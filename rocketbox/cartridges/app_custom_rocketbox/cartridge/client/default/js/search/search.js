@@ -2,6 +2,22 @@
 'use strict';
 var baseSearch = require('base/search/search');
 
+var $container;
+var $refinementBarContainer;
+var $productGrid;
+var $gridFooter;
+
+/**
+ * Initialize cached selectors when DOM is ready
+ * This eliminates repeated DOM queries throughout the module
+ */
+function initializeCachedSelectors() {
+    $container = $('.container');
+    $refinementBarContainer = $('.refinement-bar-container');
+    $productGrid = $('.product-grid');
+    $gridFooter = $('.grid-footer');
+}
+
 /**
  * Update DOM elements with Ajax results
  *
@@ -87,7 +103,7 @@ function refinementHandler(e, updateOnlyRefinementBar){
             $.ajax({
                 url: $(this).data('href'),
                 data: {
-                    page: $('.grid-footer').data('page-number'),
+                    page: $gridFooter.data('page-number'),
                     selectedUrl: $(this).data('href')
                 },
                 method: 'GET',
@@ -104,16 +120,16 @@ function refinementHandler(e, updateOnlyRefinementBar){
 
 function closeRefinementBar(){
     if(window.refinementBarInitialState){
-        $('.refinement-bar-container').replaceWith(window.refinementBarInitialState);
+        $refinementBarContainer.replaceWith(window.refinementBarInitialState);
     }
-    $('.refinement-bar-container.open').removeClass('open');
+    $refinementBarContainer.filter('.open').removeClass('open');
     $('.modal-background').hide();
     window.refinementBarInitialState = null;
 }
 
 baseSearch.applyFilter = function () {
     // Handle refinement value selection and reset click where entire dom needs change
-    $('.container').on(
+    $container.on(
         'click',
         '.refinement-bar button.reset, .floating-refinement-bar button.reset, .selected-filter-brick button, .swatch-filter button',
         function(e){
@@ -122,7 +138,7 @@ baseSearch.applyFilter = function () {
         });
 
     // Handle grouped refinement selection
-        $('.container').on(
+        $container.on(
             'click',
             '.floating-refinement-bar button.finalize-refinements',
             function(e){
@@ -136,19 +152,19 @@ baseSearch.applyFilter = function () {
             });
 
     // Handle refinement value selection that need to be held for grouping
-    $('.container').on(
+    $container.on(
         'click',
         '.floating-refinement-bar .refinements button:not(".expander, .title")',
         function(e){
             if(!window.refinementBarInitialState){
-                window.refinementBarInitialState = $('.refinement-bar-container').clone();
+                window.refinementBarInitialState = $refinementBarContainer.clone();
             }
             $('.floating-refinement-bar button.finalize-refinements').attr('data-href', $(this).data('href'));
             refinementHandler.call(this,e,true);
 
         });
 
-        $('.container').on(
+        $container.on(
             'click',
             '.refinement-bar .refinements button:not(".expander, .title, .sort-option-btn"), .category-refinement-bar .refinements button:not(".expander, .title")',
             function(e){
@@ -158,7 +174,7 @@ baseSearch.applyFilter = function () {
 
 baseSearch.mobileSort = function () {
     // Handle sort order menu selection
-    $('.container').on('click', '#sort-menu .sort-option-btn', function (e) {
+    $container.on('click', '#sort-menu .sort-option-btn', function (e) {
         e.preventDefault();
         var $this = $(this);
         $.spinner().start();
@@ -168,7 +184,7 @@ baseSearch.mobileSort = function () {
             data: { selectedUrl: $this.data('sortvalue') },
             method: 'GET',
             success: function (response) {
-                $('.product-grid').empty().html(response);
+                $productGrid.empty().html(response);
                 $this.parent().siblings().find('i.fa-check-circle').addClass('fa-circle-o').removeClass('fa-check-circle');
                 $this.find('i.fa-circle-o').addClass('fa-check-circle').removeClass('fa-circle-o');
                 window.globalLazyLoad.update();
@@ -182,17 +198,19 @@ baseSearch.mobileSort = function () {
 }
 
 baseSearch.quickViewShow = function () {
-    $('.container').on('mouseenter', '.product', function (e) {
+    $container.on('mouseenter', '.product', function (e) {
         $(this).find('a.quickview:not(.quickview-show)').addClass('quickview-show');
     });
 
-    $('.container').on('mouseleave', '.product', function (e) {
+    $container.on('mouseleave', '.product', function (e) {
         $(this).find('a.quickview.quickview-show').removeClass('quickview-show');
     });
 }
 
 baseSearch.init = function(){
-    $('.container').on('scroll', '.refinement-bar', function(e){
+    initializeCachedSelectors();
+    
+    $container.on('scroll', '.refinement-bar', function(e){
         $(e.target).parents('.refinement-bar-container').addClass('on-scrollbar');
 
         clearTimeout($.data(this, 'scrollTimer'));
@@ -201,13 +219,13 @@ baseSearch.init = function(){
         }, 500));
         });
 
-        $('.container').on('click', '.close-refinement-btn', closeRefinementBar);
+        $container.on('click', '.close-refinement-btn', closeRefinementBar);
 
-    $('.container').on('click', '.filter-results', function() {
-        $('.refinement-bar-container').addClass('open');
+    $container.on('click', '.filter-results', function() {
+        $refinementBarContainer.addClass('open');
     });
 
-    $('.container').on('click', '.tile-view-selector button', function() {
+    $container.on('click', '.tile-view-selector button', function() {
         if($(this).hasClass('fa-align-left') && !$(this).hasClass('selected')){
             $('.tile-view-selector button').toggleClass('selected')
             $('.product-tile.tile-view').hide();
@@ -225,7 +243,7 @@ baseSearch.init = function(){
 
 baseSearch.sort = function () {
     // Handle sort order menu selection
-    $('.container').on('change', '[name=sort-order]', function (e) {
+    $container.on('change', '[name=sort-order]', function (e) {
         e.preventDefault();
         var text = $(this).find('option:selected').text();
         var $aux = $('<select/>').append($('<option/>').text(text));
@@ -239,7 +257,7 @@ baseSearch.sort = function () {
             data: { selectedUrl: this.value },
             method: 'GET',
             success: function (response) {
-                $('.product-grid').empty().html(response);
+                $productGrid.empty().html(response);
                 plpLazyLoad.update();
                 $.spinner().stop();
             },
@@ -263,7 +281,7 @@ baseSearch.lazyLoadOptions = function(){
 
 baseSearch.showMore = function () {
     // Show more products
-    $('.container').on('click', '.show-more button', function (e) {
+    $container.on('click', '.show-more button', function (e) {
         e.stopPropagation();
         var showMoreUrl = $(this).data('url');
         e.preventDefault();
@@ -275,7 +293,7 @@ baseSearch.showMore = function () {
             data: { selectedUrl: showMoreUrl },
             method: 'GET',
             success: function (response) {
-                $('.grid-footer').replaceWith(response);
+                $gridFooter.replaceWith(response);
                 updateSortOptions(response);
                 plpLazyLoad.update();
                 $.spinner().stop();
