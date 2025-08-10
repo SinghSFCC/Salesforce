@@ -1,0 +1,28 @@
+@import "~base/checkout/checkout";
+
+.shipping-summary, .payment-summary{
+    .card-body{
+        .p-3{
+            padding:0!important;
+        } 
+        .border{
+            border:0!important;
+        }
+    }
+}
+
+.payment-options.nav-tabs {
+    .nav-item.active {
+          border-bottom: 0.188em solid  #{var(--skin-primary-color-1)};
+   }
+}
+
+#paymentMethodsList{
+    list-style: none;
+    padding-left: 0;
+    margin-left:0;
+}
+
+.single-shipping .view-address-block{
+    display:block;
+}

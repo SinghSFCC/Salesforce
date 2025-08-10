@@ -1,0 +1,17 @@
+<label for="quantity-${loopState && loopState.count ? loopState.count : '1' }">${Resource.msg('label.quantity', 'common', null)}</label>
+<select class="quantity-select custom-select form-control" id="quantity-${loopState && loopState.count ? loopState.count : '1' }">
+    <isloop items="${product.quantities}" var="quantity">
+        <option value="${quantity.value}"
+                <isif condition="${product.productType !== 'bundle'}">data-url="${quantity.url}"</isif>
+                ${quantity.selected ? 'selected' : ''}
+        >
+            ${quantity.value}
+        </option>
+    </isloop>
+</select>
+
+<div class="placeholder-qty-selector  form-control">
+    <button class="fa fa-minus no-btn-style decrease-qty"></button>
+    <span class="selected-qty">1</span>
+    <button class="fa fa-plus no-btn-style increase-qty"></button>
+</div>

@@ -1,0 +1,18 @@
+@import "~base/utilities/responsiveUtils";
+
+
+@mixin button-global($button-bg) {
+    background-color: $button-bg;
+    line-height: 50px;
+    color: var(--skin-primary-color-invert-1);
+    border-radius: 0;
+    border: 0;
+    font-size: 0.875rem;
+    padding-top:0;
+    padding-bottom: 0;
+    &:hover {
+        background-color:$button-bg;
+        transition: all 0.3s ease;
+        color: var(--skin-primary-color-invert-1);
+    }
+}

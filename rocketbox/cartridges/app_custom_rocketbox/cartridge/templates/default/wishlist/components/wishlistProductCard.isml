@@ -1,0 +1,77 @@
+<div class="product-info uuid-${item.UUID} pid-${item.pid}">
+<!-- Updated Code -->
+     <div class="row">
+        <div class="col-sm-8 mb-3">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-4">
+                    <div class="item-image">
+                        <img class="product-image img-fluid" src="${item.imageObj.small[0].url}" alt="${item.imageObj.small[0].alt}" title="${item.imageObj.small[0].title}">
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-8">    
+                <isinclude template="wishlist/components/wishlistProductCardHeader">
+                    <div class="item-attributes d-flex flex-column">
+                        <isloop items="${item.variationAttributes}" var="attribute">
+                            <isloop items="${attribute.values}" var="eachValue">
+                                <isif condition="${!!eachValue.selected}" />
+                                    <p class="line-item-attributes">${attribute.displayName}: ${eachValue.displayValue}</p>
+                                </isif>
+                            </isloop>
+                        </isloop>
+                        <isif condition="${item.options}" />
+                            <isloop items="${item.options}" var="option">
+                                <isif condition="${!!option}" />
+                                    <p class="line-item-attributes">${option.displayName}:${option.displayValue}</p>
+                                </isif>
+                            </isloop>
+                        </isif>
+
+                        <isinclude template="wishlist/components/wishlistProductCardAvailability" />
+                        <isif condition=${!pdict.wishlist.publicView}>
+                            <div class="edit-add-to-wishlist">
+                                <a href="${URLUtils.url('Wishlist-GetProduct', 'uuid', item.UUID, 'pid', item.pid)}" class="edit"
+                                    data-toggle="modal" data-target="#editWishlistProductModal"
+                                    title="${Resource.msg('link.edit.item','cart',null)}">${Resource.msg('link.edit.item','cart',null)}
+                                </a>
+                            </div>
+                        </isif>
+                    </div>
+                    <!---unit price and quantity --->
+                    <isinclude template="wishlist/components/productListItemProductPrice" />
+                    <isif condition=${!pdict.wishlist.publicView}>
+                    <!--- remove wishlist icon--->
+                    <div class="d-sm-none removeWishlist"> <!---hide lg and xl--->
+                    <button type="button" class="remove-btn remove-from-wishlist"
+                        data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+                        aria-label="remove">
+                        <span aria-hidden="true">&times;</span>
+                        
+                    </button>
+                    </div>
+                    
+                </isif>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <isinclude template="wishlist/components/makePublicCheckbox">
+            <isif condition="${!!item.master}">
+                <isinclude template="wishlist/components/selectAttributesButton">
+            <iselse>
+                <!-- add to Cart from Wishlist -->
+                <isinclude template="wishlist/components/addToCartButton" />
+            </isif>
+
+                <isif condition=${!pdict.wishlist.publicView}>
+                    <div class="hidden-xs-down text-center"> <!---hide medium, sm, xs--->
+                    <button type="button" class="remove-btn-lg remove-from-wishlist"
+                        data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+                        aria-label="remove">Remove</button>
+                    </div>
+                </isif>
+        </div>
+        
+     </div>
+     <div class="wishlist-line-item-divider line-dotted mb-3"></div>
+     <!-- /Updated Code -->
+    </div>

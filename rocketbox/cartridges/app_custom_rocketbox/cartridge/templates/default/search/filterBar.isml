@@ -1,0 +1,15 @@
+<ul>
+    <isloop items="${pdict.productSearch.selectedFilters}" var="refinement">
+        <li>
+            <div class="selected-filter-brick">
+                <span class="refinement-name">${refinement.displayName + ' : '}</span>
+                <span>${refinement.displayValue}</span>
+                <button data-href="${refinement.url}" class="no-btn-style fa fa-times-circle remove-filter">
+                    <span class="sr-only">
+                        ${Resource.msgf('assistive.text.remove.filter.button', 'search', null, refinement.title)}
+                    </span>
+                </button>
+            </div>
+        </li>
+    </isloop>
+</ul>

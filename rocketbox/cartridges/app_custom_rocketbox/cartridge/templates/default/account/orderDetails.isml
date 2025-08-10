@@ -1,0 +1,36 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/orderTrack.css');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <!--- Replace image once UX has given images --->
+    <iscomment> <div class="hero slant-down account-image">
+        <h1 class="page-title">${Resource.msg('heading.order.details','order',null)}</h1>
+    </div> </iscomment>
+    <div class="container receipt <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <div class="row">
+         <div class="col-sm-4 col-md-4  mb-3">
+         <isinclude template="account/accountSidebar"/>
+         </div>
+            <div class="col-sm-8 col-md-8">
+                <isinclude template="checkout/confirmation/confirmationDetails" />
+                <isif condition="${pdict.enableZenkraftTrackingOnOrderHistory}">
+                    <div class="card p-3 bg-white">
+                        <a class="mb-2 text-center" href="${URLUtils.url('Zenkraft-Track', 'order', pdict.order.orderNumber)}">View tracking information</a>
+                        <isset name="order" value="${pdict.order}" scope="page" />
+                        <isinclude template="account/order/orderCheckmarks" />
+                    </div>
+                </isif>
+                <div class="my-account mb-3">
+                    <a href="${pdict.exitLinkUrl}" class="text-primary" title="${Resource.msg('link.orderdetails.myaccount','account',null)}" aria-label="${Resource.msg('link.orderdetails.myaccount','account',null)}">
+                        ${pdict.exitLinkText}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

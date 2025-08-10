@@ -1,0 +1,15 @@
+<isinclude template="/components/modules" />
+<div class="container ">
+   <div class="col-sm-12">
+      <h3 class="text-center pt-2 pb-2">Match with it</h3>
+   </div>
+   <div id="slick-carousel">
+         <div class="regular">
+            <isloop items="${slotcontent.content}" var="product" status="loopState">
+               <div class="col-sm-11 col-xs-12 bx-sw  m-2 p-0">
+                  <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', true, 'swatches', true)}"/>
+               </div>
+            </isloop>
+         </div>
+   </div>
+</div>

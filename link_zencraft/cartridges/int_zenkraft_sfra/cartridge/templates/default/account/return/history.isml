@@ -1,0 +1,33 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkmarks.css');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <div class="hero slant-down account-image">
+        <h1 class="page-title">${Resource.msg('page.title.return','returns',null)}</h1>
+    </div>
+    <div class="container">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-4 col-md-3">
+                <h2>${Resource.msg('label.returnhistory','returns',null)}</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="container order-list-container col-xs-12 col-lg-8 justify-content-center">
+                <isset name="returns" value="${pdict.returns}" scope="page" />
+                <isinclude template="account/return/returnHistoryCards"/>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6 text-center">
+                <a href="${URLUtils.url('Account-Show')}" class="normal">
+                    ${Resource.msg('link.profile.backtomyaccount','account',null)}
+                </a>
+            </div>
+        </div>
+    </div>
+</isdecorate>

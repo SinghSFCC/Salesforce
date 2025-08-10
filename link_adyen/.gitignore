@@ -1,0 +1,5 @@
+.idea
+.DS_Store
+/cartridges/int_adyen_SFRA/dw.json
+.tern-project
+node_modules

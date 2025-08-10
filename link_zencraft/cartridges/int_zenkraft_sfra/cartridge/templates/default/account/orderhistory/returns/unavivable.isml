@@ -1,0 +1,24 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/account/profile.css');
+</isscript>
+<div class="hero slant-down account-image">
+    <h1 class="page-title">${Resource.msg('label.print','returns',null)}</h1>
+</div>
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="card py-3 my-3">
+        <div class="card-header">
+            <h3>${Resource.msg('label.orderhistory.ordernumber', 'account', null)} ${pdict.orderNo}</h3>
+        </div>
+        <div class="card-body py-3 my-3">
+            <p class="py-3 my-3">${Resource.msg('msg.return.unavivable', 'returns', null)}</p>
+        </div>
+        <div class="border-top pt-3 pr-3">
+            <a class="btn btn-primary color-white float-right" href="${URLUtils.url('Order-History')}">${Resource.msg('btn.to.order.history', 'returns', null)}</a>
+        </div>
+    </div>
+</div>
+</isdecorate>

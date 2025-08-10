@@ -1,0 +1,36 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isdecorate template="common/layout/pdStorePage">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/experience/storePage.css');
+    </isscript>
+
+    <div class="storepage" id="${pdict.page.ID}">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="home-main homepage mb-4">
+                    <isslot id="home-main-m" description="Main home page slot." context="global" />
+                </div>
+
+                <div class="container home-populer-categories homepage h-100">
+                    <isslot id="home-categories-populer" description="populer Categories slots on the home page."
+                        context="global" />
+                </div>
+
+                <div class="container home-categories homepage h-100">
+                    <div class="row home-main-categories no-gutters m-0">
+                        <isslot id="home-categories-m" description="Categories slots on the home page."
+                            context="global" />
+                    </div>
+                </div>
+
+                <div id="ecarousal" class="mb-2 pb-2 mx-auto">
+                    <isslot id="einstein-carousel" description="create einstein-carousel." context="global" />
+                </div>
+
+                <isprint value="${pdict.regions.main.setClassName(" col-12").render()}" encoding="off" />
+            </div>
+        </div>
+    </div>
+</isdecorate>

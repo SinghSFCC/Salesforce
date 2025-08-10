@@ -1,0 +1,62 @@
+<isscript>
+	var results = pdict.Locations.locations;
+
+</isscript>
+
+<div class="drop-off-results">
+	<div class="drop-off-column left">
+		<isloop items="${results}" var="result" status="loopstate">
+			<div class="drop-off-result" data-json="${JSON.stringify(result)}">
+				<strong>${result.name}</strong>
+			</div>
+		</isloop>
+	</div>
+	<div class="drop-off-column middle">
+		<div class="drop-off-map" style="position:relative;height: 100%;width: 100%;"></div>
+	</div>
+	<div class="drop-off-column drop-off-result-info right" style="background-color:#efefef;">
+		<div class="drop-off-result-container" style="display:none;" data-json="">
+			<div class="result-name" style="font-weight: bold;"></div>
+
+			<div style="padding-top: 20px;font-weight: bold;">${Resource.msg('dropoff.hours','zenkraft',null)}</div>
+			<div class="result-hours"></div>
+
+			<div style="padding-top: 20px;font-weight: bold;">${Resource.msg('dropoff.services','zenkraft',null)}</div>
+			<div class="result-services"></div>
+
+			<button value="DELIVER HERE" style="margin-top: 20px;" id="deliverherebtn" class="btn-deliverhere btn-labelaction">${Resource.msg('singleshipping.deliverhere','checkout',null)}</button>
+		</div>
+	</div>
+</div>
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three unequal columns that floats next to each other */
+.drop-off-column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left, .right {
+  width: 25%;
+}
+
+.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.drop-off-results:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.drop-off-result{padding-bottom: 20px;cursor: pointer;}
+</style>

@@ -1,0 +1,90 @@
+@import "~base/components/productTiles";
+@import "../utilities/swatch";
+
+.product-tile{
+    .swatch-circle {
+        // $white will be replaced by color image background via Javascript
+        @include swatch-rectangle(1.5em, 1.5em, $white);
+    }
+
+    &.tile-view{
+        display: block;
+
+        .tile-body{
+            .tile-body-footer{
+                .ratings{
+                    flex: 0 0 100%;
+                    width: 100%;
+                    max-width: 100%;
+
+                    .yotpo .standalone-bottomline.star-clickable, .yotpo .standalone-bottomline .star-clickable{
+                        float: none;
+                        justify-content: space-between;
+                    }
+                }
+
+                .compare{
+                    flex: 0 0 100%;
+                    width: 100%;
+                    max-width: 100%;
+
+                    label.custom-control-label{
+                        vertical-align: middle;
+
+                        &:after, &:before{
+                            top: 0.20rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.list-view{
+        display: none;
+
+        .tile-body-top-right, .tile-body-bottom-right{
+            text-align: right;
+        }
+
+        .pdp-link a.link{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .product-description{
+            font-size: 13px;
+            font-weight: 300;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .wishlistTile{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .fa-circle.fa-inverse{
+            color:transparent;
+        }
+    }
+
+    .image-container{
+        overflow: visible;
+        .quickview{
+            bottom: -22px;
+            right: 10px;
+            display: none;
+
+            &.quickview-show{
+                display: block;
+            }
+
+            img{
+                height: 44px;
+                width: 44px;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<div class="image-container">
+    <a href="${pdict.urls.product}">
+        <img class="tile-image lazy"
+             data-load-error = "${URLUtils.staticURL('/images/noimagefound-medium.jpg')}" 
+             src="${URLUtils.staticURL('/images/loading.gif')}"
+             data-src="${product.images.medium[0].url}"
+             alt="${product.productName}"
+             title="${product.images.medium[0].title}"
+            itemprop="image"/>
+    </a>
+    <a class="wishlistTile" href="${URLUtils.url('Wishlist-AddProduct')}" title="${Resource.msg('wishlist.addto.wishlist.heart', 'wishlist', null)}">
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+        <i class="fa fa-heart-o fa-stack-1x"></i>
+    </span>
+    </a>
+    <isif condition="${pdict.display.showQuickView !== false}">
+        <a class="quickview hidden-sm-down" href="${pdict.urls.quickView}"
+           data-toggle="modal"
+           data-target="#quickViewModal"
+           title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+           aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+        >
+         <iscomment> <img class="img-fluid" src="${URLUtils.staticURL('/images/quick-view.svg')}" alt="${Resource.msg('cart.empty.name', 'cart', null)}" /> </iscomment>
+            <span>
+                 <img class="img-fluid" src="${URLUtils.staticURL('/images/quick-view.svg')}" alt="${Resource.msg('cart.empty.name', 'cart', null)}" />
+            </span>
+        </a>
+    </isif>
+</div>

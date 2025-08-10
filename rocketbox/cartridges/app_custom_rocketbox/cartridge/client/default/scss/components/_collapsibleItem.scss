@@ -1,0 +1,10 @@
+@import "~base/components/collapsibleItem";
+
+@each $size in map-keys($grid-breakpoints) {
+    #footercontent{
+        .container div.collapsible-#{$size} button.title {
+            box-shadow:none;
+            outline:none;
+        }
+    }
+}

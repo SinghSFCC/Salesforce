@@ -1,0 +1,22 @@
+{
+    "name": "Youtube",
+    "description": "Add Youtube video link",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "youtubeSpec",
+            "name": "YoutubeSpecification",
+            "description": "Specification of the youtube to be displayed in editor.",
+            "attribute_definitions": [
+                {
+                    "id": "videoLink",
+                    "name": "Youtube Video Link",
+                    "description": "Video url which needs to embed",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

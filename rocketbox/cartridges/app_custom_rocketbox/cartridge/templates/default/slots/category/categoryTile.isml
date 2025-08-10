@@ -1,0 +1,6 @@
+<isif condition="${slotcontent}">
+
+    <iscomment>created new clp page, change slot id name'clp-landing'</iscomment>
+
+ 
+</isif>

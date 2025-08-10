@@ -1,0 +1,346 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/trackingpage.css');
+    assets.addCss('/css/intlTelInput.css');
+    assets.addCss('/css/jquery.rateyo.css');
+    assets.addJs('/js/jquery.rateyo.js');
+    assets.addJs('/js/phone/intlTelInput-jquery.min.js');
+    assets.addJs('/js/tracking.js');
+</isscript>
+
+<isscript>
+    var _today = new Date();
+    var zenkraftHelper = require('*/cartridge/scripts/helpers/zenkraftHelper');
+    var _todayformatted = zenkraftHelper.getFormattedDateTime(_today);
+</isscript>
+
+<div class="container trackingpage">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="row justify-content-center">
+        <div class="col-sm-8 col-md-8">
+            <isif condition="${pdict.OrderNo}">
+                <h2>${Resource.msg('tracking.order','zenkraft',null)} ${pdict.OrderNo}</h2>
+            </isif>
+            <isif condition="${pdict.TrackingsData.length === 0}">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="pull-left">${Resource.msg('tracking.title.pending','tracking',null)}</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="tracking-overview">
+                            <div class="track-checkmarks">
+                                <ul class="checkmark">
+                                    <li class="active"><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.pending','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </isif>
+            <isloop items="${pdict.TrackingsData}" var="trackingData" status="loopstatus">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="pull-left">${trackingData.status ? trackingData.status : Resource.msg('tracking.title.pending','tracking',null)}
+                            <isif condition="${trackingData.estimated_delivery && !empty(trackingData.estimated_delivery)}">
+                                <p class="track-status-top">
+                                    <span class="font-weight-bold">${Resource.msg('tracking.estimated.date','zenkraft',null)}</span> ${zenkraftHelper.getFormattedDateTime(zenkraftHelper.convertDate(trackingData.estimated_delivery))}
+                                </p>
+                            <iselse/>
+                                <isif condition="${
+                                    trackingData.packages &&
+                                    trackingData.packages.length > 0 &&
+                                    trackingData.packages[0].checkpoints
+                                    trackingData.packages[0].checkpoints.length > 0
+                                }">
+                                    <p class="track-status-top">
+                                        ${zenkraftHelper.getFormattedDateTime(zenkraftHelper.convertTime(trackingData.packages[0].checkpoints[0].time))}
+                                    </p>
+                                </isif>
+                            </isif>
+                        </h2>
+                            <div class="pull-right">
+                                <isif condition="${!empty(trackingData.trackingNo)}">
+                                    ${trackingData.trackingNo}
+                                </isif>
+                                <isif condition="${trackingData.carrier == 'usps'}">
+                                    <img src="${URLUtils.staticURL('/images/usps-logo-black-transparent.png')}" class="ups-logo-top" alt="usps">
+                                <iselseif condition="${trackingData.carrier == 'fedex'}">
+                                    <img src="${URLUtils.staticURL('/images/fedex-logo.png')}" class="logo-top" alt="fedex">
+                                <iselseif condition="${trackingData.carrier == 'ups'}">
+                                    <img src="${URLUtils.staticURL('/images/ups-logo.png')}" class="logo-top" alt="ups">
+                                </isif>
+                            </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="tracking-overview">
+                            <div class="track-checkmarks">
+                                <ul class="checkmark">
+                                    <iscomment>Only show for exceptions</iscomment>
+                                    <isif condition="${trackingData.tracking_stage == 'EXCEPTION'}">
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+                                    </li>
+
+                                    <li class="active"><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+                                    </li>
+                                    <iselseif condition="${trackingData.tracking_stage == 'SHIPMENT_VOIDED'}"/>
+                                    <iscomment>For cancellations</iscomment>
+                                    <li class="active"><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.cancelled','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+                                    </li>
+                                    <iselseif condition="${!trackingData.status || empty(trackingData.status)}"/>
+                                    <iscomment>For pending</iscomment>
+                                    <li class="active"><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.pending','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+                                    </li>
+
+                                    <li><span>&nbsp;</span>
+                                        <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+                                    </li>
+                                    <iselseif condition="${trackingData.tracking_stage == 'CREATED'}"/>
+                                    <div>${Resource.msg('tracking.stage.created','tracking',null)}</div>
+                                    <iselse/>
+                                    <iscomment>For non-exceptions</iscomment>
+                                    <isif condition="${trackingData.tracking_stage == 'PICKED_UP'}">
+                                        <li class="active"><span>&nbsp;</span>
+                                    <iselse/>
+                                        <li><span>&nbsp;</span>
+                                    </isif>
+                                        <div class="title">${Resource.msg('tracking.stage.pickedup','tracking',null)}</div>
+                                    </li>
+
+                                    <isif condition="${trackingData.tracking_stage == 'IN_TRANSIT'}">
+                                        <li class="active"><span>&nbsp;</span>
+                                    <iselse/>
+                                        <li><span>&nbsp;</span>
+                                    </isif>
+                                        <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+                                    </li>
+
+                                    <isif condition="${trackingData.tracking_stage == 'OUT_FOR_DELIVERY'}">
+                                        <li class="active"><span>&nbsp;</span>
+                                    <iselse/>
+                                        <li><span>&nbsp;</span>
+                                    </isif>
+                                        <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+                                    </li>
+
+                                    <isif condition="${trackingData.tracking_stage == 'DELIVERED'}">
+                                        <li class="active"><span>&nbsp;</span>
+                                    <iselse/>
+                                        <li><span>&nbsp;</span>
+                                    </isif>
+                                        <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+                                    </li>
+                                    </isif>
+                                </ul>
+                            </div>
+                        </div>
+                        <isif condition="${trackingData.inflight && !empty(trackingData.inflight) && trackingData.inflight.carrier_url && !empty(trackingData.inflight.carrier_url)}">
+                            <div class="font-weight-bold">
+                                <p class="m-0">${Resource.msg('tracking.label.orderchange', 'tracking', null)}</p>
+                                <a class="m-0" href="${trackingData.inflight.carrier_url}" target="_blank">${Resource.msg('tracking.clickhere', 'tracking', null)}</a>
+                            </div>
+                        </isif>
+                    </div>
+                <iscomment> </div> </iscomment>
+                <isif condition="${
+                    trackingData.ShippingModel && !empty(trackingData.ShippingModel) &&
+                    trackingData.ShippingModel.productLineItems && !empty(trackingData.ShippingModel.productLineItems) &&
+                    trackingData.ShippingModel.productLineItems.items && !empty(trackingData.ShippingModel.productLineItems.items)
+                }">
+                    <iscomment> <div class="card"> </iscomment>
+                    <h2 class="card-header track-order-header">${Resource.msg('shipitems','tracking',null)}</h2>
+
+                        <div class="card-body">
+                            <isloop items="${trackingData.ShippingModel.productLineItems.items}" var="lineItem">
+                                <isif condition="${lineItem.productType === 'bundle'}">
+                                    <isinclude template="cart/productCard/cartBundleCard" />
+                                <iselse/>
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                    <iselse/>
+                                        <isinclude template="account/tracking/trackingProductCard" />
+                                    </isif>
+                                </isif>
+                            </isloop>
+                        </div>
+                    <iscomment> </div> </iscomment>
+                <iselseif condition="${trackingData.products && trackingData.products.length > 0}" />
+
+                    <h2 class="card-header track-order-header">${Resource.msg('shipitems','tracking',null)}</h2>
+                    <div class="card-body">
+                        <isloop items="${trackingData.products}" var="parcelProduct" status="loopstatus">
+                        <div class="product-info border-bottom mb-2 uuid-${parcelProduct.product.getUUID()}">
+                            <div class="line-item-header">
+                                <div class="line-item-name">
+                                    ${parcelProduct.product.getName()}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 d-flex flex-row">
+                                    <div class="item-image">
+                                        <a href="${URLUtils.https('Product-Show', 'pid', parcelProduct.product.getID())}">
+                                            <img class="product-image" src="${parcelProduct.product.getImage('small').getURL().abs().toString()}" alt="asdas">
+                                        </a>
+                                    </div>
+                                    <div class="text-center w-100 row align-items-center">
+                                        <p class="col-12">${Resource.msg('tracking.estimated.quantity','zenkraft',null)} ${parcelProduct.quantity.toString()}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </isloop>
+                    </div>
+                </isif>
+
+
+
+                <isif condition="${
+                    dw.system.Site.getCurrent().getCustomPreferenceValue('zenkraftEnableShipNotifications') &&
+                    trackingData.orderNo &&
+                    (trackingData.trackingNo || trackingData.systemShipment.trackingNumber)
+                }">
+                    <iscomment> <div class="card"> </iscomment>
+                        <div class="card-header">
+                            <h2 class="pull-left">${Resource.msg('shipnotifications','tracking',null)}</h2>
+                        </div>
+                        <div class="card-body notification-selector">
+                            <ul class="notification-tabs" role="tablist">
+                                <li role="presentation" class="sms-item">
+                                    <button data-tab="tab-sms" role="tab" aria-controls="panel-sms" aria-selected="false">
+                                        <span class="tab-wrapper">
+                                            <span class="notify-icon sms-icon">${Resource.msg('sms','tracking',null)}</span>
+                                            <span class="notify-text">${Resource.msg('sms','tracking',null)}</span>
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body notify-content tab-voice">
+                            <p>${Resource.msg('enternumbervoice','tracking',null)}</p>
+                            <div class="shipment-notifiation-form">
+                                <input type="tel" class="shipment-notification-sms" class="intl-phone" name="shipment-notification-sms"/>
+                                <button class="btn-shipment-voice" name="btn-shipment-sms" data-type="voice"
+                                    data-url="${URLUtils.https('Zenkraft-AddNotification')}"
+                                    data-tracking="${trackingData.trackingNo}"
+                                    data-carrier="${trackingData.carrier}"
+                                    data-stage="${trackingData.tracking_stage}"
+                                >${Resource.msg('notifyme','tracking',null)}</button>
+                            </div>
+                        </div>
+                        <div class="card-body notify-content tab-sms">
+                            <p>${Resource.msg('enternumbersms','tracking',null)}</p>
+                            <div class="shipment-notifiation-form">
+                                <input type="tel" class="shipment-notification-sms intl-phone" name="shipment-notification-sms"/>
+                                <button class="btn-shipment-sms"
+                                    name="btn=shipment-sms"
+                                    data-type="sms"
+                                    data-order="${trackingData.orderNo}"
+                                    data-shipment="${trackingData.systemShipment &&
+                                        !empty(trackingData.systemShipment) ?
+                                        trackingData.systemShipment.shipmentNo :
+                                        ''
+                                    }"
+                                    data-tracking="${trackingData.systemShipment &&
+                                        !empty(trackingData.systemShipment) ?
+                                        trackingData.systemShipment.trackingNumber : trackingData.trackingNo}"
+                                    data-carrier="${trackingData.carrier}"
+                                    data-stage="${trackingData.tracking_stage}"
+                                    data-url="${URLUtils.https('Zenkraft-AddNotification')}"
+                                >${Resource.msg('notifyme','tracking',null)}</button>
+                            </div>
+                        </div>
+                    <iscomment> </div> </iscomment>
+                </isif>
+                <iscomment> <div class="card"> </iscomment>
+                    <isif condition="${trackingData.checkpoints && !empty(trackingData.checkpoints) && trackingData.checkpoints.length > 0}">
+                        <h2 class="card-header track-order-header">
+                            ${Resource.msg('travelhistory','tracking',null)}
+                        </h2>
+
+                        <div class="card-body">
+                            <div class="tracking-container">
+                                <div class="tracking-header">
+                                    <div class="track-column">${Resource.msg('datetime','tracking',null)}</div>
+                                    <div class="track-column">${Resource.msg('activity','tracking',null)}</div>
+                                    <div class="track-column">${Resource.msg('location','tracking',null)}</div>
+                                </div>
+
+                                <isloop items="${trackingData.checkpoints}" alias="checkpoint" status="checkpoints">
+                                    <isscript>
+                                        var formattedDate = zenkraftHelper.parseISOString(checkpoint.time);
+                                    </isscript>
+                                    <div class="tracking-data">
+                                        <div class="track-column">${formattedDate}</div>
+                                        <div class="track-column">${checkpoint.description}</div>
+                                        <isif condition="${checkpoint.location.address}">
+                                            <div class="track-column">${checkpoint.location.address}</div>
+                                        <iselse/>
+                                            <div class="track-column">${!empty(checkpoint.location.city) ? checkpoint.location.city + ' ' : ''} ${!empty(checkpoint.location.state) ? checkpoint.location.state + ' ' : ''} ${!empty(checkpoint.location.postal_code) ? checkpoint.location.postal_code : ''}</div>
+                                        </isif>
+                                    </div>
+                                </isloop>
+                            </div>
+                        </div>
+                    </isif>
+                </div>
+            </isloop>
+        </div>
+        <div class="col-sm-8 col-md-4">
+            <div class="card">
+                   <h2 class="card-header">${Resource.msg('recommended','tracking',null)}</h2>
+                <div class="card-body">
+                    <isslot id="tracking-page-content" description="Content For Branded Tracking Page" context="global" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</isdecorate>

@@ -1,0 +1,85 @@
+<div class="product-tile tile-view">
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <isinclude template="product/components/productTileImage" />
+    <div class="tile-body">
+        <isif condition="${pdict.display.swatches !== false}">
+            <isinclude template="product/components/productTileSwatch" />
+        </isif>
+
+        <isinclude template="product/components/productTileName" />
+
+        <isset name="price" value="${product.price}" scope="page" />
+        <isif condition="${product.productType === 'set'}">
+            <isinclude template="product/components/pricing/setPrice" />
+            <iselse>
+                <isinclude template="product/components/pricing/main" />
+        </isif>
+
+        <isif condition="${pdict.display.ratings !== false}">
+            <isinclude template="product/productTileFooter" />
+        </isif>
+    </div>
+    <!-- END_dwmarker -->
+</div>
+
+<div class="product-tile list-view row">
+    <div class="col-sm-3">
+        <isinclude template="product/components/productTileImage" />
+    </div>
+    <div class="tile-body col-sm-9">
+        <div class="tile-body-top row">
+            <div class="tile-body-top-left col-sm-8">
+                <isinclude template="product/components/productTileName" />
+                <div class="product-description">
+                    ${product.shortDescription}
+                </div>
+            </div>
+            <div class="tile-body-top-right col-sm-4">
+                <div class="product-pricing">
+                    <isset name="price" value="${product.price}" scope="page" />
+                    <isif condition="${product.productType === 'set'}">
+                        <isinclude template="product/components/pricing/setPrice" />
+                        <iselse>
+                            <isinclude template="product/components/pricing/main" />
+                    </isif>
+                </div>
+
+                <isif condition="${pdict.display.ratings !== false}">
+                    <div class="product-rating">
+                        <isinclude template="product/components/ratings" />
+                    </div>
+                </isif>
+            </div>
+        </div>
+        <div class="tile-body-bottom row">
+            <div class="tile-body-bottom-left col-sm-8">
+                <iscomment> <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                    
+                        <div data-attr="${attr.id}" class="swatch row">
+                            <div class="col-8">
+                                <isinclude template="product/components/variationAttribute" />
+                            </div>
+                        </div>
+                   
+                </isloop> </iscomment>
+                <isif condition="${pdict.display.swatches !== false}">
+                    <isinclude template="product/components/productTileSwatch" />
+                </isif>
+            </div>
+            <div class="tile-body-bottom-right col-sm-4">
+                <!-- Quantity Drop Down Menu -->
+
+                <iscomment> <div class="quantity col-10 mx-auto">
+                    <isinclude template="product/components/quantity" />
+                </div> </iscomment>
+
+
+                <iscomment> <isif condition="${pdict.addToCartUrl}">
+                    <isinclude template="product/components/addToCartGlobal" />
+                    <iselse>
+                        <isinclude template="product/components/updateProduct" />
+                </isif> </iscomment>
+            </div>
+        </div>
+    </div>
+</div>

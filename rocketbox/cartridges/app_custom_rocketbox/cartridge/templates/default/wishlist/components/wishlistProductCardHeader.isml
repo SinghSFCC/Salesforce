@@ -1,0 +1,8 @@
+<div class="line-item-header">
+    <!--- product name--->
+    <div class="line-item-name">
+    <a href="${URLUtils.url('Product-Show', 'pid', item.pid)}">${item.name}</a>
+    
+    </div>
+</div>
+

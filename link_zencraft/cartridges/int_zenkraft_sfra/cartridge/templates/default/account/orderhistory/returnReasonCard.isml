@@ -1,0 +1,57 @@
+<isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}"  scope="page"/>
+<isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page"/>
+<isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page"/>
+
+<div class="product-info ${bonusproductlineitem} uuid-${lineItem.UUID}">
+    <!--- name and remove buttons --->
+    <isinclude template="cart/productCard/cartProductCardHeader" />
+
+    <div class="row ${bonuslineitemrow}">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-row">
+                    <div class="item-image">
+                        <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
+                    </div>
+                    <div class="item-attributes d-flex flex-column">
+                        <isloop items="${lineItem.variationAttributes}" var="attribute">
+                            <p class="line-item-attributes ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</p>
+                        </isloop>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <fieldset>
+                <label for="select-return-reason-${lineItem.UUID}">${Resource.msg('reason.card.label','returns',null)}</label>
+                <select name="select-return-reason-${lineItem.UUID}" id="select-return-reason-${lineItem.UUID}" class="form-control custom-select return-reason-selector js-reason">
+                    <option id="not-selected" value="">${Resource.msg('reason.card.option.title','returns',null)}</option>
+                    <isloop items="${lineItem.returnReasons}" var="reason">
+                        <option id="${reason.id}" value="${reason.id}">${reason.display}</option>
+                    </isloop>
+                </select>
+                <isloop items="${lineItem.returnReasons}" var="reason">
+                    <select name="sub-reasons" class="sub-reasons js-sub-reason form-control custom-select js-sub-reason-${reason.id}" style="display:none;">
+                        <isloop items="${reason.values}" var="subReason">
+                            <option class="${subReason.id}" value="${subReason.id}">${subReason.display}</option>
+                        </isloop>
+                    </select>
+                </isloop>
+            </fieldset>
+        </div>
+        <div class="col-lg-2">
+            <label class="" for="quantity-${lineItem.UUID}">${Resource.msg('field.selectquantity','cart',null)}</label>
+            <select class="quantity custom-select js-return-quantity"
+                    id="quantity-${lineItem.UUID}"
+                    name="quantity-${lineItem.UUID}"
+                    aria-label="quantity: ${StringUtils.formatInteger(lineItem.quantity)}">
+                <isloop begin="${1}"
+                        end="${lineItem.quantity}"
+                        status="status">
+                    <option>${status.index}</option>
+                </isloop>
+            </select>
+        </div>
+    </div>
+</div>
+

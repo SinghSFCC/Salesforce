@@ -1,0 +1,60 @@
+<footer id="footercontent" class="pb-5">
+    <div class="container">
+    <div class="d-none d-sm-block"></div>
+        <div class="footer-container pt-md-5 mb-md-5 row">
+            <div class="footer-item  col-sm-12 col-md-3 collapsible-sm">
+                <iscontentasset aid="footer-about" />
+            </div>
+            <div class="footer-item col-sm-12 col-md-3 collapsible-sm">
+                <iscontentasset aid="footer-departments" />
+            </div>
+            <div class="footer-item col-sm-12 col-md-3 collapsible-sm">
+                <iscontentasset aid="footer-help" />
+            </div>
+            <div class="footer-item col-sm-12 col-md-3 collapsible-sm">
+                <iscontentasset aid="footer-payments-delivery" />
+            </div>
+            
+        </div>
+        
+        <div class="row mb-2">
+            <div class="col-lg-4 col-sm-12 social mb-4">
+                <div class="title d-block d-lg-none mb-3 text-uppercase">Social</div>
+                <isslot id="footer-column-m" description="Content in column 1 of the Footer" context="global" />
+                <button class="back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}" aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                        <i class="fa fa-arrow-up fa-stack-1x"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="col-lg-3 col-sm-12 countrySelector d-none d-lg-block">
+                <iscontentasset aid="footer-country-selector" />
+            </div>
+            <div class="col-lg-5 col-sm-12 email-signup">
+                <div class="home-email-signup">
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="hpEmailSignUp" placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-primary subscribe-email pl-4 pr-4 text-uppercase" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row d-block d-lg-none">
+            <div class="col-12">
+                <div class="footer-logo mb-4 mt-4 text-center">
+                    <img class="img-fluid" src="${URLUtils.staticURL('/images/footer-logo.svg')}" alt="${Resource.msg('cart.empty.name', 'cart', null)}" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <iscontentasset aid="footer-copy" />
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,133 @@
+.collection-points {
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+
+.collection-points::-webkit-scrollbar {
+    width: 8px;
+    padding: 1px;
+    border-radius: 4px;
+}
+
+  /* Track */
+.collection-points::-webkit-scrollbar-track {
+    background: white;
+    border: 1px solid #d8d8d8;
+}
+
+  /* Handle */
+.collection-points::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    height: 80px;
+    background: #d8d8d8;
+}
+
+  /* Handle on hover */
+.collection-points::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.collection-point {
+    cursor: zoom-in;
+}
+#drop-off-modal .close-cross {
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    width: 32px;
+    height: 32px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#drop-off-modal .close-cross:hover {
+    opacity: 1;
+}
+.pac-container {
+    z-index: 1060 !important;
+}
+
+#drop-off-modal .close-cross:before {
+    transform: rotate(45deg);
+}
+
+#drop-off-modal .close-cross:after {
+    transform: rotate(-45deg);
+}
+
+#drop-off-modal .close-cross:before, #drop-off-modal .close-cross:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    top: 5px;
+    height: 22px;
+    width: 3px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+#drop-off-modal .close-cross:hover:before, #drop-off-modal .close-cross:hover:after {
+    opacity: 1;
+}
+
+.leading-lines.shipping-method-list {
+    overflow: visible;
+}
+.collection-point-opening-hours div {
+    font-size: 10px;
+}
+.collection-point-title {
+    font-size: 14px;
+}
+.collection-point-distance {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    #drop-off-modal .close-cross {
+        opacity: 1;
+    }
+    #drop-off-modal .choose-location.btn {
+        width: 100%;
+    }
+    #drop-off-modal .choose-location.btn.d-none {
+        display: inline-block !important;
+    }
+
+    #drop-off-modal .modal-dialog.modal-xl {
+        margin: 1.5rem
+    }
+
+    .collection-map {
+        height: calc(80vh - 1.5rem);
+    }
+
+    .collection-points {
+        width: 80vw !important;
+        height: unset !important;
+        display: flex;
+        padding: 0;
+        overflow-y: unset !important;
+        overflow-x: scroll !important;
+        position: absolute;
+        bottom: 0px;
+        overflow: auto;
+        white-space: nowrap;
+        z-index: 100;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        margin-left: calc(10vw - 1.5rem);
+    }
+
+    .collection-points .collection-point {
+        margin: 0 0 10px 10px;
+        width: unset;
+        min-width: 80vw;
+        background-color: white;
+        scroll-snap-align: center;
+    }
+    .collection-points::-webkit-scrollbar {
+        display: none;
+    }
+}

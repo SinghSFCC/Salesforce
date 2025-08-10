@@ -1,0 +1,903 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://use.fontawesome.com/db3d161993.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="${URLUtils.staticURL('/css/styleguide/styleguide-hpb.css')}" />
+    
+   </head>
+   <body>
+      <div class="container-fluid styleguide">
+         <div class="row">
+            <div class="col-md-3 col-sm-12 bg-light">
+               <nav id="navbar-example3" class="navbar-light bg-light h-100 position-fixed">
+                  <div class="col-12 pt-2 pb-3">
+                     <img src="https://zyaj-010.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/Sites-RefArch-Site/-/default/dw3446e4a6/images/logo.svg">
+                     <h4 class="text-center text-uppercase">StyleGuide</h4>
+                  </div>
+                  <ul class="list-unstyled ml-5">
+                     <h6>Grid System</h6>
+                     <li><a class=" " href="#desktop">Desktop</a></li>
+                     <li><a class="" href="#mobile">Mobile</a></li>
+                  </ul>
+                  <ul class="list-unstyled ml-5">
+                     <h6>Typography</h6>
+					  <li><a class="" href="#fonts">Fonts</a></li>
+                     <li><a class="" href="#typography-Desktop">Typography Desktop</a></li>
+                     <li><a class="" href="#typography-mobile">Typography Mobile</a></li>
+                  </ul>
+                  <ul class="list-unstyled ml-5">
+				  <strong>Color</strong>
+                    
+                     <li><a class="" href="#color-Desktop">Color</a></li>
+					 <li><a class="" href="#elevation">Elevation</a></li>
+                     
+                  </ul>
+                  <ul class="list-unstyled ml-5">
+                     <h6>Buttons</h6>
+                     <li><a class="" href="#Button Sizes">Buttons Sizes</a></li>
+                     <li><a class="" href="#Buttons and States">Buttons and States</a></li>
+					 <li><a class="" href="#Icons">Icons</a></li>
+                  </ul>
+                  <ul class="list-unstyled ml-5">
+                     <h6>Controls</h6>
+                     <li><a class="" href="#Controls">Controls</a></li>
+                     
+                  </ul>
+               </nav>
+            </div>
+            <div class="col-md-9 col-sm-12 bg-light pt-3 pb-3">
+               <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2">
+                  <div id="item-1 " class="p-2"><strong>Brands</strong></div>
+                  <section>
+                     <div class="bg-white p-3">
+                        <div class="col-12"><img src="https://zyaj-010.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/Sites-RefArch-Site/-/default/dw3446e4a6/images/logo.svg"></div>
+                     </div>
+                  </section>
+                  <div id="desktop" class="p-2"><strong>Grid Desktop (12 Grid)</strong></div>
+                  <section>
+                     <div class="bg-white p-3">
+                        <h6></h6>
+                        <ul class="nav">
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                        </ul>
+                     </div>
+                  </section>
+                  <div id="mobile" class="p-2"><strong>Mobile Grid</strong></div>
+                  <section>
+                     <div class="bg-white p-3">
+                        <div class="col-12">
+                          <ul class="nav">
+                           <li class="gridtile m-1"> </li>
+                           <li class="gridtile m-1"> </li>
+                           
+                        </ul>
+                        </div>
+                     </div>
+                  </section>
+				  
+				   <section>
+				   <div id="fonts" class="p-2"><strong>Fonts</strong>
+				  <div class="bg-white p-3 mt-3">
+                        <div class="row">
+						
+						<div class="col-12">
+                              <h1 class="p-3">Poppins', sans-serif</h1>
+							  
+							  </div>
+						
+						</div>
+						
+						</div>
+				  </section>
+				  
+                  <div id="typography-Desktop" class="p-2"><strong>Typography Desktop</strong>
+                  <p>Line-height for every font style is bigger about 6points (example: font: 12 - line-height: 18)</p>
+				  </div>
+				 
+				  
+                  <section>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-6">
+                              <h1 class="p-3">Desktop Heading 1</h1>
+                              <h2 class="p-3">Desktop Heading 2</h2>
+                              <h3 class="p-3">Desktop Heading 3</h3>
+                              <h4 class="p-3">Desktop Heading 4</h4>
+                              <h5 class="p-3">Desktop Heading 5</h5>
+                              <h6 class="p-3">Desktop Heading 6</h6>
+                           </div>
+                           <div class="col-6">
+                              <pre>
+		
+Desktop H1;
+font-family: Poppins;font-size: 40px;font-style: normal;font-weight: 500;line-height: 52px;letter-spacing: 0px;text-align: left;
+
+Desktop H2;
+font-family: Poppins;font-size: 36px;font-style: normal;font-weight: 400;line-height: 48px;letter-spacing: 0px;text-align: left;
+
+</pre>
+                           </div>
+                        </div>
+						<hr>
+                     </div>
+                  </section>
+                  <section>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-4">
+                              <div class="p-3 font-weight-bold">Desktop Body Text</div>
+                              <div class="p-3 font-weight-bold">Desktop Body Text Small</div>
+                              <div class="p-3 font-weight-bold">Desktop Label</div>
+                              <div class="p-3 font-weight-bold">Desktop Button</div>
+                              <div class="p-3 font-weight-bold">Desktop Button Text</div>
+                           </div>
+                           <div class="col-8">
+                              <pre>
+		
+Desktop Body Text:-
+font-family: Poppins;font-size: 18px;font-style: normal;font-weight: 400;line-height: 20px; letter-spacing: 0em;
+
+Desktop Body Text Small:-
+font-family: Poppins;font-size: 16px;font-style: normal;font-weight: 400;line-height: 20px; letter-spacing: 0em;
+
+Desktop Label:-
+font-family: Poppins;font-size: 14px;font-style: normal;font-weight: 300;line-height: 20px; letter-spacing: 0em;
+
+Desktop Button:-
+font-family: Poppins;font-size: 16px;font-style: normal;font-weight: 600;line-height: 20px; letter-spacing: 0em;
+
+</pre>
+                           </div>
+                        </div>
+						
+                     </div>
+                  </section>
+				  
+				  
+				   <div id="typography-mobile" class="p-2"><strong>Typography Mobile</strong>
+                  <p>Line-height for every font style is bigger about 6points (example: font: 12 - line-height: 18)</p>
+				  </div>
+                  <section>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-6">
+                              <h1 class="p-3">Mobile Heading 1</h1>
+                              <h2 class="p-3">Mobile Heading 2</h2>
+                              <h3 class="p-3">Mobile Heading 3</h3>
+                              <h4 class="p-3">Mobile Heading 4</h4>
+                              <h5 class="p-3">Mobile Heading 5</h5>
+                              <h6 class="p-3">Mobile Heading 6</h6>
+                           </div>
+                           <div class="col-6">
+                              <pre>
+		
+Desktop H1;
+font-family: Poppins;font-size: 40px;font-style: normal;font-weight: 500;line-height: 52px;letter-spacing: 0px;text-align: left;
+
+Desktop H2;
+font-family: Poppins;font-size: 36px;font-style: normal;font-weight: 400;line-height: 48px;letter-spacing: 0px;text-align: left;
+
+</pre>
+                           </div>
+                        </div>
+						<hr>
+                     </div>
+                  </section>
+				  
+				   <section>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-4">
+                              <div class="p-3 font-weight-bold">Mobile Body Text</div>
+                              <div class="p-3 font-weight-bold">Mobile Body Text Small</div>
+                              <div class="p-3 font-weight-bold">Mobile Label</div>
+                              <div class="p-3 font-weight-bold">Mobile Button</div>
+                              <div class="p-3 font-weight-bold">Mobile Button Text</div>
+                           </div>
+                           <div class="col-8">
+                              <pre>
+		
+Desktop Body Text:-
+font-family: Poppins;font-size: 18px;font-style: normal;font-weight: 400;line-height: 20px; letter-spacing: 0em;
+
+Desktop Body Text Small:-
+font-family: Poppins;font-size: 16px;font-style: normal;font-weight: 400;line-height: 20px; letter-spacing: 0em;
+
+Desktop Label:-
+font-family: Poppins;font-size: 14px;font-style: normal;font-weight: 300;line-height: 20px; letter-spacing: 0em;
+
+Desktop Button:-
+font-family: Poppins;font-size: 16px;font-style: normal;font-weight: 600;line-height: 20px; letter-spacing: 0em;
+
+</pre>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+				  
+               </div>
+               <div id="color-Desktop"><strong>Color</strong></div>
+               <section>
+                  <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                           <div class="primary-black">
+                              <div class="color-name text--white">primary-black</div>
+                              <div class="color-value text--white">#1D1F22</div>
+                           </div>
+						   <div class="secondary-black">
+                              <div class="color-name text--white">secondary-black</div>
+                              <div class="color-value text--white">#43464E;</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+
+primary-black                           <pre>
+.element {
+	background: #1D1F22;
+}
+Secondary-black
+.element{
+	background: #43464E;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                     <div class="row mb-3 mb-3">
+                        <div class="col-sm-6 mb-3">
+                           <div class="primary-pink">
+                              <div class="color-name text--white">primary-pink</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+						    <div class="secondary-pink">
+                              <div class="color-name text--white">secondary-pink</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	color: $white;
+	background: $dark-gray;
+	border: 2px solid $black;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					  <div class="row mb-3 mb-3">
+                        <div class="col-sm-6 mb-3">
+                           <div class="primary-grey">
+                              <div class="color-name text--white">primary-grey</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+						    <div class="secondary-grey">
+                              <div class="color-name text--white">secondary-grey</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	color: $white;
+	background: $dark-gray;
+	border: 2px solid $black;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					  <div class="row mb-3 mb-3">
+                        <div class="col-sm-6 mb-3">
+                           <div class="primary-red">
+                              <div class="color-name text--white">primary-red</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+						    <div class="secondary-red">
+                              <div class="color-name text--white">secondary-red</div>
+                              <div class="color-value text--white">#002D55</div>
+                              <div class="color-value text--white">$brand-primary</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	color: $white;
+	background: $dark-gray;
+	border: 2px solid $black;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					  </div>
+					  </section>
+					 <section>
+					 <div id="elevation" class="pt-3"><strong>Elevation</strong></div>
+					 <div class="bg-white pt-3 mt-3">
+					  <div class="row mb-3">
+                                               <div class="col-sm-6  mb-3">
+                           <div class="btn-h">
+                              <div> Buttons Hover Elevation</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	box-shadow: 0px 4px 4px 0px #00000040;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3 ">
+                           <div class="defalt-shadow">
+                              <div> defalt-shadow</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	box-shadow: 4px 12px 24px 0px #77797A40;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					  <div class="row mb-3">
+                        <div class="col-sm-6 mb-3 ">
+                           <div class="bottomnavigation">
+                              <div> bottomnavigation</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	box-shadow: 0px -2px 10px 0px #9A9A9A26;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					    <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                           <div class="color-shadow">
+                              <div> bottomnavigation</div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 mb-3 bg-light">
+                           <pre>
+.element {
+	box-shadow: 4px 12px 24px 0px #5ECE7B40;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+                    </div>
+                     
+                    
+                  
+                 
+               </section>
+			   			   
+			    <section>
+				 <div id="Button Sizes"><strong>Desktop Button Sizes</strong></div>
+                  <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="small-button">Small</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:168px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+				  
+				    <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="medium-button">Medium</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:280px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+				  
+				  
+				    <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="large-button">Large</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:400px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+			   
+			   
+			    <section>
+				 <div id="item-3"><strong>obile Button Sizes</strong></div>
+                  <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="small-m-button">Small</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:145px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+				  
+				    <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="medium-m-button">Medium</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:280px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+				  
+				  
+				    <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+                         <div class="large-m-button">Large</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	width:343px;height:50px; line-height:32px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+			   
+			   <section>
+			   <div id="Buttons and States" class="pt-3 pb-3" ><strong>Buttons and States</strong></div>
+			   <div class="bg-white p-3">
+                     <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Primary Orange</strong></div>
+                         <div class="small-button"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#FC5A52;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Primary Orange Hover</strong></div>
+                         <div class="small-button"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#FC5A52;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					  <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Primary Black</strong></div>
+                         <div class="small-button-p"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#1D1F22;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					   <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Primary Black Hover</strong></div>
+                         <div class="small-button-p"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#1D1F22;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					  <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong> Secondary Default</strong></div>
+                         <div class="small-button-s"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#F1F2F3;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					  <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Secondary Default hover </strong></div>
+                         <div class="small-button-s-h"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	background:#F1F2F3;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Default Outline</strong></div>
+                         <div class="small-button-o"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	1px solid #FC5A52;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Default Outline hover</strong></div>
+                         <div class="small-button-o-h"></div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+.element {
+	1px solid #FC5A52;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Text Link</strong></div>
+                         <div class="small-button-t">Shop Now</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+       
+                    <pre>
+
+.element {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	color: #FC5A52;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>Text Hover Link</strong></div>
+                         <div class="small-button-t-h">Shop Now</div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+    
+                       <pre>
+
+.element {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	color: #FC5A52;
+	text-decoration-line: underline;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+					 
+					 
+					  <div class="row mb-3">
+                        <div class="col-sm-6 mb-3">
+						<div><strong>button with icon</strong></div>
+                         <div class="bicon float-left m-3" >
+						 <i class="fa fa-times" aria-hidden="true"></i>
+						 </div>
+						 
+						  <div class="bicon float-left m-3">
+						 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+						 </div>
+						 
+						 
+						   <div class="bicon float-left m-3">
+						   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								<div class="carticon"><span class="cart-value">2</span></div>
+						 </div>
+                           
+                        </div>
+                        <div class="col-sm-6 mb-3  bg-light">
+                           <pre>
+
+.element {
+	width:52px;
+	height:52px;
+	border-radius:50%;
+	background: #FC5A52;
+	text-align: center;
+	line-height: 52px;
+	color:#fff;
+	font-weight:normal;
+	font-size:20px;
+}
+                           
+                        </pre>
+                        </div>
+                     </div>
+                  </div>
+			   </section>
+			   
+			   
+			   
+			   
+			    <section>
+                     <div id="Icons" class="pt-3 pb-3"><strong>Icons</strong></div>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-sm-6 text-center">
+                              <div class="p-3 ">
+                                 <i class="fa fa-check " aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-check" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                              <div class="p-3 ">
+                                 <i class="fa fa-map-marker " aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-map-marker" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                              <div class="p-3 ">
+                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-heart-o" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                              <div class="p-3 ">
+                                 <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-sign-in" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                           </div>
+                           <div class="col-sm-6 text-center">
+                              <div class="p-3 text-center">
+                                 <i class="fa fa-comment-o " aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-comment-o" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                              <div class="p-3 ">
+                                 <i class="fa fa-sign-out " aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-sign-out" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                              <div class="p-3 ">
+                                 <i class="fa fa-gift" aria-hidden="true"></i>
+                                 <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-gift" aria-hidden="true"</span><span class="nt">&gt;</span><span class="nt">&lt;/i&gt;</span></code></pre>
+                                 </figure>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+				
+				<section>
+                     <div id="Controls" class="pt-3 pb-3"><strong>Controls</strong></div>
+                     <div class="bg-white p-3">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="custom-control custom-radio mb-2">
+                                 <input type="radio" class="custom-control-input" name="radio" id="radio1">
+                                 <label class="custom-control-label" for="radio1">Radio</label>
+                              </div>
+                              <div class="custom-control custom-radio mb-2">
+                                 <input type="radio" class="custom-control-input" name="radio" id="radio2" checked="">
+                                 <label class="custom-control-label" for="radio2">Radio selected</label>
+                              </div>
+                              <div class="custom-control custom-radio mb-2">
+                                 <input type="radio" class="custom-control-input" name="radio" id="radio3" disabled="">
+                                 <label class="custom-control-label" for="radio">Radio disabled</label>
+                              </div>
+                           </div>
+                           <div class="col-md-6  pt-2 pb-3 pt-md-0 pb-md-0 bg-light">
+                              <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Radio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio2<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Radio selected<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio3<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Radio disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    </code></pre>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="custom-control custom-checkbox mb-2 mt-5">
+                                 <input type="checkbox" class="custom-control-input" id="checkBox1">
+                                 <label class="custom-control-label" for="checkBox1">Checkbox</label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-2">
+                                 <input type="checkbox" class="custom-control-input" id="checkBox2" checked="">
+                                 <label class="custom-control-label" for="checkBox2">Checkbox selected</label>
+                              </div>
+                              <div class="custom-control custom-checkbox mb-2">
+                                 <input type="checkbox" class="custom-control-input" id="checkBox3" disabled="">
+                                 <label class="custom-control-label" for="checkBox3">Checkbox disabled</label>
+                              </div>
+                           </div>
+                           <div class="col-md-6  pt-2 pb-3 pt-md-0 pb-md-0 mt-5 bg-light">
+                              <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Checkbox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox2<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Checkbox selected<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control custom-checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-input<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox3<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-control-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkBox3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Checkbox disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    </code></pre>
+                           </div>
+                           <div class="col-md-6 mt-5">
+                              <label for="custom-select-id">
+                              Select an option:
+                              </label>
+                              <select class="form-control custom-select" id="custom-select-id" name="custom-select" style="background-image: url(${URLUtils.staticURL('/images/icon-arrow-down.svg')});">
+                                 <option>Dropdown</option>
+                                 <option>Option 1</option>
+                                 <option>Option 2</option>
+                                 <option>Option 3</option>
+                              </select>
+                           </div>
+                           <div class="col-md-6  pt-2 pb-3 pt-md-0 pb-md-0 mt-5 bg-light">
+                              <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control custom-select<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Dropdown<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Option 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Option 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Option 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span></code></pre>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+			   
+			   
+			   
+			   
+            </div>
+         </div>
+      </div>
+      </div>
+   </body>
+</html>

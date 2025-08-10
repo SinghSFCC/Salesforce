@@ -1,0 +1,116 @@
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<div class="container search-results">
+    <iscomment>
+        <div class="row search-nav">
+            <isif condition="${!pdict.productSearch.isCategorySearch}">
+                <div class="nav-tabs-wrapper">
+                    <ul class="nav nav-tabs nav-fill" role="tablist">
+
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active product-search" href="#product-search-results"
+                                aria-controls="product-search-results" data-toggle="tab" role="tab" aria-selected="true"
+                                tabindex="0" id="product-tab">
+                                ${Resource.msg('tab.nav.search.productsresults', 'search', null)}
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link content-search" href="#content-search-results-pane"
+                                aria-controls="content-search-results-pane" data-toggle="tab" role="tab"
+                                aria-selected="false" tabindex="-1" id="articles-tab"
+                                data-url="${URLUtils.url('Search-Content', 'q', pdict.productSearch.searchKeywords, 'startingPage', 0)}">
+                                ${Resource.msg('tab.nav.search.artclesresults', 'search', null)}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </isif>
+        </div>
+    </iscomment>
+    <div class="row">
+        <div class="tab-content col-12">
+            <div class="tab-pane container active" id="product-search-results" role="tabpanel"
+                aria-labelledby="product-tab">
+
+                <isif condition="${pdict.productSearch.productIds.length > 0}">
+                    <!--- Refinement bar --->
+                    <div class="row ">
+                        <div class="refinement-bar-container d-none d-md-block">
+                        <div class="floating-refinement-backdrop"></div>
+                            <div class="floating-refinement-bar">
+                                <isinclude url="${pdict.refineurl}" />
+                            </div>
+                            <button type="button" class="close-refinement-btn">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="category-refinement-bar col-md-3 d-none d-md-block">
+                            <div class="row grid-header category-refinement-header">
+                                <p>
+                                    <span>Categories</span>
+                                </p>
+                            </div>
+                            <isinclude url="${pdict.categoryRefineUrl}" />
+                        </div>
+                        <div class="refinement-bar col-md-3 d-md-none">
+                            <isinclude url="${pdict.refineurl}" />
+                        </div>
+                        <div class="col-sm-12 col-md-9 right-section">
+                            <isif condition="${pdict.productSearch.productIds.length > 0}">
+                                <div class="row grid-header">
+
+                                    <div class="row col-12 right-grid-header">
+                                        <div class="tile-view-selector order-sm-4 d-none d-md-block">
+                                            <span>View:</span>
+                                            <button type="button" class="fa fa-th selected">
+                                            </button>
+                                            <button type="button" class="fa fa-align-left">
+                                            </button>
+                                        </div>
+                                        <div class="result-count text-center order-sm-3">
+                                            <iselse>
+                                                <div class="row grid-header justify-content-center">
+                                                    <div class="row">
+                                                        <div class="result-count col">
+                            </isif>
+                            <isinclude template="search/resultsCount" />
+                        </div>
+                        <isif condition="${pdict.productSearch.productIds.length > 0}">
+                            <div class="order-sm-2 d-none d-md-block">
+                                <label class="sort-by-label" for="">Sort By:</label>
+                                <isinclude template="search/sortOrderMenu" />
+                            </div>
+
+                            <div class="text-right order-sm-1">
+                                <button type="button" class="no-btn-style  filter-results col-12">
+                                    <i class="fa fa-sliders"></i>${Resource.msg('button.filter', 'search', null)}
+                                </button>
+                            </div>
+                        </isif>
+                    </div>
+            </div>
+            <!--- Selected filters bar --->
+            <div class="row filter-bar">
+                <isinclude template="search/filterBar" />
+            </div>
+
+            <!--- Product Grid --->
+            <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                <isinclude template="search/productGrid" />
+            </div>
+        </div>
+    </div>
+    <iselse/>
+        <br><isinclude template="search/resultsCount" />
+    </isif>
+</div>
+<!--- Content Grid --->
+<div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-labelledby="articles-tab">
+    <div id="content-search-results" class="content-grid-header"></div>
+</div>
+
+</div>
+</div>
+</div>

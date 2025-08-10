@@ -1,0 +1,21 @@
+@import "~base/variables";
+
+.product-comparison{
+    .back-to-results{
+        button{
+            background: transparent;
+            border:0;
+            color:$black;
+            text-decoration: underline;
+
+            &:focus, &:active{
+                outline: none;
+                box-shadow: none;
+                background: transparent;
+            }
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}

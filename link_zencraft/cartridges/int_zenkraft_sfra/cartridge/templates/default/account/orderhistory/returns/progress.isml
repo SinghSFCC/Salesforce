@@ -1,0 +1,23 @@
+<div class="row returns-progress-container">
+    <div class="col-4 returns-progress js-select-items-step">
+        <div class="progress-rectangle js-progress-rectangle active">
+            <span class="d-none d-sm-inline-block">${Resource.msg('progress.select','returns',null)}</span> <span>${Resource.msg('progress.items','returns',null)}</span>
+        </div>
+        <div class="progress-triangle js-progress-triangle active"></div>
+    </div>
+    <div class="col-4 returns-progress js-reasons-step">
+        <div class="progress-rectangle js-progress-rectangle">
+        <span class="d-none d-sm-inline-block">${Resource.msg('progress.select','returns',null)}</span> <span>${Resource.msg('progress.reasons','returns',null)}</span></div>
+        <div class="progress-triangle js-progress-triangle"></div>
+    </div>
+    <div class="col-4 returns-progress js-label-step">
+        <div class="progress-rectangle js-progress-rectangle final">
+            <isif condition="${pdict.pageSettings.returnsRequireApproval}">
+                <span>${Resource.msg('progress.request','returns',null)}</span> <span class="d-none d-sm-inline-block">${Resource.msg('progress.return','returns',null)}</span>
+            <iselse/>
+                <span class="d-none d-sm-inline-block">${Resource.msg('progress.get','returns',null)}</span> <span>${Resource.msg('progress.label','returns',null)}</span>
+            </isif>
+        </div>
+    </div>
+</div>
+<span></span><span></span>

@@ -1,0 +1,60 @@
+@import "~base/components/headerSearch";
+
+.site-search{
+    top: 1.5rem;
+    margin-right: 0;
+    @include media-breakpoint-down(lg) {
+        width: 95%;
+        margin: auto;
+    }
+    input.form-control{
+        border: none;
+        border-bottom: 0.13rem solid $searchBoxBottomBorderColor;
+        border-radius: 0;
+        font-size: 0.81rem;
+        padding-left: 0.06rem;
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    .fa-search{
+        font-size: 1.25rem;
+        top: 0.38rem; 
+        right: 0;
+        &::before{
+            content:"";
+        }
+    }
+    .reset-button{
+        right: 2.19rem;
+        top: 0.56rem;
+    }
+}
+
+.suggestions {
+    @include media-breakpoint-up(md) {
+     width: 27.2rem;
+    }
+
+    .item {
+        .name {
+            margin: 0;
+        }
+    }
+
+    .header {
+            justify-content: flex-start !important;
+        }
+
+        .term {
+        div {
+            justify-content: flex-start !important;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .minicart-total {
+        top: 1.2rem;
+    }
+}

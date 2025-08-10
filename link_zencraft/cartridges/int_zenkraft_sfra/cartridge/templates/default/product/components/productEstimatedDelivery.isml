@@ -1,0 +1,27 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/productDetail.js');
+    assets.addJs('/js/zen-product.js');
+    assets.addCss('/css/product/detail.css');
+    assets.addCss('/css/zen-product.css');
+</isscript>
+
+<!-- Estimated Delivery -->
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+
+    <div class="row estimated-delivery-container">
+        <div class="zenkraft_estimated_delivery_pdp col-12 p-md-0" data-methodurl="${URLUtils.url('Zenkraft-GetShippingMethodsForProduct').toString()}" data-dateurl="${URLUtils.url('Zenkraft-GetEarliestDeliveryDate')}">
+        <hr>
+            <div class="stage1">
+                <p>
+                    ${Resource.msg('enteraddressforoptions', 'product', null)}
+                </p>
+                <input type="text" class="form-control pb-1"  id="zk_location" name="zk_location"/>
+            </div>
+            <div class="stage2" style="display:none;">
+                ${Resource.msg('shippingto', 'product', null)} <strong><span class="destination"></span></strong>
+            </div>
+        </div>
+    </div>
+</isif>

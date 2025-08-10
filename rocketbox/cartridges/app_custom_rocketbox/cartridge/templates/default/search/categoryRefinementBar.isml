@@ -1,0 +1,14 @@
+<div>
+    <div class="refinements category-refinements">
+            <div class="card collapsible-sm refinement refinement-${pdict.productSearch.categoryRefinement.displayName.toLowerCase().replace(/ /g, '-')}">
+                
+                <div class="card-body content value" id="refinement-${pdict.productSearch.categoryRefinement.displayName.toLowerCase().replace(/ /g, '-')}">
+                   
+                        <isset name="categories" value="${pdict.productSearch.categoryRefinement.values}" scope="page" />
+                        <isset name="nestingLevel" value="${'1'}" scope="page" />
+                        <isinclude template="search/refinements/collapsible-categories" />
+                    
+                </div>
+            </div>
+    </div>
+</div>

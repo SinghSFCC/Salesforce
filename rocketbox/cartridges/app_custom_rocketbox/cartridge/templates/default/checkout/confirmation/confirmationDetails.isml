@@ -1,0 +1,28 @@
+<div class="card confirm-details bg-white">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+    </div>
+
+    <div class="card-body row">
+        <p class="col-sm-12">
+            <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+            <span class="summary-details order-number font-weight-bold">${pdict.order.orderNumber}</span>
+            <br/>
+            <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+            <span class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></span>
+        </p>
+<div class="col-sm-12 col-md-12 col-lg-6">
+        <isinclude template="checkout/shipping/shippingSummary" /></div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+        <isinclude template="checkout/billing/billingSummary" /></div>
+
+    </div>
+</div>
+
+<isinclude template="checkout/orderProductSummary" />
+
+<div class="card checkout-order-total-summary">
+    <div class="card-body order-total-summary bg-white">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+</div>

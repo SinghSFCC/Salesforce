@@ -1,0 +1,33 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<!DOCTYPE html>
+<subject><isif condition="${!empty(pdict.MailSubject)}">${pdict.MailSubject}<iselse/></isif></subject>
+<html>
+<head>
+<title>${Resource.msg('labelemail.arrived','order',null)}</title>
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" style="background:#e0e0e0;padding:50px 0;">
+            <center>
+                <table  style="background:#ffffff;border:1px solid #999999;width:680px;">
+                    <tr>
+                        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top;">
+                        
+                            <h1 style="font-size:20px;font-family:georgia;font-weight:normal;">
+                                ${Resource.msg('labelemail.arrived','order',null)}
+                            </h1>
+                            
+                            <p><a href="${pdict.LabelURL}">${Resource.msg('labelemail.arrived.clickhere','order',null)}</a></p>
+                        
+                        </td>
+                    </tr>
+                </table>						
+            </center>
+        </td>
+    </tr>
+</table>
+    
+    
+</body>
+</html>

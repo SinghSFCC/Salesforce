@@ -1,0 +1,22 @@
+<header class="border-0">
+    
+    <nav role="navigation">
+        <div class="header container mb-3 pt-3">
+            <div class="row">
+                <div class="col-3 pt-md-4 pb-md-4 col-md-3 d-none d-md-block">
+                    <a href="${URLUtils.https('Cart-Show')}" class="go-back text-primary"><u>${Resource.msg('label.go.back', 'common', null)}</u></a>
+                </div>
+                <div class="col-5 col-md-6 pt-2 pt-2 pt-md-0 pb-md-0">
+                    <div class="text-center navbar-header brand">
+                        <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                            <img src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-7 pt-2 pb-2 pt-md-4 pb-md-4 col-md-3 text-right">
+                    <a href="" class="secure-payment"><img src="${URLUtils.staticURL('/images/secure.svg')}" alt="" class="img-fluid" /> ${Resource.msg('label.secure.payment', 'common', null)}</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

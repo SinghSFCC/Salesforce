@@ -1,0 +1,49 @@
+<div class="minicart-total hide-link-med">
+  <span class="minicart-link" href="${URLUtils.https('Cart-Show')}" title="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-label="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-haspopup="true">
+        <img src="${URLUtils.staticURL('/images/cart.svg')}" alt="" />
+        <span class="minicart-quantity">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+        </span>
+    </span>
+</div>
+
+<div class="minicart-total hide-no-link">
+    <img src="${URLUtils.staticURL('/images/cart.svg')}" alt="" />
+        <span class="minicart-quantity">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+        </span>
+</div>
+<div id="overlay"></div>
+<div class="notification-container dismiss-minicart" role="dialog">
+     <div class="minicart-label">
+            <span class="text-left">
+                <label>${Resource.msg('title.your.shopping.cart','cart',null)}</label>
+            </span>
+            <span class="text-right">
+                <a href="${URLUtils.https('Cart-Show')}">View Cart</a>
+            </span>
+            <span class="text-right">
+                <a href="#" id="closeFilePanel">&times;</a>
+            </span>
+        </div>
+         <div class="container cart-empty hide">
+            <div class="row">
+            <div class="text-center">
+                <div class="empty-cart-image">
+                    <img class="img-fluid" src="${URLUtils.staticURL('/images/empty-cart.svg')}" alt="${Resource.msg('cart.empty.name', 'cart', null)}" />
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h2 class="mb-12 emptymessage">${Resource.msg('info.cart.empty.msg','cart',null)}</h2>
+                        <p class="mb-12 emptymessage">${Resource.msg('info.cart.empty.description.msg','cart',null)}</p>
+                        <a class="btn btn-secondary btn-lg btn-block gotohome" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.start.shopping','cart',null)}">
+                            ${Resource.msg('link.start.shopping','cart',null)}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>    
+        </div>
+    <div class="popover popover-bottom"></div>
+</div>

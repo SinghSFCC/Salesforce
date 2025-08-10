@@ -1,0 +1,28 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/shipping-methods.css');
+    assets.addJs('/js/zen-shipping.js');
+</isscript>
+
+<div class="row leading-lines shipping-method-list" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
+	<input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+    <div style="display:none"><isprint value="${JSON.stringify(shippingModel.applicableShippingMethods)}"/></div>
+</div>
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-method-template" class="d-none">
+    <label for="shippingMethodRadioButton" class="form-check ship-method-row col-12 my-2 p-2 border">
+        <div class="row">
+            <div class="col-10 row"></div>
+            <div class="col-2 m-auto p-0"></div>
+        </div>
+        <input type="radio" id="shippingMethodRadioButton" class="d-none">
+    </label>
+</div>
+
+<isinclude template="components/dropOffModal"/>
+

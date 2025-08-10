@@ -1,0 +1,513 @@
+.tracking-details-window {
+    display:none;
+  }
+  
+  .expand-tracking-details {
+    cursor: pointer;
+  }
+  
+  .ups-logo-top {
+    width: 6em;
+  }
+  
+  .sms-status-message {
+    color: red;
+  }
+  
+  .logo-top {
+    width: 4em;
+  }
+  
+  .label-email-modal {
+    display: block;
+  }
+  
+  .track-status-top {
+    font-size: .5em;
+    margin-top: .5em;
+  }
+  
+  .tab-voice {
+    display:none;
+  }
+  
+  .shipment-notifiation-form {
+    display:inline-block;
+  }
+  
+  #feedback-comments-wrapper {
+    display:none;
+  }
+  
+  #feedback-comments-thankyou {
+    display:none;
+  }
+  
+  .tracking-overview ul {
+  font-size: 1.3em;
+  position: relative;
+  z-index: 1;
+  padding-inline-start: 0em;
+  display: flex;
+  margin-bottom: 2em;
+  justify-content: space-between;
+  }
+  
+  .tracking-overview li {
+      width: 4em;
+      height: 4em;
+      text-align: center;
+      line-height: 4em;
+      border-radius: 2em;
+      background: #00a1e0;
+      margin: 0 1.2em;
+      display: inline-block;
+      position: relative;
+  }
+  
+  .order-tracking-group .tracking-overview li {
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    line-height: 4em;
+    border-radius: 2em;
+    background: #00a1e0;
+    margin: 0 1.2em;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .tracking-overview li::before {
+      content: "";
+      position: absolute;
+      top: 1.7em;
+      left: -5em;
+      width: 5em;
+      height: 0.2em;
+      background: #00a1e0;
+      z-index: -1;
+  }
+  
+  ul.checkmark li:after {
+      content: " ";
+      display: block;
+      width: 0.6em;
+      height: 1.2em;
+      border: solid white;
+      border-width: 0 0.2em 0.2em 0;
+      position: absolute;
+      left: 1.7em;
+      top: 40%;
+      margin-top: -.3em;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+  
+  .order-tracking-group ul.checkmark li:after {
+    left: 1.3em;
+  }
+  
+  
+  ul.checkmark .active ~ li:after {
+      display: none;
+  }
+  
+  ul.checkmark .title {
+      font-size: .7em;
+      font-weight: bold;
+      line-height: 1em;
+      margin-top: 1em;
+      width: 200%;
+      margin-left: -50%;
+      white-space: nowrap;
+  }
+  
+  .tracking-container, .tracking-overview {
+    width: 100%;
+    margin: auto;
+  }
+  
+  .tracking-overview.order-shipment-table {
+    width: auto;
+  }
+  
+  .trackingpage li:first-child::before {
+    display: none;
+  }
+  .trackingpage .active {
+    background: #00a1e0;
+  }
+  .trackingpage .active ~ li {
+    background: #444;
+  }
+  .trackingpage .active ~ li::before {
+    background: #444;
+  }
+  
+  .order-tracking-group li:first-child::before {
+    display: none;
+  }
+  .order-tracking-group .active {
+    background: #00a1e0;
+  }
+  .order-tracking-group .active ~ li {
+    background: #444;
+  }
+  .order-tracking-group .active ~ li::before {
+    background: #444;
+  }
+  
+  .tracking-header .track-column {
+    font-weight: bold;
+    border-bottom: solid .1em #efefef;
+  }
+  
+  .track-column {
+    float: left;
+    width: 33.33%;
+    padding-top: .5em;
+  }
+  
+  /* Clear floats after the columns */
+  .tracking-data:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .track-number {
+    float: right;
+  }
+  
+  .track-checkmarks {
+    clear: both;
+    padding-top: .5em;
+  }
+  
+  /* Notifications */
+  #notification-tabs {
+      line-height: .6em;
+      margin-bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0em;
+  }
+  
+  #notification-tabs li {
+      background-color: #ffffff;
+      border: none;
+      display: inline-block;
+      height: 3em;
+      line-height: 1em;
+      max-width: 6em;
+      position: relative;
+      text-align: center;
+      width: 4em;
+  }
+  
+  #notification-tabs li.active:before {
+      background-color: #fff;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
+  
+  #notification-tabs li button {
+      color: #232323;
+      font-size: 1em;
+      height: 100%;
+      line-height: 100%;
+      left: 0;
+      padding: .5em 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: none;
+      border: none;
+      box-shadow: none;
+      display: inline-block;
+      margin: 0;
+      font-family: inherit;
+      font-weight: normal;
+      letter-spacing: inherit;
+      -webkit-appearance: none;
+  }
+  
+  #notification-tabs li button .tab-wrapper span {
+      display: block;
+      max-width: 100%;
+      padding-bottom: .2em;
+  }
+  
+  #notification-tabs li button .tab-wrapper span span {
+      max-width: 100%;
+  }
+  
+  .trackingpage .notify-icon {
+      height: 3em;
+      text-indent: -9999px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      image-rendering: -webkit-optimize-contrast;
+  }
+  
+  .trackingpage .voice-icon {
+      background-image: url(../images/social/phone.png);
+  }
+  
+  .trackingpage .sms-icon {
+      background-image: url(../images/social/sms.png);
+  }
+  
+  .trackingpage .whatsapp-icon {
+      background-image: url(../images/social/whatsapp.png);
+  }
+  
+  .trackingpage .messenger-icon {
+      background-image: url(../images/social/messenger.png);
+  }
+  
+  .trackingpage .slack-icon {
+      background-image: url(../images/social/slack.png);
+  }
+  
+  @media only screen and (max-width: 600px) {
+  ul.checkmark li:after {
+      content: " ";
+      display: block;
+      width: 0.4em;
+      height: .9em;
+      border: solid white;
+      border-width: 0 0.2em 0.2em 0;
+      position: absolute;
+      left: 0.9em;
+      top: 40%;
+      margin-top: -.3em;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+  .tracking-overview li::before {
+      content: "";
+      position: absolute;
+      top: 1.0em;
+      left: -5em;
+      width: 5em;
+      height: 0.2em;
+      background: #00a1e0;
+      z-index: -1;
+  }
+  .tracking-overview li {
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      border-radius: 1em;
+      background: #00a1e0;
+      margin: 0 1em;
+      display: inline-block;
+      position: relative;
+  }
+  ul.checkmark .title {
+      font-size: .7em;
+      font-weight: bold;
+  }
+  .tracking-container, .tracking-overview {
+      width: 100%;
+      margin: auto;
+  }
+  }
+  
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 543px) {
+    
+    .tracking-overview li {
+        margin: 0 1em;
+    }
+  
+  } 
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (max-width: 599px) {
+    
+    .tracking-overview li {
+        margin: 0 0.5em;
+    }
+  
+  } 
+  
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) and (max-width: 674px){
+    
+  ul.checkmark li:after {
+      content: " ";
+      display: block;
+      width: 0.4em;
+      height: .9em;
+      border: solid white;
+      border-width: 0 0.2em 0.2em 0;
+      position: absolute;
+      left: 0.9em;
+      top: 40%;
+      margin-top: -.3em;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+  .tracking-overview li::before {
+      content: "";
+      position: absolute;
+      top: 1.0em;
+      left: -3em;
+      width: 3em;
+      height: 0.2em;
+      background: #00a1e0;
+      z-index: -1;
+  }
+  .tracking-overview li {
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      border-radius: 1em;
+      background: #00a1e0;
+      margin: 0 0.7em;
+      display: inline-block;
+      position: relative;
+  }
+  ul.checkmark .title {
+      font-size: .7em;
+      font-weight: bold;
+  }
+  .tracking-container, .tracking-overview {
+      width: 100%;
+      margin: auto;
+      /*padding-left: 25px;*/
+  }
+  
+  } 
+  
+  
+  
+  @media only screen and (max-width: 543px) {
+  .tracking-overview li::before {
+     left: -4em;
+     width: 4em;
+  }
+  }
+  
+  
+  @media only screen and (max-width: 991px) and (min-width: 675px) {
+    
+  ul.checkmark li:after {
+      content: " ";
+      display: block;
+      width: 0.4em;
+      height: .9em;
+      border: solid white;
+      border-width: 0 0.2em 0.2em 0;
+      position: absolute;
+      left: 0.9em;
+      top: 40%;
+      margin-top: -.3em;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+  .tracking-overview li::before {
+      content: "";
+      position: absolute;
+      top: 1.0em;
+      left: -4em;
+      width: 4em;
+      height: 0.2em;
+      background: #00a1e0;
+      z-index: -1;
+  }
+  .tracking-overview li {
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      border-radius: 1em;
+      background: #00a1e0;
+      margin: 0 1em;
+      display: inline-block;
+      position: relative;
+  }
+  ul.checkmark .title {
+      font-size: .7em;
+      font-weight: bold;
+  }
+  .tracking-container, .tracking-overview {
+      width: 100%;
+      margin: auto;
+      /*padding-left: 25px;*/
+  }
+  
+  } 
+  
+  
+  
+  @media only screen and (min-width: 1200px)  {
+  
+  
+    .tracking-overview li {
+        margin: 0 2em;
+    }
+  
+  
+  }
+  
+  
+  @media only screen and (max-width: 543px)  {
+  
+  
+    .tracking-overview li {
+        margin: 0 -.1em;
+    }
+  
+    ul.checkmark .title {
+      font-size: 11px;
+      font-weight: bold;
+  }
+  
+  
+  }
+  
+  .line-item-quantity.selector {
+    display: none;
+  }
+  
+  .print-label-error {
+    display: none;
+  }
+  
+  .print-label-success {
+    display:none;
+    color:green;
+    padding-top:10px
+  }
+  
+  .span-fill {
+    padding: 0px 5px 0px 5px;
+    display: inline-block;
+  }
+  
+  .tracking-contents .product-info {
+    border-top: .1em #efefef solid;
+    padding-top: 20px;
+  }

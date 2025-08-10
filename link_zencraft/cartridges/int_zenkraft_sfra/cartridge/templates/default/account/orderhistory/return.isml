@@ -1,0 +1,48 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/zenkraft.js');
+    assets.addJs('/js/returns.js');
+    assets.addCss('/css/returns.css');
+</isscript>
+
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="d-none label-data" data-label-url=""></div>
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Return № <isprint value="${pdict.zenkraftReturn.custom.id}" encoding="on" /></h3>
+                </div>
+
+                <isif condition="${pdict.zenkraftReturn.custom.approvedDate && !empty(pdict.zenkraftReturn.custom.approvedDate)}">
+                    <span class="d-none" id="approved-return-case-data"
+                        data-postalcode="${pdict.address.postalCode}"
+                        data-city="${pdict.address.city}"
+                        data-countrycode="${pdict.address.countryCode.value}"
+                        data-statecode="${pdict.address.stateCode}"
+                        data-street1="${pdict.address.address1}"
+                        data-alllabels="${pdict.zenkraftReturn.custom.allLabels}"
+                        data-locationurl="${URLUtils.https('Zenkraft-GetNearestDropOffLocation').toString()}"
+                    ></span>
+                    <isinclude template="account/orderhistory/returns/label" />
+                <iselse/>
+                    <div class="card-body">
+                        <h1>Thank you for your request</h1>
+                        <p>Our customer service team have received your request.</br>
+                        Once your return is approved you will receive an email with</br> a link to download a shipping label.</p>
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>
+</div>
+
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+</isif>
+
+</isdecorate>

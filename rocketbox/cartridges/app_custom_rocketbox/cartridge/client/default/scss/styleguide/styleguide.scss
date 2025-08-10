@@ -1,0 +1,43 @@
+.body{background:red;}
+.gridtile{width: 59px;height: 100px;background:#F1F2F3; display:inline-block;}
+.bg-white{background:#ff0; display:block;}
+.bg-primary{background-color:#FC5A52 !important;}
+.btn-h{box-shadow: 0px 4px 4px 0px #00000040;width:240px;height:100px;text-align:center;padding:10px;}
+.defalt-shadow{box-shadow: 4px 12px 24px 0px #77797A40; width:240px;height:100px;text-align:center;padding:10px;}
+.bottomnavigation{box-shadow: 0px -2px 10px 0px #9A9A9A26; width:240px;height:100px;text-align:center;padding:10px;}
+.color-shadow{box-shadow: 4px 12px 24px 0px #5ECE7B40;width:240px;height:100px;text-align:center;padding:10px; background:#FC5A52;}
+.styleguide a{color:#000; font-size:14px;}
+.styleguide a:hover{color: #FC5A52;}
+.primary-black{width:200px;height:200px;background: #1D1F22;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.secondary-black{width:200px;height:200px;background: #43464E;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.primary-pink { width: 200px;height:200px;background: #FC5A52;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.secondary-pink { width:200px;height:200px;background: #EDCBB9;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.primary-grey { width: 200px;height:200px;background: #72757E;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.secondary-grey { width:200px;height:200px;background: #8D8F9A;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.primary-red { width: 200px;height:200px;background: #D12727;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.secondary-red { width:200px;height:200px;background: #FCEDE8;padding:10px; text-align:center;display:inline-block;color:#fff;}
+.small-button{width:168px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.medium-button{width:280px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.large-button{width:320px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.small-m-button{width:145px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.medium-m-button{width:280px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.large-m-button{width:320px; height:50px;line-height:32px; text-align:center;color:#fff; background:#FC5A52;padding:6px;}
+.small-button-p{width:168px; height:50px;line-height:32px; text-align:center;color:#fff;background: #1D1F22;}
+.small-button-s{width:168px; height:50px;line-height:32px; text-align:center;color:#fff; background:#F1F2F3;}
+.small-button-s-h{width:168px; height:50px;line-height:32px; text-align:center;color:#fff; background:#F1F2F3;}
+.small-button-o{width:168px; height:50px;line-height:32px; text-align:center;color:#fff; border:1px solid #FC5A52;background:#fff;
+}
+.small-button-o-h{width:168px; height:50px;line-height:32px; text-align:center;color:#fff; border:1px solid #FC5A52;background:#fff;box-shadow: 4px 12px 24px 0px #77797A40;}
+.small-button-t{width:168px;line-height:32px; color: #FC5A52; font-weight: 500; font-size: 14px;line-height: 17px;}
+.small-button-t-h{width:168px;line-height:32px;  color: #FC5A52; font-weight: 500; font-size: 14px;line-height: 17px;text-decoration: underline;}
+.bicon{width:52px; height:52px;border-radius:50%; background: #FC5A52;text-align: center;
+line-height: 52px;color:#fff;font-weight:normal;font-size:20px;}
+.carticon{width:20px; height:20px;border-radius:50%;position:absolute; top:35px; left:235px; background:#f00;}
+.cart-value{display: block; margin-top: -14px;font-size: 14px;}
+.styleguide .fa{font-size:30px;}
+.custom-control-label::before { background-color: #FC5A52; border: #FC5A52 solid 1px;}
+.custom-control-input:checked~.custom-control-label::before { color: #fff;border-color: #D12727;background-color: #D12727;}
+.custom-control-input[disabled]~.custom-control-label::before {background-color: #e9ecef;border: none;}
+.custom-select, select.form-control, select {background-size: 12px;padding-right: 37px;
+border:none; border-bottom: 1px solid;border-radius: 0;}
+   a.link-color{color:#FC5A52;}

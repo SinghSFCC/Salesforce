@@ -1,0 +1,44 @@
+<div class="card confirm-details">
+    <div class="card-header">
+        <h2 class="card-header-custom pull-left">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+            <iscomment>
+            /************
+            * Zenkraft Integration
+            *
+            * Zenkraft Print Label Form
+            *************/
+            </iscomment>
+            <isif condition="${pdict.isOrderShipped}">
+                <form action="${URLUtils.https('Zenkraft-Returns')}" method="post" id="zenkraft-print-label-form">
+                    <input type="hidden" id="orderno" name="orderno" value="${pdict.order.orderNumber}"/>
+                    <input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}"/>
+                    <iscomment>
+                    <input type="hidden" id="shipmentno" name="shipmentno" value="${pdict.order.getDefaultShipment().ID}"/>
+                    </iscomment>
+                    <button type="submit" class="button-text pull-right" name="zenkraft-printlabel" value="Print Label">${Resource.msg('label.printreturnlabel','order',null)}</button>
+                </form>
+            </isif>
+    </div>
+
+    <div class="card-body">
+        <p>
+            <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+            <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+            <br/>
+            <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+            <span class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></span>
+        </p>
+
+        <isinclude template="checkout/shipping/shippingSummary" />
+        <isinclude template="checkout/billing/billingSummary" />
+
+    </div>
+</div>
+
+<isinclude template="checkout/orderProductSummary" />
+
+<div class="card checkout-order-total-summary">
+    <div class="card-body order-total-summary">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+</div>

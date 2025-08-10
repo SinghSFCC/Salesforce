@@ -1,0 +1,14 @@
+<div class="add-to-cart-wishList mb-3 text-center">
+    <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+    <button class="add-to-cart btn-block btn-outline-primary p-2"
+        data-pid="${item.pid}"
+        data-url="${URLUtils.url('Cart-AddProduct')}"
+        data-option="${JSON.stringify(item.selectedOptions)}"
+        ${!item.available ? "disabled" : ""}
+    >
+        <i class="fa fa-shopping-bag"></i>
+        ${Resource.msg('button.addtocart', 'common', null)}
+    </button>
+</div>
+
+

@@ -1,0 +1,91 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/checkmarks.css');
+</isscript>
+<div class="track-checkmarks">
+    <ul class="checkmark">
+        <iscomment>Only show for exceptions</iscomment>
+        <isif condition="${order.tracking_stage == 'EXCEPTION'}">
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+        </li>
+
+        <li class="active"><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+        </li>
+        <iselseif condition="${order.tracking_stage == 'SHIPMENT_VOIDED'}"/>
+        <iscomment>For cancellations</iscomment>
+        <li class="active"><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.cancelled','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.delayed','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+        </li>
+        <iselseif condition="${order.trackStatus == 'Pending'}"/>
+        <iscomment>For pending</iscomment>
+        <li class="active"><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.pending','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+        </li>
+
+        <li><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+        </li>
+        <iselseif condition="${order.tracking_stage == 'CREATED'}"/>
+        <div>${Resource.msg('tracking.stage.created','tracking',null)}</div>
+        <iselse/>
+        <iscomment>For non-exceptions</iscomment>
+        <li class="active"><span>&nbsp;</span>
+            <div class="title">${Resource.msg('tracking.stage.pickedup','tracking',null)}</div>
+        </li>
+
+        <isif condition="${order.tracking_stage != 'PICKED_UP'}">
+            <li class="active"><span>&nbsp;</span>
+        <iselse/>
+            <li><span>&nbsp;</span>
+        </isif>
+            <div class="title">${Resource.msg('tracking.stage.intransit','tracking',null)}</div>
+        </li>
+
+        <isif condition="${order.tracking_stage == 'OUT_FOR_DELIVERY' || order.tracking_stage == 'DELIVERED'}">
+            <li class="active"><span>&nbsp;</span>
+        <iselse/>
+            <li><span>&nbsp;</span>
+        </isif>
+            <div class="title">${Resource.msg('tracking.stage.outfordelivery','tracking',null)}</div>
+        </li>
+
+        <isif condition="${order.tracking_stage == 'DELIVERED'}">
+            <li class="active"><span>&nbsp;</span>
+        <iselse/>
+            <li><span>&nbsp;</span>
+        </isif>
+            <div class="title">${Resource.msg('tracking.stage.delivered','tracking',null)}</div>
+        </li>
+        </isif>
+    </ul>
+</div>

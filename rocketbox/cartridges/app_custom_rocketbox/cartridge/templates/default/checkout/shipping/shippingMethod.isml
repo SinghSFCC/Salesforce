@@ -1,0 +1,44 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/shipping-methods.css');
+    assets.addJs('/js/zen-shipping.js');
+</isscript>
+
+<div class="row leading-lines shipping-method-list" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
+    <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+    <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod">
+        <div class="form-check col-9 start-lines pt-2 pb-2">
+            <isinclude template="checkout/shipping/selectedShippingMethod"/>
+            <label class="form-check-label shipping-method-option" for="shippingMethod-${shippingMethod.ID}-${shippingModel.UUID}">
+                <span class="display-name">${shippingMethod.displayName}</span>
+                <isif condition="${shippingMethod.estimatedArrivalTime}">
+                    <span class="text-muted arrival-time">(${shippingMethod.estimatedArrivalTime})</span>
+                </isif>
+            </label>
+        </div>
+        <div class="col-3 text-right shipping-method-pricing end-lines pt-2 pb-2">
+            <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+        </div>
+    </isloop>
+    <div style="display:none"><isprint value="${JSON.stringify(shippingModel.applicableShippingMethods)}"/></div>
+
+</div>
+
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-method-template" class="d-none">
+    <label for="shippingMethodRadioButton" class="form-check ship-method-row col-12 my-2 p-2 border">
+        <div class="row">
+            <div class="col-10 row"></div>
+            <div class="col-2 m-auto p-0"></div>
+        </div>
+        <input type="radio" id="shippingMethodRadioButton" class="d-none">
+    </label>
+</div>
+
+<isinclude template="components/dropOffModal"/>
+

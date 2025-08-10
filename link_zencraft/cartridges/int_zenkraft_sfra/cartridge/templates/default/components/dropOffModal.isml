@@ -1,0 +1,29 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/dropOffModal.css');
+</isscript>
+
+<div class="modal fade" id="drop-off-modal" tabindex="-1" role="dialog" aria-labelledby="drop-off-modal" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="custom-modal-header row px-3">
+        <h2 class="col-12 pt-2 text-left">${Resource.msg('modal.collection.points','checkout',null)}</h2>
+        <div class="col-12 pb-3">
+            <input id="change-modal-address" class="form-control change-modal-address" type="text" placeholder="${Resource.msg('modal.change.address','checkout',null)}" data-locationsurl="${URLUtils.https('Zenkraft-GetNearestDropOffLocations').toString()}"/>
+            <small id="change-modal-address-error" class="error form-text text-danger mt-0"></small>
+        </div>
+        <button type="button" class="close close-cross" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="custom-modal-body row text-left m-0">
+        <div class="collection-points col-12 col-md-4 pr-0">
+
+        </div>
+        <div class="collection-map col-12 col-md-8">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

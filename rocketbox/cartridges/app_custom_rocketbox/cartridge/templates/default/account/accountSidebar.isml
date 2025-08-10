@@ -1,0 +1,34 @@
+
+
+    <isscript>
+         assets.addCss('/css/account/dashboard.css');
+    </isscript>
+
+<div class="bg-light account-sidebar h-100">
+<h3 class="pl-3 pt-3">My Account </h3>
+<hr>
+<ul class="nav flex-column">
+ 
+  <li class="nav-item active">
+    <a href="${URLUtils.url('Account-EditProfile')}"class="nav-link">Personal Details</a>
+  </li>
+ 
+   <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('Order-History')}">Order Details</a>
+  </li>
+ 
+ <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('Address-List')}">Address Book</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('PaymentInstruments-List')}">Payment</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('Wishlist-Show')}">Wishlist</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('Login-Logout')}">LogOut</a>
+  </li>
+</ul>
+</div>
+

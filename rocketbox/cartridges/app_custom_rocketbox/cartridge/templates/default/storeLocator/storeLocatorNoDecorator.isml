@@ -1,0 +1,80 @@
+<!-- Structure For Landing Page -->
+<isif condition="${pdict.storePage}">
+<div id="storeLanding" class="container store-locator-container mt-4 pb-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card search-form border-0 p-0">
+                <isinclude template="storeLocator/storeLocatorFields" />
+            </div>
+            <div class="card results-card border-0">
+                <div class="card-header border-0 p-0">
+                    <isinclude template="storeLocator/storeLocatorRadius" />
+                </div>
+                <div class="card-body">
+                    <p class="text-center store-locator-no-results">${Resource.msg('error.no.results','storeLocator',null)}</p>
+
+                    <div class="results striped" data-search-key="${JSON.stringify(pdict.stores.searchKey)}" data-radius="${pdict.stores.radius}" data-has-results="${pdict.stores.stores.length > 0}">
+                        <isinclude template="storeLocator/storeLocatorResults" />
+                    </div>
+                </div>
+            </div>
+            <isif condition="${pdict.showMap === false || pdict.showMap === 'false'}">
+            <div class="row">
+                <div class="${pdict.horizontalView === 'true' ? 'col-sm-12' : 'col-sm-12'}">
+                    <button class="btn btn-primary btn-block select-store mt-0" disabled>${Resource.msg('button.select.store','storeLocator',null)}</button>
+                </div>
+            </div>
+        </isif>
+        </div>
+        <div class="col-sm-8 h-100">
+             <isif condition="${pdict.showMap === 'true'}">
+                <div class="jumbotron map-canvas" data-has-google-api="${pdict.stores.googleMapsApi ? true : false}" data-locations="${pdict.stores.locations}">
+                    <div class="container">
+                        <div class="row">
+                            <p class="store-locator-no-apiKey alert alert-danger">${Resource.msg('error.no.api.key','storeLocator',null)}</p>
+                        </div>
+                    </div>
+                </div>
+            </isif>
+        </div>
+    </div>
+        
+</div>
+
+<iselse/>
+<div class="container store-locator-container pl-md-0 pr-md-0 mb-4">
+    <div class="row">
+        <div class="${pdict.horizontalView === 'true' ? 'col-sm-6 d-flex align-items-start flex-column' : 'col-sm-12'}">
+            <div class="card search-form">
+                <isinclude template="storeLocator/storeLocatorFields" />
+            </div>
+        </div>
+
+        <div class="${pdict.horizontalView === 'true' ? 'col-sm-6' : 'col-sm-12'}">
+            <div class="card results-card">
+                <div class="card-header">
+                    <isinclude template="storeLocator/storeLocatorRadius" />
+                </div>
+                <div class="card-body">
+                    <p class="text-center store-locator-no-results">${Resource.msg('error.no.results','storeLocator',null)}</p>
+
+                    <div class="results striped" data-search-key="${JSON.stringify(pdict.stores.searchKey)}" data-radius="${pdict.stores.radius}" data-has-results="${pdict.stores.stores.length > 0}">
+                        <isinclude template="storeLocator/storeLocatorResults" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="container store-locator-container p-0 mb-3">
+        <isif condition="${pdict.showMap === false || pdict.showMap === 'false'}">
+            
+                <div class="${pdict.horizontalView === 'true' ? 'col-sm-12' : 'col-sm-12'} p-0">
+                    <button class="btn btn-primary btn-block select-store mt-0" disabled>${Resource.msg('button.select.store','storeLocator',null)}</button>
+                </div>
+            
+        </isif>
+</div>    
+</isif>
+<!-- /Structure For Landing Page -->

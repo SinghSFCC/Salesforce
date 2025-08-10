@@ -1,0 +1,23 @@
+<iscomment>
+Zenkraft - Drop Off Locations
+</iscomment>
+<fieldset class="drop-off-search" style="display:none;">
+
+	<legend>
+		${Resource.msg('singleshipping.dropofflocationsheader','checkout',null)}
+	</legend>
+	
+	<div class="form-row" style="text-align:center;">
+		<input type="text" style="width: 50%" name="${pdict.CurrentForms.dropoff.search.htmlName}" id="${pdict.CurrentForms.dropoff.search.htmlName}" placeholder="${Resource.msg('resource.postalcode','forms',null)}" />
+		<button value="Search" style="margin-left: 15px;" id="dropoffbtn" class="btn-dropoffsearch btn-labelaction" data-url="${URLUtils.https('Zenkraft-GetDropOffLocations').toString()}">${Resource.msg('global.search','locale',null)}</button>
+	</div>
+
+	<div class="drop-off-results-container">
+	
+	</div>
+
+</fieldset>
+
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+</isif>

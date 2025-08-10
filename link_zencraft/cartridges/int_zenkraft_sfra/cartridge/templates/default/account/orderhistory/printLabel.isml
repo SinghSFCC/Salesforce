@@ -1,0 +1,110 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<script>
+    var globalResourceMsg = {
+        enterEmail: "${Resource.msg('enterEmail','order',null)}",
+        emailLabelHeader: "${Resource.msg('emailLabelHeader','order',null)}",
+        close: "${Resource.msg('close','order',null)}",
+        errorSending: "${Resource.msg('errorSending','order',null)}",
+        invalidEmail: "${Resource.msg('invalidEmail','order',null)}",
+        sendLabel: "${Resource.msg('sendLabel','order',null)}",
+        emailSuccess: "${Resource.msg('emailSuccess','order',null)}"
+    };
+</script>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/zenkraft.js');
+    assets.addCss('/css/trackingpage.css');
+</isscript>
+
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>${Resource.msg('label.printreturnlabel','order',null)}</h3>
+                </div>
+                <div class="card-body">
+                        <isif condition="${!empty(pdict.Shipment)}">
+                        <isset name="shipment" value="${pdict.Shipment}" scope="page"/>	
+                        <isscript>
+                            var CartModel = require('*/cartridge/models/cart');
+                            var shipData = new CartModel(pdict.Order);
+                        </isscript>
+                        <div class="actions">
+                            <p>${Resource.msg('selectreturnitems','order',null)}</p>
+                        </div>
+                        <div class="orderdetails">
+                            <div class="order-shipments">
+                                    <isif condition="${shipment.productLineItems.size() > 0}">
+                                        <iscomment>Shipment Items</iscomment>
+                                        <div class="order-shipment-table">
+                                            <div class="line-items">
+                                                <isloop items="${shipData.items}" var="lineItem" status="pliloopstate">
+                                                    <div class="line-item" data-itemid="${lineItem.id}">
+                                                        <div class="line-item-details">
+                                                            <iscomment>Display product line and product using module</iscomment>
+                                                            <isinclude template="account/tracking/trackingProductCard" />
+                                                            <div class="form-group pull-left">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input input-checkbox zenkraft-checkbox" id="${lineItem.id}" />
+                                                                    <label for="${lineItem.id}" class="custom-control-label checkout-checkbox">
+                                                                        <span>${Resource.msg('order.returnitem','order',null)}</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="line-item-quantity display-only pull-right" data-quantity="${lineItem.quantity}">
+                                                                <isif condition="${pliloopstate.first}">
+                                                                    <div class="label">${Resource.msg('quantity','order',null)}</div>
+                                                                </isif>
+                                                                <isprint value="${lineItem.quantity}"/>
+                                                            </div>
+                                                            <iscomment>Quantity Selector</iscomment>
+                                                            <div class="line-item-quantity selector pull-right">
+                                                                <isif condition="${pliloopstate.first}">
+                                                                    <div class="label">${Resource.msg('quantity','order',null)}</div>
+                                                                </isif>
+                                                                <select name="${lineItem.id}-quantity">
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </isloop>
+                                            </div>
+                                        </div>
+                                    </isif>
+                            </div>
+                        </div>
+                        
+                    <iselse/>
+                    
+                        <isif condition="${pdict.CurrentCustomer.authenticated}">
+                            <div class="back">
+                                <a href="${URLUtils.https('Order-History')}" title="${Resource.msg('account.orderdetails.returnorder','account',null)}">
+                                    ${Resource.msg('account.orderdetails.returnorder','account',null)}
+                                </a>
+                            </div>
+                        </isif>
+                        <div class="not-found">
+                            ${Resource.msg('account.orders.notfound','account',null)}
+                        </div>
+                    
+                    </isif>
+                </div>
+                <div class="card-footer">
+                    <div class="form-row form-row-button">
+                        <button value="Print Label" id="printlabelbtn" class="btn-printlabel btn-labelaction" data-url="${URLUtils.https('Zenkraft-GetShippingLabel', 'orderID', pdict.Order.orderNo).toString()}" disabled="disabled">${Resource.msg('label.printlabel','order',null)}</button>
+                        <button value="Email Label" id="emaillabelbtn" class="btn-emaillabel btn-labelaction" data-url="${URLUtils.https('Zenkraft-SendShippingLabel', 'orderID', pdict.Order.orderNo).toString()}" disabled="disabled">${Resource.msg('label.emaillabel','order',null)}</button>
+                    </div>
+                    <div class="error label-error print-label-error">${Resource.msg('label.selectitem','order',null)}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</isdecorate>

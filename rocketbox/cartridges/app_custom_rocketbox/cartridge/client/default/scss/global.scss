@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "skin/skinVariables";
+@import "~base/bootstrap-custom-import";
+@import "~base/bootstrapOverrides";
+@import "utilities/responsiveUtils";
+@import "font-awesome/scss/font-awesome";
+@import "flag-icon";
+@import "components/common";
+@import "components/header";
+@import "components/footer";
+@import "~base/components/hero";
+@import "~base/components/headers";
+@import "~base/components/notification";
+@import "~base/components/pricing";
+@import "components/productTiles";
+@import "~base/components/tabs";
+@import "~base/components/breadcrumb";
+@import "~base/components/spinner";
+@import "miniCart";
+@import "~base/components/tooltip";
+@import "components/headerSearch";
+@import "product/comparison";
+@import "components/quickView";
+@import "storeLocator";
+@import "slick-carousel-custom";
+.no-btn-style, .fa-th, .fa-align-left{
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.custom-select{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z' stroke='black' stroke-width='1'/></svg>") no-repeat right .75rem center/1em 1em !important;
+}
+
+.modal-background{
+    z-index: 2;
+}
+

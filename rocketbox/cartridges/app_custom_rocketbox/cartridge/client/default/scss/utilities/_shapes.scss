@@ -1,0 +1,10 @@
+@import "~base/utilities/shapes";
+
+@mixin rectangle($height, $width, $color) { // Source:  https://gist.github.com/kogakure/4769904
+    border: 0.063em solid rgba(0, 0, 0, 0.3);
+    width: $width;
+    height: $height;
+    background: $color;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}

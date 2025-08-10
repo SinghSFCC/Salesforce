@@ -1,0 +1,45 @@
+{
+  "name": "plugin_productcompare",
+  "version": "6.0.0",
+  "description": "New overlay cartridge",
+  "main": "index.js",
+  "scripts": {
+    "cover": "sgmf-scripts --cover",
+    "test": "sgmf-scripts --test test/unit/**/*.js",
+    "lint": "sgmf-scripts --lint js && sgmf-scripts --lint css",
+    "upload": "sgmf-scripts --upload ",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge plugin_productcompare",
+    "compile:js": "sgmf-scripts --compile js",
+    "compile:scss": "sgmf-scripts --compile css",
+    "build": "npm run compile:js && npm run compile:scss",
+    "watch": "sgmf-scripts --watch",
+    "watch:static": "sgmf-scripts --watch static"
+  },
+  "author": "Patrick Poon <ppoon@salesforce.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.16.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^2.1.6",
+    "proxyquire": "1.7.4",
+    "sass-loader": "^7.3.1",
+    "sgmf-scripts": "^2.3.0",
+    "sinon": "^1.17.7",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.5.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 10"
+  ],
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
+  }
+}

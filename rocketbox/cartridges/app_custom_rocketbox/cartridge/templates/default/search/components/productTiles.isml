@@ -1,0 +1,7 @@
+<isloop items="${pdict.productSearch.productIds}" var="product">
+    <div class="tile-sizer col-6 col-sm-4">
+        <isobject object="${product.productSearchHit}" view="searchhit">
+            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true, 'cgid', (!empty(pdict.productSearch.category) ? pdict.productSearch.category.id : '') , 'compare', pdict.compareEnabled)}" />
+        </isobject>
+    </div>
+</isloop>

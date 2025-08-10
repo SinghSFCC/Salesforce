@@ -1,0 +1,150 @@
+body{
+    font-size:.875rem;
+}
+
+.page {
+    @include media-breakpoint-down(xs) {
+        overflow-x: hidden;
+    }
+}
+.btn{
+    @include button-global(var(--skin-banner-background-color-1));
+}
+
+.btn-secondary{
+    @include button-global(var(--skin-primary-color-2));
+    color:(var(--skin-link-color-1))!important;
+}
+
+.form-control{
+    height:calc(2.5em + .75rem + 2px);
+}
+
+.oauth-google{
+    @include button-global($black);
+    color:$white!important;
+}
+.oauth-facebook{
+    @include button-global($fb-blue);
+    color:$white!important;
+}
+
+/*-------- Default Popup Styles ---------*/
+#consent-tracking{
+    .modal-dialog{ 
+        max-width: 862px; 
+        margin:0 auto; 
+        transform: translateY(15%); 
+        @include media-breakpoint-down(md) {
+            max-width:67%;
+        }
+    }
+    .modal-header{ 
+        border:0;
+
+        .close-btn {
+            width: 100%;
+            text-align: right;
+ 
+            .close {
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+    .modal-content{ 
+        background-color: $black;
+        background-image: url(../images/share-look-img.jpg);
+        background-repeat: no-repeat;
+        min-height: 520px;
+        background-position: -36% 0%;
+        padding-left:46%;
+
+        @include media-breakpoint-down(md) {
+            padding-left:0;
+            padding-top: 180px;
+            background-position: 50% 42%;
+            .modal-body{
+                padding:0;
+            }
+            .content-asset{
+                background-color: $black;
+                padding:30px 0;
+            }
+        }
+
+        .tracking-consent{
+            max-width: 85%;
+            margin: auto;
+
+            .decline{
+                position: absolute;
+                right:15px;
+                top:-30px;
+            }
+        }
+        form{
+            input{ 
+                border:2px solid $white;
+
+                &::placeholder{
+                    color:$white;
+                }
+            }
+        }
+    }
+    .modal-footer{ border:0; }
+}
+
+/*-------- Common Popup Styles ---------*/
+.modal {
+    z-index: 10000;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+
+    @include media-breakpoint-down(xs) {
+        margin-left: 0;
+    }
+}
+
+.modal-footer{
+    padding: 1.5rem 2.5rem;
+
+    @include media-breakpoint-down(xs) {
+        padding: 1.5rem 1rem;
+    }
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #43464E;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.modal-body{
+    padding: 1rem 2.0rem 2.5rem 2.5rem;
+
+    @include media-breakpoint-down(xs) {
+        padding: 1rem 2rem 2.5rem 1rem;
+    }
+}
+
+.modal-header {
+	background-color: transparent !important;
+    border-bottom: 0 !important;
+
+    .close {
+        padding: 1rem;
+        margin: -1.25rem -1rem -1rem auto;
+    }
+}
+
+button:focus {
+    outline: 0;
+}

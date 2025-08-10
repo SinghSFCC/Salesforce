@@ -1,0 +1,12 @@
+<isif condition="${(session.custom.applepaysession === 'yes') && (product.available && product.readyToOrder) && pdict.enabledPlugins.ApplePay}">
+    <div class="col col-sm-12 pdp-apple-pay-button">
+        <isapplepay class="apple-pay-pdp btn" sku="${product.id}"></isapplepay>
+    </div>
+</isif>
+<isif condition="${pdict.paypal && pdict.paypal.pdpButtonEnabled && !pdict.paypal.paypalEmail}">
+    <div class="row paypal_pdp_button">
+        <div class="col-sm-12 p-md-0 mt-2">
+            <isinclude template="paypal/pdp/paypalPdpContent"/>
+        </div>
+    </div>
+</isif>

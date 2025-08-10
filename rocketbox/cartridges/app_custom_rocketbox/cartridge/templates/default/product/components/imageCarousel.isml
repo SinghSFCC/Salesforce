@@ -1,0 +1,24 @@
+ <div class="primary-images col-12 col-sm-6">
+            <div class="pdp-image-container">
+                    <div class="banner-slider">
+                    <div class="slider slider-nav thumb-image">
+                        <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                            <div class="thumbnail-image">
+                                <div class="thumbImg">
+                                    <img src="${image.url}" alt="slider-img">
+                                </div>
+                            </div>
+                            </isloop>
+                        </div>
+                        <div class="slider slider-for carousel"> 
+                        <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                            <div class="slider-banner-image">
+                                <img src="${image.url}" alt="Product Image">
+                            </div> 
+                            </isloop>
+                        </div>
+                        
+                </div>
+            </div>
+
+</div>

@@ -1,0 +1,115 @@
+<isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}"  scope="page"/>
+<isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page"/>
+<isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page"/>
+
+<div class="card p-0 pb-4 mb-4 product-info ${bonusproductlineitem} uuid-${lineItem.UUID}">
+
+    <!-- Updated Code -->
+    <div class="row ${bonuslineitemrow}">
+        <div class="col-lg-5">
+            <div class="">
+                <div class="">
+                    <div class="item-image float-left">
+                        <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
+                    </div>
+                    <div class="item-attributes d-flex flex-column">
+                        <isinclude template="cart/productCard/cartProductCardHeader" />
+                        <isset name="price" value="${lineItem.price}" scope="page"/>
+                        <div class="unit-price  mb-1">
+                            <isinclude template="/product/components/pricing/main" />
+                        </div>
+                        <!--- promotions --->
+                        <div class="line-item-promo mb-1 item-${lineItem.UUID}">
+                            <isinclude template="checkout/productCard/productCardProductPromotions" />
+                        </div>
+                        <!--- line item total price --->
+                        <div class="line-item-total-price mb-1">
+                            <p class="line-item-price-info float-left mr-2">
+                                <strong>${Resource.msg('label.total.price','cart',null)}</strong>
+                            </p>
+                            <div class="float-left item-total-${lineItem.UUID} price">
+                                <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                            </div>
+                        </div>
+                        <!--- extra slot for spacing reasons due to large remove button --->
+                        <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+                        <isloop items="${lineItem.variationAttributes}" var="attribute">
+                            <p class="line-item-attributes ${attribute.displayName}-${lineItem.UUID}"><strong>${attribute.displayName}:</strong> ${attribute.displayValue}</p>
+                        </isloop>
+                        <isloop items="${lineItem.options}" var="option">
+                            <isif condition="${!!option}" />
+                                <div class="lineItem-options-values" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">
+                                    <p class="line-item-attributes mb-1">${option.displayName}</p>
+                                </div>
+                            </isif>
+                        </isloop>
+
+                        <isinclude template="cart/productCard/cartProductCardAvailability" />
+                        <div class="qty mt-2">
+                            <isinclude template="checkout/productCard/productCardQuantitySelector" />
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="cart-actions d-none d-lg-block">
+                        <div class="actionsPopup">
+                        <div class="closePopup d-block d-lg-none"><button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                            <ul>
+                                <li><isinclude template="cart/productCard/cartProductCardEdit" /></li>
+                                <iscomment> <li><a href="">${Resource.msg('label.save.for.later','cart',null)}</a></li>
+                                <li><a href="">${Resource.msg('label.add.to.compare','cart',null)}</a></li>
+                                <li><a href="">${Resource.msg('label.add.message.gift.wrap','cart',null)}</a></li> </iscomment>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                        <div class="hidden-md-down">
+                            <button type="button" class="remove-product" data-toggle="modal"
+                                data-target=".cart.cart-page #removeProductModal" data-pid="${lineItem.id}"
+                                data-name="${lineItem.productName}"
+                                data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                                data-uuid="${lineItem.UUID}"
+                                aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+                            <span aria-hidden="true">${Resource.msg('label.remove.from.cart','cart',null)}</span>
+                        </button>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted d-lg-block d-none">${Resource.msg('cart.shipping.copy','cart',null)}</p>
+                </div>
+            </div>
+            <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                <div class="hidden-md-down d-none">
+                    <isinclude template="components/deleteButton" />
+                </div>
+            </isif>
+            <isif condition="${lineItem.fromStoreId}">
+                <div class="row">
+                    <div class="col-12"><hr class="line-item-divider line-dotted"></div>
+                    <div class="col-12">
+                        <span class="line-item-name">${Resource.msg('label.instore.pickup.from','instorePickup',null)}</span>
+                        <isinclude url="${URLUtils.url('Stores-GetStoreById', 'storeId', lineItem.fromStoreId)}"/>
+                    </div>
+                </div>
+            </isif>
+        </div>
+    </div>
+    <!-- /Updated Code -->
+       <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+        <isinclude template="cart/productCard/cartEmbeddedBonusProducts" />
+    </isif>
+</div>

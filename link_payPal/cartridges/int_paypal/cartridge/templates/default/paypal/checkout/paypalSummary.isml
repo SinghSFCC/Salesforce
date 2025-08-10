@@ -1,0 +1,8 @@
+<div>
+    <div>
+        <span>
+            ${pdict.paypal.paypalEmail} <br />
+            ${payment.paymentMethod + '/' + pdict.paypal.paymentAmount}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="text-center mb-3 select-attributes-wishList">
+    <input type="hidden" class="select-attributes-url" value="${}">
+    <button class="select-attributes-btn btn-block btn-outline-primary p-2"
+            data-toggle="modal" data-target="#editWishlistProductModal"
+            data-pid="${item.pid}"
+            data-get-product-url="${URLUtils.url('Wishlist-GetProduct', 'uuid', item.UUID, 'pid', item.pid)}">
+        ${Resource.msg('button.select_attributes', 'wishlist', null)}
+    </button>
+</div>

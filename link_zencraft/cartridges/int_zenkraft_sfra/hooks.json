@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "dw.ocapi.shop.order.beforePATCH",
+            "script": "./cartridge/scripts/hooks/order.js"
+        },
+        {
+            "name": "dw.order.calculateShipping",
+            "script": "./cartridge/scripts/hooks/shipping.js"
+        }
+    ]
+}

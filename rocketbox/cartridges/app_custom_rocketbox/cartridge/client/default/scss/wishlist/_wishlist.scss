@@ -1,0 +1,45 @@
+@import "~base/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "~base/components/toastMessage";
+
+.product-card-price {
+    @include media-breakpoint-down(xs) {
+        margin-left: 0;
+    }
+}
+
+.remove-from-wishlist{
+    background-color: transparent;
+    border:0;
+    outline: none;
+    box-shadow: none;
+    text-decoration: underline;
+    &:hover{
+        text-decoration: none;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.removeWishlist{
+    position: absolute;
+    right: 10px;
+    top:-10px;
+
+    button{
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+}
+
+.line-item-name{ max-width: 90%; }
+.line-item-price-info{ margin-bottom: 0; }
+
+.select-attributes-wishList, .add-to-cart-wishList {
+    .select-attributes-btn, .add-to-cart{
+        border: 0;
+        background-color: var(--skin-banner-background-color-1);
+    }
+}

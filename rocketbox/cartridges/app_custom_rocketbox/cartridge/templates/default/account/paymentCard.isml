@@ -1,0 +1,19 @@
+<div class="card mb-5 mt-5">
+    <div class="card-header bg-light clearfix">
+        <h2 class="pull-left">${Resource.msg('label.payment','account',null)}</h2>
+        <isif condition="${pdict.payment}">
+            <a href="${pdict.viewSavedPaymentsUrl}" class="pull-right text-primary pt-2" aria-label="${Resource.msg('label.payment.viewsavedpaymentmethods','account',null)}">${Resource.msg('link.view','account',null)}</a>
+        </isif>
+    </div>
+    <isif condition="${pdict.payment}">
+        <div class="card-body card-info-group">
+            <isset name="payment" value="${pdict.payment}" scope="page">
+            <isinclude template="account/payment/savedPayment"/>
+        </div>
+    </isif>
+    <isif condition="${pdict.addPaymentUrl}">
+        <div class="card-footer card-footer-border text-center">
+            <a href="${pdict.addPaymentUrl}" class="card-link text-primary" aria-label="${Resource.msg('label.payment.addnewpayment','payment',null)}">${Resource.msg('link.addnew','account',null)}</a>
+        </div>
+    </isif>
+</div>

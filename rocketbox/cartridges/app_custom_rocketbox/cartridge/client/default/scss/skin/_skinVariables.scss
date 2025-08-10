@@ -1,0 +1,15 @@
+@import "~base/skin/skinVariables";
+
+:root {
+    --color-white: #{$white};
+    --color-black: #{$black};
+    --color-primary: #{$primary};
+    --skin-link-color-1: var(--color-white);
+    --skin-link-color-2: var(--color-black);
+    --skin-primary-color-1: var(--color-primary);
+    --skin-primary-color-2: var(--color-black);
+    --skin-banner-background-color-1: #{$primary};
+    --skin-banner-background-color-2:  #{$primary};
+    --skin-header-font: 'Poppins', sans-serif;
+    --skin-body-font: 'Poppins', sans-serif;
+}

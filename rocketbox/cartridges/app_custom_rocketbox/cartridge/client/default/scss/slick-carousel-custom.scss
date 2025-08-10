@@ -1,0 +1,55 @@
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
+@import "~base/variables";
+@import "variables";
+#ecarousal {
+	.regular {
+        .slick-prev, .slick-next{width:auto;height:auto;}
+		.slick-prev:before,
+		.slick-next:before {
+			font: normal normal normal 25px FontAwesome;
+			background: var(--skin-primary-color-1);
+			padding: 5px 15px;
+			color: $white;
+			opacity: 1;
+		}
+		.slick-prev {
+			left: -25px;
+			z-index: 1;
+			top: 35%;
+		}
+		.slick-next {
+			right: -25px;
+			z-index: 1;
+			top: 35%;
+		}
+		.bx-sw:hover {
+			box-shadow: 0px 4px 11px $slick-shodow;
+		}
+		.quickview {
+			display: none;
+		}
+		.pdp-link {
+			padding: 0.5rem 0;
+		}
+		.ratings {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding-top: 5px;
+		}
+		.wishlistTile {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 10px;
+		}
+		button.slick-disabled:before {
+			background: $grey2;
+			opacity: 0.2;
+		}
+		.yotpo a {
+			color:$primary !important;
+		}
+        
+	}
+}

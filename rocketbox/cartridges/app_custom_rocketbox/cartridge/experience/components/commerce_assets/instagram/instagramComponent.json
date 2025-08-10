@@ -1,0 +1,29 @@
+{
+    "name": "Instagram",
+    "description": "Embed Instagram Photos",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "instagramFeed",
+            "name": "Instagram Feed",
+            "description": "Instagram photos feed configuration",
+            "attribute_definitions": [
+                {
+                    "id": "accessToken",
+                    "name": "Access Token",
+                    "description": "Access Token",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "limit",
+                    "name": "Max No of photos",
+                    "description": "Max No of photos to be displayed. Please note that maximum number is 20",
+                    "type": "integer",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

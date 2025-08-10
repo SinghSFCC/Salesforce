@@ -1,0 +1,79 @@
+<header>
+    <isinclude template="/components/header/skipNav" />
+    <div class="header-banner slide-up">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div><a href="${URLUtils.https('Stores-Find', 'showMap', true, 'horizontalView', true, 'isForm', true).toString()}">Find a Store</a></div>
+                <div class="content">
+                    <div class="mobile-menu-bottom d-lg-none" aria-hidden="true">
+                        <a href="${URLUtils.https('Home-Show')}">
+                            <img src="${URLUtils.staticURL('/images/home.svg')}" alt="Home" />
+                            Home
+                        </a>
+                        <a href="/" class="mobile-menu-toggle">
+                            <img src="${URLUtils.staticURL('/images/menu.svg')}" alt="Menu" />
+                            Menu
+                        </a>
+                        <a href="${URLUtils.https('Wishlist-Show')}">
+                            <img src="${URLUtils.staticURL('/images/wishlist.svg')}" alt="wishlist" />
+                            Wishlist
+                        </a>
+                        <a href="${URLUtils.https('Account-Show')}">
+                            <img src="${URLUtils.staticURL('/images/account-icon.svg')}" alt="account" />
+                            Account
+                        </a>
+                        <a href="${URLUtils.https('Cart-Show')}" class="cart-bottom-icon">
+                            <span class="mini-cart-bottom-fixed">
+                                <img src="${URLUtils.staticURL('/images/cart-white.jpg')}" alt="cart" />
+                                <span class="minicart-quantity"><isprint value="${pdict.quantityTotal}" formatter="##" /></span>
+                            </span>
+                            <span>Cart</span>
+                        </a>
+                    </div>
+                    <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+                </div>
+                <div class="d-flex navbar-header">
+                    <div>
+                        <isinclude template="/components/header/countrySelector" />
+                        <div class="country-selector hidden-md-down pl-4 pr-4">
+                            <a href="" role="button" aria-label="">
+                                <img src="${URLUtils.staticURL('/images/country-selector.svg')}" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <isinclude url="${URLUtils.url('Account-Header')}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav role="navigation" class="bg-white">
+        <div class="container">
+            <div class="d-flex">
+                <div class="mr-md-0 mr-sm-2">
+                    <a href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                        <img class="brand-logo img-fluid" alt="RocketBox Logo" src="${URLUtils.staticURL('/images/logo.svg')}" />
+                    </a>
+                </div>
+                <div class="col mega-menu main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown" id="sg-navbar-collapse">
+                    <button aria-label="Menu" class="navbar-toggler d-lg-none d-xl-none" aria-controls="sg-navbar-collapse"><span aria-hidden="true" class="fa fa-bars"></span></button>
+                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+                </div>
+                <div>
+                    <isinclude template="components/header/search" />
+                    <div aria-hidden="true" class="search hidden-xs-down"></div>
+                </div>
+                <div class="wishlist-header mr-sm-2 mr-md-2 ml-md-2">
+                    <a href="${URLUtils.https('Wishlist-Show')}">
+                        <img src="${URLUtils.staticURL('/images/wishlist.svg')}" alt="wishlist" />
+                        <span class="user-message">${Resource.msg('link.wishlist.login', 'account', null)}</span>
+                    </a>
+                </div>
+                <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,43 @@
+<div class="card-body display-return-label return-label-template" style="display:none;">
+    <div class="row return-of"></div>
+    <div class="row border-bottom py-3">
+        <div class="line-item-name col-12">
+            {{lbl}}
+        </div>
+        <div class="col-7">
+            <div class="row item-data"></div>
+        </div>
+        <div class="col-5 text-right action-container" style="display: none;">
+            <div class="row">
+                <div class="col-6 returns-download">
+                    <div class="label-image">
+                        <img class="sample-label-image" src="${URLUtils.staticURL('/images/sample-label.png').toString()}"/>
+                    </div>
+                </div>
+                <div class="col-6 action-links">
+                    <a class="btn btn-block btn-primary return-label-download" download="return-label" title="return-label" href="">${Resource.msg('btn.download','returns',null)}</a>
+                    <isif condition="${pdict.googleAPIEnabled}">
+                        <div class="col-12 returns-nearest-location p-0">
+                            <div class="location-progress">${Resource.msg('retrieving.location','returns',null)}</div>
+                            <div class="nearest-location">
+                                <div class="show-more-locations">
+                                    <button class="btn btn-block btn-outline-primary btn-show-return-locations" data-url="${URLUtils.https('Zenkraft-GetNearestDropOffLocations').toString()}">Dropoff Locations</button>
+                                </div>
+                                <isinclude template="components/dropOffModal"/>
+                            </div>
+                        </div>
+                        <div class="col-4 returns-map">
+                            <div class="return-map-container" style="position:relative;height: 100%;width: 100%;">
+                            </div>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 more-address-results"></div>
+    </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+<div class="js-select-return-items">
+    <div class="orderdetails">
+        <div class="order-shipments">
+            <iscomment>Shipment Items</iscomment>
+            <div class="order-shipment-table">
+                <div class="line-items">
+                    <isloop items="${shipment.items}" var="lineItem" status="pliloopstate">
+                        <isif condition="${!lineItem.notReturnable}">
+                            <div class="line-item" style="clear:both;" data-itemid="${lineItem.id}" data-orderitemid="${lineItem.orderItemID}" data-pliuuid="${lineItem.UUID}">
+                                <div class="line-item-details">
+                                    <iscomment>Display product line and product using module</iscomment>
+                                    <isinclude template="account/tracking/trackingProductCard" />
+                                    <div class="form-group pull-left">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input input-checkbox js-checkbox-return-item" id="${lineItem.orderItemID}" />
+                                            <label for="${lineItem.orderItemID}" class="custom-control-label checkout-checkbox">
+                                                <span>${Resource.msg('order.returnitem','order',null)}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <iselse/>
+                            <isset name="notReturnable" value="${true}" scope="page" />
+                        </isif>
+                    </isloop>
+                    <isif condition="${notReturnable}">
+                        <div class="order-shipments pt-3">
+                            <iscomment>Shipment Items</iscomment>
+                            <div class="order-shipment-table pt-3">
+                                <div class="line-items pt-3">
+                                    <div>
+                                        <h3 class="font-weight-bold">${Resource.msg('non.returnable.items','returns',null)}</h4>
+                                    </div>
+                                    <isloop items="${shipment.items}" var="lineItem" status="pliloopstate">
+                                        <isif condition="${lineItem.notReturnable}">
+                                            <div class="line-item" style="clear:both;" data-itemid="${lineItem.id}" data-orderitemid="${lineItem.orderItemID}">
+                                                <div class="line-item-disabled">
+                                                    <iscomment>Display product line and product using module</iscomment>
+                                                    <isinclude template="account/tracking/trackingProductCard" />
+                                                </div>
+                                            </div>
+                                        </isif>
+                                    </isloop>
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod == 'AdyenPOS' || payment.paymentMethod == 'AdyenComponent'} ">
+            <isinclude template="checkout/billing/paymentOptions/adyenComponentSummary"/>
+        </isif>
+        <isif condition="${payment.paymentMethod === 'DW_APPLE_PAY'}">
+            <isinclude template="checkout/billing/paymentOptions/applePaySummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'PayPal' && pdict.paypal}">
+            <isinclude template="paypal/checkout/paypalSummary" />
+        </isif>
+    </isloop>
+</div>

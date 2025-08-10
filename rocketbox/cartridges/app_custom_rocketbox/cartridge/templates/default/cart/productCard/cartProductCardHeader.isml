@@ -1,0 +1,15 @@
+<isif condition="${lineItem.isBonusProductLineItem}" />
+    <div>${Resource.msg('msg.bonus.product','cart',null)}</div>
+</isif>
+<div class="line-item-header">
+    <div class="line-item-name">
+        <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">${lineItem.productName}</a>
+    </div>
+    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+        
+        <div class="remove-line-item d-lg-none">
+            <isinclude template="components/deleteButton" />
+        </div>
+        <div class="toggleControls d-lg-none" ><a href=""><img class="img-fluid" src="${URLUtils.staticURL('/images/icon-actions.svg')}" alt="${Resource.msg('cart.edit.actions', 'cart', null)}" /></a></div>
+    </isif>
+</div>

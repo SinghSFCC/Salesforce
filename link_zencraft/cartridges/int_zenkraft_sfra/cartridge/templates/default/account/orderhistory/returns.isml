@@ -1,0 +1,104 @@
+<isdecorate template="common/layout/page">
+<isinclude template="components/modules"/>
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/zenkraft.js');
+    assets.addJs('/js/returns.js');
+    assets.addCss('/css/account/profile.css');
+    assets.addCss('/css/returns.css');
+    assets.addCss('/css/checkmarks.css');
+</isscript>
+
+<div class="hero slant-down account-image">
+    <h1 class="page-title">${Resource.msg('label.print','returns',null)}</h1>
+</div>
+<div class="container">
+    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+    <div class="d-none label-data" data-label-url=""></div>
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-lg-12">
+            <isif condition="${pdict.order.shipping.length > 0}">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                        <isprint value="${pdict.pageSettings.returnsRequireApproval ? 'Request Return' : 'Print Return Label'}" encoding="on" />
+                        </h3>
+                    </div>
+                    <div class="card-body">
+
+                        <isinclude template="account/orderhistory/returns/progress" />
+
+                        <isif condition="${!empty(pdict.order)}">
+                            <div class="actions">
+                                <p>${Resource.msg('get.label.title','returns',null)}</p>
+                            </div>
+                            <isloop items="${pdict.order.shipping}" var="shipping" status="shippingloopstatus">
+                                <isset name="shipment" value="${shipping.productLineItems}" scope="page"/>
+
+                                <isinclude template="account/orderhistory/returns/items" />
+
+                                <isinclude template="account/orderhistory/returns/reasons" />
+
+                            </isloop>
+
+                            <isinclude template="account/orderhistory/returns/label" />
+                            <div class="row return-heading d-none">
+                                <div class="col-12">
+                                    <p>You items are being return to <span class="totalLocations"></span> different warehouses</p>
+                                </div>
+                            </div>
+                            <div class="return-labels"></div>
+
+                            <div class="return-progress-next pull-right">
+                                <button class="btn btn-primary js-button-returns-back"  style="display:none;">${Resource.msg('returns.back','returns',null)}</button>
+                                <button class="btn btn-primary js-button-returns-next"
+                                    data-url="${URLUtils.https('Zenkraft-GetShippingLabel')}"
+                                    data-locationurl="${URLUtils.https('Zenkraft-GetNearestDropOffLocation')}"
+                                    data-gmapsenabled="${pdict.googleAPIEnabled}"
+                                    data-orderid="${pdict.order.orderNumber}">${Resource.msg('returns.next','returns',null)}</button>
+                            </div>
+                            <div class="invalid-feedback pull-right">${Resource.msg('returns.select.item','returns',null)}.</div>
+                        <iselse/>
+                            <isif condition="${pdict.CurrentCustomer.authenticated}">
+                                <div class="back">
+                                    <a href="${URLUtils.https('Order-History')}" title="${Resource.msg('account.orderdetails.returnorder','account',null)}">
+                                        ${Resource.msg('account.orderdetails.returnorder','account',null)}
+                                    </a>
+                                </div>
+                            </isif>
+                            <div class="not-found">
+                                ${Resource.msg('account.orders.notfound','account',null)}
+                            </div>
+                        </isif>
+                    </div>
+                </div>
+            </isif>
+            <isif condition="${pdict.order.returnLineItems && pdict.order.returnLineItems.length > 0}">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            ${Resource.msg('page.title.return','returns',null)}
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                    <isloop items="${pdict.order.returnLineItems}" var="returnLineItem" status="itemsloopstatus">
+                        <div class="row border-bottom py-3">
+                            <isinclude template="account/return/returnLineItem"/>
+                        </div>
+                        <isif condition="${itemsloopstatus.last}">
+                            <a class="btn btn-primary color-white float-right mt-3" href="${URLUtils.url('Order-History')}">${Resource.msg('btn.to.order.history', 'returns', null)}</a>
+                        </isif>
+                    </isloop>
+                    </div>
+                </div>
+            </isif>
+        </div>
+    </div>
+</div>
+
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+</isif>
+
+</isdecorate>

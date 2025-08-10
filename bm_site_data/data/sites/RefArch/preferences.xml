@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <standard-preferences>
+        <all-instances>
+            <preference preference-id="AccountNumberRetentionDays">0</preference>
+            <preference preference-id="AddProductToBasketBehavior">IncrementQuantities</preference>
+            <preference preference-id="BasketLifetime">240</preference>
+            <preference preference-id="BasketPersistence">all</preference>
+            <preference preference-id="CouponGeneratorIncludeDashes">true</preference>
+            <preference preference-id="CouponGeneratorIncludeVowels">true</preference>
+            <preference preference-id="EnableSiteOrderNumbers">false</preference>
+            <preference preference-id="EnforceHTTPS">false</preference>
+            <preference preference-id="IntegrationOrderCenterIncludeSite">true</preference>
+            <preference preference-id="OrderEditExportDelay">30</preference>
+            <preference preference-id="OrderExportDelay">30</preference>
+            <preference preference-id="OrderIPLoggingEnabled">true</preference>
+            <preference preference-id="OrderLifetime">0</preference>
+            <preference preference-id="RedirectUrlCopySourceParameters">true</preference>
+            <preference preference-id="SiteCatalog">storefront-catalog-m-en</preference>
+            <preference preference-id="SiteCurrencies">USD:EUR:JPY:CNY</preference>
+            <preference preference-id="SiteCustomerList">RefArch</preference>
+            <preference preference-id="SiteDefaultLocale">en_US</preference>
+            <preference preference-id="SiteInventoryList">inventory_m</preference>
+            <preference preference-id="SiteLibrary">RefArchSharedLibrary</preference>
+            <preference preference-id="SiteLocales">en_US</preference>
+            <preference preference-id="SitePriceBooks">cny-m-list-prices:cny-m-sale-prices:eur-m-list-prices:eur-m-sale-prices:jpy-m-list-prices:jpy-m-sale-prices:usd-m-list-prices:usd-m-sale-prices</preference>
+            <preference preference-id="SiteTimezone">Asia/Calcutta</preference>
+            <preference preference-id="StorefrontURLsEnabled">true</preference>
+        </all-instances>
+        <development>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="ExternallyPublishProductIndex">false</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="MergedVariationGroupsDisplayMode">false</preference>
+            <preference preference-id="PageURLBlankSubstitute">%20</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchFriendlyURLsEnabled">true</preference>
+            <preference preference-id="SearchSuggestions">Disabled</preference>
+        </development>
+        <staging>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="ExternallyPublishProductIndex">false</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="MergedVariationGroupsDisplayMode">false</preference>
+            <preference preference-id="PageURLBlankSubstitute">%20</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchFriendlyURLsEnabled">false</preference>
+            <preference preference-id="SearchSuggestions">Enabled</preference>
+        </staging>
+        <production>
+            <preference preference-id="AvailabilityFiltering">Disabled</preference>
+            <preference preference-id="AvailabilityLowRankingThreshold">0.0</preference>
+            <preference preference-id="ExternallyPublishProductIndex">false</preference>
+            <preference preference-id="IncludePromotionIDInProductIndex">true</preference>
+            <preference preference-id="MergedVariationGroupsDisplayMode">false</preference>
+            <preference preference-id="PageURLBlankSubstitute">%20</preference>
+            <preference preference-id="RobotsTxtContent"/>
+            <preference preference-id="RobotsTxtMode">Cartridge</preference>
+            <preference preference-id="SearchFriendlyURLsEnabled">false</preference>
+            <preference preference-id="SearchSuggestions">Disabled</preference>
+        </production>
+    </standard-preferences>
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="ATSettings">{"taxCalculation":true,"addressValidation":false,"taxationpolicy":"net","saveTransactions":true,"commitTransactions":true,"companyCode":"DEFAULT","useCustomCustomerCode":"customer_email","customCustomerAttribute":"","defaultShippingMethodTaxCode":"","locationCode":"","line1":"255 S King St","line2":"Street 1800","line3":"","city":"Seattle","state":"Washington","zipCode":"98104","countryCode":"US"}</preference>
+            <preference preference-id="Adyen3DS2Enabled">true</preference>
+            <preference preference-id="AdyenBasketFieldsEnabled">true</preference>
+            <preference preference-id="AdyenCreditCardInstallments">[[10000000,2,31]]</preference>
+            <preference preference-id="AdyenLevel23DataEnabled">true</preference>
+            <preference preference-id="AdyenOneClickEnabled">true</preference>
+            <preference preference-id="AdyenRecurringEnabled">true</preference>
+            <preference preference-id="AdyenSecuredFieldsEnabled">true</preference>
+            <preference preference-id="Adyen_API_Key">A1Te3juy7sA+tmcmEWJFfexI1qTYZRkPpfjoRlxgfln1hDdhxgu0qwxLb7LkX14GmA9a1Cy8QSI4mYJX6AVdZPeCmvRY7Js3H1NzCXRnJxHaNNZFBylpanIEMxqnFZn18SJ+h2BVz8xyUvTlJaZuwm30i3evAKjI+o5WMLLvWgYgCXXwASTJoUiwHmPqdxiUAVDSi+a7E7fPxlM1BLcAa9aOQk2p7Pzxq7wxkIh8w1w=</preference>
+            <preference preference-id="Adyen_Mode">TEST</preference>
+            <preference preference-id="Adyen_PaypalMerchantID">6ANQRL9Y2CZHU</preference>
+            <preference preference-id="Adyen_merchantCode">ChangeCXECOM</preference>
+            <preference preference-id="Adyen_notification_password">r1zU5/AjrhlMk8rvmVSv95RaBUGksv4WPRqOrZhDDB4tfWiY7x+ovRwOvlXNuoJa</preference>
+            <preference preference-id="Adyen_notification_user">admin</preference>
+            <preference preference-id="PP_API_APM_methods">
+                <value>CREDIT_CARD</value>
+                <value>AdyenPOS</value>
+                <value>AdyenComponent</value>
+            </preference>
+            <preference preference-id="PP_API_BA_Enabled">false</preference>
+            <preference preference-id="PP_API_BrandName">ChangeCX</preference>
+            <preference preference-id="PP_API_Button_Location">CartMinicart</preference>
+            <preference preference-id="PP_API_Merchant_Id">6ANQRL9Y2CZHU</preference>
+            <preference preference-id="PP_API_PaymentAction">true</preference>
+            <preference preference-id="companyWideLeadTime">1</preference>
+            <preference preference-id="countryCode">US</preference>
+            <preference preference-id="enableZenkraftEstimatedDeliveryDates">true</preference>
+            <preference preference-id="enableZenkraftFeedback">true</preference>
+            <preference preference-id="enableZenkraftShipping">true</preference>
+            <preference preference-id="enableZenkraftShippingRates">true</preference>
+            <preference preference-id="enableZenkraftTrackingOnOrderHistory">true</preference>
+            <preference preference-id="enableZenkraftTrackingPage">true</preference>
+            <preference preference-id="googleMapsAPIKey">AIzaSyBTTz7zUiSvA8bYw5K8g6FuRoR4NnbNCsI</preference>
+            <preference preference-id="mapAPI">AIzaSyBTTz7zUiSvA8bYw5K8g6FuRoR4NnbNCsI</preference>
+            <preference preference-id="setOrderReturnsOneToOneRelation">true</preference>
+            <preference preference-id="sfraEnableOverlayApplePay">true</preference>
+            <preference preference-id="sfraEnableOverlayCommercePayments">true</preference>
+            <preference preference-id="sfraEnableOverlayDataDownload">true</preference>
+            <preference preference-id="sfraEnableOverlayGiftRegistry">false</preference>
+            <preference preference-id="sfraEnableOverlayInStorePickup">true</preference>
+            <preference preference-id="sfraEnableOverlayProductCompare">true</preference>
+            <preference preference-id="sfraEnableOverlayWishlist">true</preference>
+            <preference preference-id="trackingPageRequiresLogin">true</preference>
+            <preference preference-id="useParcelObjectforTracking">true</preference>
+            <preference preference-id="yotpoCartridgeEnabled">true</preference>
+            <preference preference-id="yotpoDebugLogEnabled">true</preference>
+            <preference preference-id="yotpoExportGroupIdInOrder">true</preference>
+            <preference preference-id="yotpoInfoLogEnabled">true</preference>
+            <preference preference-id="yotpoLoyaltyEnableCustomerFeed">false</preference>
+            <preference preference-id="yotpoLoyaltyEnableOrderFeed">false</preference>
+            <preference preference-id="yotpoLoyaltyEnabled">false</preference>
+            <preference preference-id="yotpoProductInformationFromMaster">true</preference>
+            <preference preference-id="zenkraftAdvancedJSON">true</preference>
+            <preference preference-id="zenkraftAdvancedJSONObject">{
+    "EDD": {
+      "usps": {
+        "ACCOUNT_ID": "70098843",
+        "CARRIER_ID": "usps",
+        "SERVICE_TYPE": "usps_ground",
+        "PACKAGING": "your_packaging",
+        "CURRENCY_CODE": "USD",
+        "DIM_UNITS": "IN",
+        "WEIGHT_UNITS": "LB",
+        "ADDRESS": {
+          "STREET": "10062 Treena Street",
+          "CITY": "San Diego",
+          "STATECODE": "CA",
+          "POSTALCODE": "92131",
+          "COUNTRYCODE": "US",
+          "COMPANY": "Zenkraft Default",
+          "NAME": "Zenkraft Default",
+          "PHONE": "1231231233",
+          "EMAIL": "api@zenkraft.com"
+        }
+      },
+      "fedex": {
+        "ACCOUNT_ID": "982314638",
+        "CARRIER_ID": "fedex",
+        "SERVICE_TYPE": "fedex_ground",
+        "PACKAGING": "your_packaging",
+        "CURRENCY_CODE": "USD",
+        "DIM_UNITS": "IN",
+        "WEIGHT_UNITS": "LB",
+        "ADDRESS": {
+          "STREET": "10062 Treena Street",
+          "CITY": "San Diego",
+          "STATECODE": "CA",
+          "POSTALCODE": "92131",
+          "COUNTRYCODE": "US",
+          "COMPANY": "Zenkraft Default",
+          "NAME": "Zenkraft Default",
+          "PHONE": "1231231233",
+          "EMAIL": "api@zenkraft.com"
+        }
+      }
+    },
+    "SHIP": {
+      "US": {
+        "ACCOUNT_ID": "70098843",
+        "CARRIER_ID": "ups",
+        "SERVICE_TYPE": "ups_ground",
+        "PACKAGING": "your_packaging",
+        "CURRENCY_CODE": "USD",
+        "DIM_UNITS": "IN",
+        "WEIGHT_UNITS": "LB",
+        "FILETYPE": "PDF",
+        "ADDRESS": {
+          "STREET": "10062 Treena Street",
+          "CITY": "San Diego",
+          "STATECODE": "CA",
+          "POSTALCODE": "92131",
+          "COUNTRYCODE": "US",
+          "COMPANY": "Zenkraft Default",
+          "NAME": "Zenkraft Default",
+          "PHONE": "1231231233",
+          "EMAIL": "api@zenkraft.com"
+        }
+      }
+    },
+    "RETURN": {
+      "US": {
+        "ACCOUNT_ID": "70098843",
+        "CARRIER_ID": "ups",
+        "SERVICE_TYPE": "ups_ground",
+        "PACKAGING": "your_packaging",
+        "CURRENCY_CODE": "US",
+        "DIM_UNITS": "IN",
+        "WEIGHT_UNITS": "LB",
+        "FILETYPE": "PDF",
+        "ADDRESS": {
+          "STREET": "10062 Treena Street",
+          "CITY": "San Diego",
+          "STATECODE": "CA",
+          "POSTALCODE": "92131",
+          "COUNTRYCODE": "US",
+          "COMPANY": "Zenkraft Default",
+          "NAME": "Zenkraft Default",
+          "PHONE": "1231231233",
+          "EMAIL": "api@zenkraft.com"
+        }
+      }
+    }
+  }</preference>
+            <preference preference-id="zenkraftCarrier">ups</preference>
+            <preference preference-id="zenkraftDebugLog">true</preference>
+            <preference preference-id="zenkraftDeliveryInstructionsConfig">[
+    {
+        "id": "leave_with_a_neighbour",
+        "value": "Leave with a neighbour",
+        "shippingMethods": [
+            "001", "003", "EUR001", "EUR003" 
+        ],
+        "fields": [
+            {
+                "nodeType": "input",
+                "attributes": [
+                    {
+                        "id": "type",
+                        "value": "text"
+                    },
+                    {
+                        "id": "placeholder",
+                        "value": "Neighbour name:"
+                    },
+                    {
+                        "id": "class",
+                        "value": "form-control mt-1"
+                    }
+                ]
+            },
+            {
+                "nodeType": "input",
+                "attributes": [
+                    {
+                        "id": "type",
+                        "value": "text"
+                    },
+                    {
+                        "id": "placeholder",
+                        "value": "Neighbour phone:"
+                    },
+                    {
+                        "id": "class",
+                        "value": "form-control mt-1"
+                    }
+                ]
+            },
+            {
+                "nodeType": "input",
+                "attributes": [
+                    {
+                        "id": "type",
+                        "value": "textarea"
+                    },
+                    {
+                        "id": "placeholder",
+                        "value": "Additional info..."
+                    },
+                    {
+                        "id": "class",
+                        "value": "form-control mt-1"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "leave_at_front_porch",
+        "value": "Leave at front porch",
+        "shippingMethods": [
+            "001", "003", "EUR001", "EUR003" 
+        ]
+    },
+    {
+        "id": "Leave_at_reception",
+        "value": "Leave at reception",
+        "shippingMethods": [
+            "001", "003", "EUR001", "EUR003" 
+        ]
+    }
+]</preference>
+            <preference preference-id="zenkraftDimensionUnits">IN</preference>
+            <preference preference-id="zenkraftEDDCutoffTime">2021-08-04T18:30:00.000+0000</preference>
+            <preference preference-id="zenkraftEnableShipNotifications">true</preference>
+            <preference preference-id="zenkraftMasterAPIKey">BvMFfR7F4BWdWSpuLbfhiBsIIQr7cM0X2IDlDvJWBwAFcGgyh0</preference>
+            <preference preference-id="zenkraftProdMode">false</preference>
+            <preference preference-id="zenkraftRecipientCity">Las Vegas</preference>
+            <preference preference-id="zenkraftRecipientCompany">ChangeCX</preference>
+            <preference preference-id="zenkraftRecipientCountryCode">US</preference>
+            <preference preference-id="zenkraftRecipientEmail">manish.kataria@changecx.com</preference>
+            <preference preference-id="zenkraftRecipientName">Manish</preference>
+            <preference preference-id="zenkraftRecipientPhone">0987 654 3210</preference>
+            <preference preference-id="zenkraftRecipientPostalCode">89107</preference>
+            <preference preference-id="zenkraftRecipientStateCode">NV</preference>
+            <preference preference-id="zenkraftRecipientStreet">329 S Mallard St</preference>
+            <preference preference-id="zenkraftReturnsCarrier">ups</preference>
+            <preference preference-id="zenkraftReturnsShippingAccount">70098843</preference>
+            <preference preference-id="zenkraftSenderCity">Las Vegas</preference>
+            <preference preference-id="zenkraftSenderCompany">ChangeCX</preference>
+            <preference preference-id="zenkraftSenderCountryCode">US</preference>
+            <preference preference-id="zenkraftSenderEmail">manish.kataria@changecx.com</preference>
+            <preference preference-id="zenkraftSenderName">Manish</preference>
+            <preference preference-id="zenkraftSenderPhone">89107</preference>
+            <preference preference-id="zenkraftSenderPostalCode">89107</preference>
+            <preference preference-id="zenkraftSenderStateCode">NV</preference>
+            <preference preference-id="zenkraftSenderStreet">329 S Mallard St, Las Vegas, NV 89107</preference>
+            <preference preference-id="zenkraftShippingAccount">70098843</preference>
+            <preference preference-id="zenkraftShippingService">ups_ground</preference>
+            <preference preference-id="zenkraftWeightUnits">LB</preference>
+        </development>
+        <staging/>
+        <production/>
+    </custom-preferences>
+</preferences>
+

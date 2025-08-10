@@ -1,0 +1,41 @@
+<isloop items="${returns}" var="returnObject" status="returnloopstatus">
+    <isif condition="${!empty(returnObject.orderNumber)}">
+        <div class="card">
+            <isif condition="${pdict.accountlanding}">
+                <div class="card-header clearfix">
+                    <h2 class="pull-left">${Resource.msg('account.landing.header','returns',null)}</h2>
+                    <a href="${URLUtils.url('Zenkraft-ReturnHistory')}" class="pull-right"  aria-label="${Resource.msg('label.returnhistory.viewreturnhistory','returns',null)}">${Resource.msg('link.view','account',null)}</a>
+                </div>
+            <iselse/>
+                <div class="card-header clearfix">
+                    <h3 class="pull-left">${Resource.msg('label.returnhistory.orderno','returns',null)} ${returnObject.orderNumber}</h3>
+                </div>
+            </isif>
+            <div class="card-body card-info-group">
+                <div class="row">
+                    <isif condition="${pdict.accountlanding}">
+                        <isset name="returnLineItems" value="${[returnObject.returnLineItems[0]]}" scope="page" />
+                        <div class="col-12">
+                            ${Resource.msg('account.landing.mostrecentorder','returns',null)}
+                        </div>
+                    <iselse/>
+                        <isset name="returnLineItems" value="${returnObject.returnLineItems}" scope="page" />
+                    </isif>
+                    <isloop items="${returnLineItems}" var="returnLineItem" status="returnlineitemloopstatus">
+                        <isinclude template="account/return/returnLineItem"/>
+                    </isloop>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 dashboard-order-card-footer-columns card-info-group text-left">
+                        <p class="d-inline-block">${Resource.msg('label.orderhistory.totalitems','account',null)}</p>
+                        <p class="dashboard-order-card-footer-value d-inline-block ">
+                            <isprint value="${returnObject.totalItems}" formatter="#"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </isif>
+</isloop>

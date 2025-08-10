@@ -1,0 +1,52 @@
+#inStoreInventoryModal{
+    padding-right:0!important;
+    .in-store-inventory-dialog{
+        max-width: 700px;
+        .modal-header{
+            padding-bottom: 0;
+        }
+        .modal-body{
+            @include media-breakpoint-down(sm) {
+                padding: 1rem;
+            }
+        }
+        .results-card{
+            .results{
+                &.striped{
+                    .card-body{ padding:10px 5px;
+                        .store-details{ 
+                            margin-left:1em; 
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+#storeLanding{
+    .search-form{
+        margin-bottom: 1rem;
+        #store-postal-code{
+            border:0;
+            border-bottom:1px solid $grey2;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+        }
+        .card-body {
+            padding:0;
+        }
+    }
+
+    .results-card{
+        .card-body{
+            padding-left:0;
+            .form-check{
+                padding-left: 2rem;;
+            }
+        }
+    }
+}

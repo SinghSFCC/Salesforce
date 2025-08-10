@@ -1,0 +1,40 @@
+<div class="col-lg-7 product-card-footer">
+    <isif condition="${!lineItem.isBonusProductLineItem}">
+        <div class="row">
+            <iscomment>Item Price</iscomment>
+            <div class="col-4 line-item-price-${lineItem.UUID}">
+                <p class="line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>
+                <isset name="price" value="${lineItem.price}" scope="page"/>
+                <isinclude template="/product/components/pricing/main" />
+            </div>
+
+            <iscomment>Quantity</iscomment>
+            <div class="col-4 col-lg-3 line-item-quantity">
+                <p class="line-item-price-info">
+                    ${Resource.msg('field.selectquantity','cart',null)}
+                </p>
+                <div class="item-total-${lineItem.UUID} quantity">
+                    <strong><isprint value="${lineItem.quantity}" formatter="##" /></strong>
+                </div>
+            </div>
+
+            <iscomment>Line Item Total Price</iscomment>
+            <div class="col-4 line-item-total-price">
+                <p class="line-item-price-info">
+                    ${Resource.msg('label.total.price','cart',null)}
+                </p>
+                <div class="item-total-${lineItem.UUID} price">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
+            </div>
+
+            <iscomment>Extra Slot for spacing</iscomment>
+            <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+        </div>
+
+        <iscomment>Promotions</iscomment>
+        <div class="line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+</div>

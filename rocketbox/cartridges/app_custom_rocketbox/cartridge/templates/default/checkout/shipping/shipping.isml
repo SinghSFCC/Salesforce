@@ -1,0 +1,44 @@
+<div class="card ghost shipping">
+    <div class="card-header bg-light">
+        <h3 class="card-header-custom mb-0">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h3>
+    </div>
+</div>
+
+<div class="card shipping-section bg-white">
+    <div class="shipping-section">
+        <div class="single-shipping">
+            <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+            <isset name="shipmentLoopState" value="${null}" scope="page" />
+            <isset name="lineItem" value="${null}" scope="page" />
+            <div class="card border-0" data-shipment-uuid="${shippingModel.UUID}">
+                <div class="card-header border-0 bg-light">
+                    <h3 class="card-header-custom mb-0">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h3>
+                    <div class="shipping-error"></div>
+                </div>
+
+                <isinclude template="checkout/shipping/multiShipCheckbox" />
+
+                <isinclude template="checkout/shipping/shipmentCard" />
+                </div>
+
+            <div class="multi-shipping">
+                <isloop items="${pdict.order.shipping}" var="shippingModel" status="shipmentLoopState">
+                    <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
+                        <div class="card" data-shipment-uuid="${shippingModel.UUID}">
+                            <div class="card-header bg-light">
+                            <div class="card-header">
+                                <isinclude template="checkout/productCard/productShippingCard" />
+                            </div>
+                            </div>
+
+                            <isinclude template="checkout/shipping/shipmentCard" />
+                        </div>
+                    </isloop>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</div>
+<isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey'))}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=${dw.system.Site.getCurrent().getCustomPreferenceValue('googleMapsAPIKey')}&libraries=places"></script>
+</isif>

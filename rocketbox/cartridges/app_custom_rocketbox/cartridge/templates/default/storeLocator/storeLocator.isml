@@ -1,0 +1,16 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        if (pdict.stores.googleMapsApi) {
+            assets.addJs(pdict.stores.googleMapsApi);
+        }
+        assets.addJs('/js/storeLocator.js');
+        assets.addCss('/css/storeLocator.css');
+    </isscript>
+   
+
+    <div class="hero store-locator-hero">
+        <h1 class="page-title">${Resource.msg('title.hero.text','storeLocator',null)}</h1>
+    </div>
+    <isinclude template="storeLocator/storeLocatorNoDecorator" />
+</isdecorate>

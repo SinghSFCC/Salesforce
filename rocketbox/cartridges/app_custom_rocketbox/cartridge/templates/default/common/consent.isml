@@ -1,0 +1,9 @@
+<span class="api-${pdict.consentApi} ${pdict.tracking_consent == null ? '' : 'consented' } tracking-consent"
+    data-caOnline="${pdict.caOnline}"
+    data-url="${URLUtils.url('ConsentTracking-GetContent', 'cid', 'tracking_hint')}"
+    data-reject="${URLUtils.url('ConsentTracking-SetSession', 'consent', 'false')}"
+    data-accept="${URLUtils.url('ConsentTracking-SetSession', 'consent', 'true')}"
+    data-acceptText=""
+    data-rejectText="${Resource.msg('button.consentTracking.no', 'common', null)}"
+    data-heading=""
+    ></span>

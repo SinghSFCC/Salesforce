@@ -1,0 +1,11 @@
+@import "~base/account/addressBook";
+
+
+.remove-btn {
+    @include delete-card-button();
+
+    font-size: 1.0em;
+    width: 6rem;
+    background-color: transparent;
+    outline: none !important;
+}

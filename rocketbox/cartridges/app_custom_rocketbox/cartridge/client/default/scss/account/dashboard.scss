@@ -1,0 +1,16 @@
+@import "~base/account/dashboard";
+
+.account-sidebar{
+    ul{
+        li{
+            line-height:2rem;
+            font-size: 1.0rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            border-bottom: 1px solid rgba(29,31,34,.125);
+            a{color:#ff0;}
+        }
+    }
+
+}
+

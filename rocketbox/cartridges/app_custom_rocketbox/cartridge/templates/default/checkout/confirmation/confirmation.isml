@@ -1,0 +1,69 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addJs('/js/checkoutRegistration.js');
+    </isscript>
+    <script>
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+		  "event": "checkout",
+		  "ecommerce": {
+		    "checkout": {
+		      "actionField": {
+		        "step": 5
+		      },
+		      "products": <isprint value="${JSON.stringify(pdict.gtm.trxProducts)}" encoding="off"/>
+		    }
+		  }
+		});
+
+		dataLayer.push({
+		  "event":"EEtransaction",
+	    "ecommerce": {
+	      "purchase": {
+	        "actionField": {
+	          "id": '${pdict.gtm.trxNumber}',
+	          "revenue": ${pdict.gtm.trxTotal},
+	          "shipping" : ${pdict.gtm.trxShipping},
+            "tax" : ${pdict.gtm.trxTax}
+            	        },
+	        "products": <isprint value="${JSON.stringify(pdict.gtm.trxProducts)}" encoding="off" />
+	      }
+	    }
+	  });
+
+	</script>
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <iscomment> <div class="hero slant-down hero-confirmation">
+        <h1 class="page-title">${Resource.msg('title.thank.you.page','confirmation',null)}</h1>
+    </div> </iscomment>
+    <div class="container receipt <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <div class="row pt-4">
+            <div class="${pdict.returningCustomer ? '1 col-sm-12 col-md-9' : '2 col-sm-6'}">
+                <h2 class="order-thank-you-msg">${Resource.msg('msg.placed.order.thank.you','confirmation',null)}</h2>
+                <isif condition="${pdict.order.orderEmail}">
+                    <p class="order-thank-you-email-msg"><isprint value="${Resource.msgf('info.receive.email.confirmation', 'confirmation', null, pdict.order.orderEmail)}" encoding="htmlcontent" /></p>
+                </isif>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <isif condition="${pdict.returningCustomer === false && pdict.order.orderEmail}">
+                <div class="3 col-sm-12 col-md-6">
+                    <isinclude template="checkout/confirmation/confirmationCreateAccount" />
+                </div>
+            </isif>
+            <div class="${pdict.returningCustomer ? '4 col-sm-12 col-md-12 ' : '5 col-sm-12 col-md-6' }">
+                <isinclude template="checkout/confirmation/confirmationDetails" />
+                <div class="mb-3">
+                    <a href="${URLUtils.url('Home-Show')}" class="btn btn-primary btn-block order-confirmation-continue-shopping" role="button" aria-pressed="true">
+                        ${Resource.msg('button.continue.shopping','confirmation',null)}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

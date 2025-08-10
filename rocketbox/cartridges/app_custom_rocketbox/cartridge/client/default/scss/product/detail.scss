@@ -1,0 +1,290 @@
+@import "~base/product/detail";
+@import "../utilities/swatch";
+
+.paypal_pdp_button {
+    padding: 0 1em !important;
+}
+#pdp-paypal-button-container {
+    margin-bottom: 0 !important;
+}
+
+.yotpo {
+    a:hover{color: var(--skin-primary-color-1) !important;}
+    .text-m {
+        padding-left: 1rem !important;
+        color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-default-button {
+        background-color: var(--skin-primary-color-1) !important;
+    }
+    .write-review {
+        .yotpo-header {
+            .yotpo-header-title {
+                font-size: 1.5rem !important;
+            }
+        }
+        .connect-wrapper {
+            padding-left: 0 !important;
+        }
+        .socialize-wrapper{
+            position: unset !important;
+            text-align: center;
+            width:auto !important;
+            .socialize{
+                float: none !important;
+                display:block !important;
+                .y-label{
+                    font-size:1.0rem !important;
+                    font-weight: bold;
+                    padding-left: 7px;}
+            }
+            .yotpo-or{margin-top: 10px !important;
+                font-size: 1.0rem;
+                display:block !important;
+                width: auto !important;
+            }
+        }
+    }
+    .primary-color-btn {
+        background-color: var(--skin-primary-color-1) !important;
+        
+    }
+    .submit-button input[type="button"].primary-color-btn:hover{
+        background: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-review-date{
+        font-weight:bold !important;
+    }
+    .y-input {
+        height: 2.5rem !important;
+    }
+
+    .yotpo-small-box {
+        border-bottom: none !important;
+    }
+    a.social-link.popup-link {
+        color: var(--skin-primary-color-1) !important;
+    }
+
+    .yotpo-nav-wrapper {
+        color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo .yotpo-nav ul .yotpo-nav-tab.yotpo-active span {
+        color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-logo-link-new{
+        display:none;
+    }
+    .yotpo-icon-profile{
+        background-color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-icon-circle-checkmark{
+        color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-nav-tab.yotpo-active span {
+        color: #000 !important;
+    }
+    .yotpo-user-name{
+        color: #000 !important;
+    }
+    .yotpo-nav-wrapper{
+        border-color: var(--skin-primary-color-1) !important;
+    }
+    .transparent-color-btn span.yotpo-icon{
+        color: var(--skin-primary-color-1) !important;
+    }
+    .yotpo-thank-you{
+        .yotpo-thankyou-header{
+            span{
+                color: var(--skin-primary-color-1) !important;
+            }
+        }
+    }
+}
+
+.size-chart {
+    .size-chart-collapsible {
+        h2 {
+            text-align: center;
+        }
+        .nav-tabs {
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+        .table td,
+        .table th {
+            border-top: none;
+        }
+        .table {
+            border-collapse: separate;
+        }
+        .nofit h2 {
+            text-align: left;
+        }
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+        &.active {
+            max-height: 100%;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}
+
+
+#zk_location{
+    background-position: 7px center;
+    padding-left: 30px;
+}
+
+.product-detail {
+    .attributes {
+
+        .attribute, .availability{
+            .non-input-label, label{
+                font-weight: bold;
+            }
+        }
+    
+        .availability.row > div{
+            &.col-3{
+                max-width: 30%;
+            }
+    
+            &.col-9{
+                max-width: 70%;
+            }
+        }
+    
+        .btn-get-in-store-inventory{
+            color: var(--skin-primary-color-invert-1);
+            background-color: var(--skin-primary-color-1);
+            border-color: var(--skin-primary-color-1);
+        }
+        .swatch-circle {
+            // $white will be replaced by color image background via Javascript
+            @include swatch-rectangle(2.5em, 2.5em, $white);
+        }
+    
+        .select-size{
+            border: 0;
+            border-bottom: 1px solid #ced4da;
+        }
+
+        .select-width{
+            border: 0;
+            border-bottom: 1px solid #ced4da
+        }
+
+        .estimated-delivery-container{
+            .stage1 p{
+                font-weight: bold;
+            }
+        }
+    }
+
+    .product-number-rating .ratings {
+    
+        @include media-breakpoint-up(sm) {
+            margin-top: 0;
+        }
+    }
+}
+
+.quantity-select{
+    position: absolute;
+    left: -99999px;
+}
+
+.placeholder-qty-selector{
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    background-color: #f1f2f3;
+
+    button{
+        -webkit-text-stroke: 2px #f1f2f3;
+    }
+
+    .selected-qty{
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/*CSS for pdp product images Slider*/
+.pdp-image-container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+
+    img {
+        max-width: 100%;
+    }
+
+.banner-slider{
+    display: flex;
+    justify-content: space-between;
+
+    .slider{
+        .slick-list.draggable {  height: auto !important;}
+        &.slider-for {
+            width: 84%;
+            @media screen and (max-width : 767px){
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            .slider-banner-image {
+                height: auto;
+                width: 100%;
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &.slider-nav {
+            width: 15%;
+            height: auto;
+            overflow: hidden;
+            padding: 0;
+
+            @media screen and (max-width : 767px){
+                display: none;
+            }
+
+            .thumbnail-image {
+                width: 100%;
+                .thumbImg{
+                    margin: 0 auto;
+                    border: 1px solid #EBEBEB;
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .slick-slide{
+                opacity: 0.4;
+
+                &.slick-current{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+}
+
+.display-none {
+    display: none;
+}

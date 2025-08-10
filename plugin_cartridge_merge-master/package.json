@@ -1,0 +1,53 @@
+{
+  "name": "plugin_cartridge_merge",
+  "version": "6.0.0",
+  "description": "New overlay cartridge",
+  "main": "index.js",
+  "scripts": {
+    "cover": "sgmf-scripts --cover",
+    "test": "sgmf-scripts --test test/unit/**/*.js",
+    "test:integration": "sgmf-scripts --integration 'test/integration/**/*.js'",
+    "lint": "sgmf-scripts --lint js && sgmf-scripts --lint css",
+    "upload": "sgmf-scripts --upload -- ",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge plugin_cartridge_merge",
+    "compile:js": "sgmf-scripts --compile js",
+    "compile:scss": "node buildscss.js && sgmf-scripts --compile css",
+    "build": "npm run compile:js && npm run compile:scss",
+    "watch": "sgmf-scripts --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalesforceCommerceCloud/plugin_cartridge_merge.git"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.16.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^2.1.6",
+    "proxyquire": "1.7.4",
+    "sass-loader": "^7.0.3",
+    "sgmf-scripts": "^2.3.0",
+    "sinon": "^1.17.7",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.5.0"
+  },
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/",
+    "applepay": "../plugin-applepay-master/cartridges/plugin_applepay/",
+    "datadownload": "../plugin_datadownload/cartridges/plugin_datadownload",
+    "giftregistry": "../plugin_giftregistry/cartridges/plugin_giftregistry",
+    "instorepickup": "../plugin_instorepickup/cartridges/plugin_instorepickup/",
+    "productcompare": "../plugin_productcompares/cartridges/plugin_productcompare",
+    "sitemap": "../plugin_sitemap/cartridges/plugin_sitemap",
+    "wishlist": "../plugin_wishlist/cartridges/plugin_wishlists",
+    "commercepayments": "../plugin_commercepayments/cartridges/plugin_commercepayments",
+    "commercepayments": "../plugin_commercepayments/cartridges/plugin_commercepayments"
+
+  }
+}

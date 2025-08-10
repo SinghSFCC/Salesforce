@@ -1,0 +1,94 @@
+
+@import "~base/components/toastMessage";
+@import "~base/components/footer";
+@import "collapsibleItem";
+
+footer {
+    background-color: $black;
+    border-top:4px solid $primary;
+    color:$white;
+    padding:0;
+
+    .footer-container{
+        @include media-breakpoint-down(sm) {
+            background-color: $rb-grey1;
+        }
+    }
+
+    a{
+        color:$white;
+        @include media-breakpoint-down(sm) {
+            color:$black;
+        }
+        &:hover{
+            text-decoration: underline;
+            color:$white;
+            @include media-breakpoint-down(sm) {
+                color:$black;
+            }
+        }
+    }
+
+    h2 {
+        line-height: 2.5em;
+        color:$white;
+        @include media-breakpoint-down(sm) {
+            color:$black;
+        }
+    }
+
+    .social-links {
+        width:100%;
+        li {
+            @include media-breakpoint-down(md) {
+                width:20%;
+                margin:0;
+            }
+        }
+
+        a {
+            font-size: 1em;
+            width:2rem;
+            height:2rem;
+            border-radius:50%;
+            background-color: $white;
+            line-height: 2rem;
+            margin:auto;
+
+            &.facebook{
+                color:$fb-blue;
+            }
+            &.pinterest{
+                color:$pinterest-red;
+            }
+            &.gplus{
+                color:$goole-red;
+            }
+            &.twitter{
+                color:$twitter-blue;
+            }
+            &.youtube{
+                color:$youtube-red;
+            }
+        }
+    }
+
+    .back-to-top {
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        z-index: 9;
+    }
+}
+
+.home-email-signup{
+    .subscribe-email{
+        line-height:2rem;
+        z-index: 1;
+    }
+}
+
+.footer-item{
+    border-bottom: 0;
+    .title{ text-transform: uppercase;}
+}

@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="AdyenCheckoutPaymentMethods">
+        <url>https://checkout-test.adyen.com/v51/paymentMethods</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenCheckoutPaymentMethodsLive">
+        <url>https://[YOUR_LIVE_PREFIX]-checkout-live.adyenpayments.com/v51/paymentMethods</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenConnectedTerminals">
+        <url>https://terminal-api-test.adyen.com/connectedTerminals</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenConnectedTerminalsLive">
+        <url>https://[YOUR_LIVE_PREFIX]-terminal-api-live.adyenpayments.com/connectedTerminals</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenGiving">
+        <url>https://pal-test.adyen.com/pal/servlet/Payment/v40/donate</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenGivingLive">
+        <url>https://[YOUR_LIVE_PREFIX]-pal-live.adyenpayments.com/pal/servlet/Payment/v40/donate</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenOriginKeys">
+        <url>https://checkout-test.adyen.com/v1/originKeys</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenOriginKeysLive">
+        <url>https://[YOUR_LIVE_PREFIX]-checkout-live.adyenpayments.com/v1/originKeys</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPayment">
+        <url>https://checkout-test.adyen.com/checkout/v51/payments</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPaymentDetails">
+        <url>https://checkout-test.adyen.com/checkout/v51/payments/details</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPaymentDetailsLive">
+        <url>https://[YOUR_LIVE_PREFIX]-checkout-live.adyenpayments.com/checkout/v51/payments/details</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPaymentLive">
+        <url>https://[YOUR_LIVE_PREFIX]-checkout-live.adyenpayments.com/checkout/v51/payments</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPosPayment">
+        <url>https://terminal-api-test.adyen.com/sync</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenPosPaymentLive">
+        <url>https://[YOUR_LIVE_PREFIX]-terminal-api-live.adyenpayments.com/sync</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenRecurring">
+        <url>https://pal-test.adyen.com/pal/servlet/Recurring/v25/listRecurringDetails</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="AdyenRecurringDisable">
+        <url>https://pal-test.adyen.com/pal/servlet/Recurring/v25/disable</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Credentials">
+        <url>https://api.sandbox.paypal.com/</url>
+        <user-id>AYiZDbHxjoIIzWOwC5XiwPeaV7eHm4dENkxjE57_rsP2EUkGNy6fZ3DWr746rWr3iXlyAUm22Lgp5cfe</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="credentials.avatax.rest">
+        <url>https://sandbox-rest.avatax.com/</url>
+        <user-id>manish.kataria@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="int_yotpo_sfra.https.post.auth.api.cred">
+        <url>https://api.yotpo.com/oauth/token</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="int_yotpo_sfra.https.post.export.purchase.api.cred">
+        <url>https://api.yotpo.com/apps/:app_key/purchases/mass_create.json</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="int_yotpo_sfra.https.post.loyalty.api.cred">
+        <url>https://loyalty.yotpo.com/commerce-cloud/</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="logentries.avatax.rest">
+        <url>https://webhook.logentries.com/noformat/logs/</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="zenkraft-dopu-creds">
+        <url>https://api.zenkraft.com/dopu</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="zenkraft-label-creds">
+        <url>https://api.zenkraft.com/merge</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="zenkraft-rate-creds">
+        <url>https://api.zenkraft.com/rate</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="zenkraft-ship-creds">
+        <url>https://api.zenkraft.com/ship</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="zenkraft-track-creds">
+        <url>https://api.zenkraft.com/track</url>
+        <user-id>david.biechler@changecx.com</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-profile service-profile-id="Adyen">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="AdyenPOS">
+        <timeout-millis>100000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="PayPal_Profile">
+        <timeout-millis>60000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="int_yotpo_sfra.rest.api.profile">
+        <timeout-millis>120000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="logentries.avatax.profile">
+        <timeout-millis>20000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="profile.avatax.rest">
+        <timeout-millis>3000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="service-zenkraft">
+        <timeout-millis>20000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="AdyenCheckoutPaymentMethods">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenCheckoutPaymentMethods</credential-id>
+    </service>
+
+    <service service-id="AdyenConnectedTerminals">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenConnectedTerminals</credential-id>
+    </service>
+
+    <service service-id="AdyenGiving">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenGiving</credential-id>
+    </service>
+
+    <service service-id="AdyenOriginKeys">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenOriginKeys</credential-id>
+    </service>
+
+    <service service-id="AdyenPayment">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenPayment</credential-id>
+    </service>
+
+    <service service-id="AdyenPaymentDetails">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenPaymentDetails</credential-id>
+    </service>
+
+    <service service-id="AdyenPosPayment">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>AdyenPOS</profile-id>
+        <credential-id>AdyenPosPayment</credential-id>
+    </service>
+
+    <service service-id="AdyenRecurring">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Adyen</profile-id>
+        <credential-id>AdyenRecurring</credential-id>
+    </service>
+
+    <service service-id="AdyenRecurringDisable">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>adyen</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id/>
+        <credential-id>AdyenRecurringDisable</credential-id>
+    </service>
+
+    <service service-id="avatax.rest.all">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>AvaLara</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>profile.avatax.rest</profile-id>
+        <credential-id>credentials.avatax.rest</credential-id>
+    </service>
+
+    <service service-id="http.zenkraft.dopu">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>zenkraft-dopu</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>service-zenkraft</profile-id>
+        <credential-id>zenkraft-dopu-creds</credential-id>
+    </service>
+
+    <service service-id="http.zenkraft.label">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>zenkraft-label</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>service-zenkraft</profile-id>
+        <credential-id>zenkraft-label-creds</credential-id>
+    </service>
+
+    <service service-id="http.zenkraft.rate">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>zenkraft-rate</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>service-zenkraft</profile-id>
+        <credential-id>zenkraft-rate-creds</credential-id>
+    </service>
+
+    <service service-id="http.zenkraft.ship">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>zenkraft-ship</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>service-zenkraft</profile-id>
+        <credential-id>zenkraft-ship-creds</credential-id>
+    </service>
+
+    <service service-id="http.zenkraft.track">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>zenkraft-track</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>service-zenkraft</profile-id>
+        <credential-id>zenkraft-track-creds</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPalRest</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Credentials</credential-id>
+    </service>
+
+    <service service-id="int_yotpo_sfra.https.post.auth.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>YotpoRESTAPIEndpoints</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>int_yotpo_sfra.rest.api.profile</profile-id>
+        <credential-id>int_yotpo_sfra.https.post.auth.api.cred</credential-id>
+    </service>
+
+    <service service-id="int_yotpo_sfra.https.post.export.purchase.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>YotpoRESTAPIEndpoints</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>int_yotpo_sfra.rest.api.profile</profile-id>
+        <credential-id>int_yotpo_sfra.https.post.export.purchase.api.cred</credential-id>
+    </service>
+
+    <service service-id="int_yotpo_sfra.https.post.loyalty.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>YotpoRESTAPIEndpoints</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>int_yotpo_sfra.rest.api.profile</profile-id>
+        <credential-id>int_yotpo_sfra.https.post.loyalty.api.cred</credential-id>
+    </service>
+
+    <service service-id="logentries.avatax.svc">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>AvaTax</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>logentries.avatax.profile</profile-id>
+        <credential-id>logentries.avatax.rest</credential-id>
+    </service>
+
+</services>

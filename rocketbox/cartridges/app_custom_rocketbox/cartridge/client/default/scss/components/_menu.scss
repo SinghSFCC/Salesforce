@@ -1,0 +1,234 @@
+#sg-navbar-collapse{
+    &.in{
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            z-index: 1;
+            .navbar{
+                transform: translateX(0);
+                box-shadow: 0 0 1rem $grey2;
+                .nav-item, .dropdown-item{
+                    &.dropdown{
+                        &.show{
+                            position: absolute;
+                            width: 100%;
+                            height: 100vh;
+                            left: 0;
+                            top: 0;
+                            z-index: 2;
+                            background-color: $white;
+                            > .dropdown-toggle{
+                                display: none;
+                            }
+                            > .dropdown-menu{
+                                border: none;
+                                display: block;
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                margin: 0;
+                                .dropdown-item{
+                                    padding: .5rem 1.0rem;
+                                    &:active, &.active{
+                                        background-color: $rb-grey1;
+                                    }
+                                    > a{
+                                        display: block;
+                                    }
+                                }
+                                .nav-menu{
+                                    padding: 0 1rem;
+                                    .close-menu{
+                                        font-size: 0.875rem;
+                                    }
+                                }
+                                .top-category{
+                                    background-color: $rb-grey1;
+                                    > a{
+                                        background-color: transparent;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }                        
+                    }
+                }
+            }
+        }
+    }
+    &.main-menu{
+        background-color: transparent;
+        .navbar-toggler{
+            transform: translate(-1.875rem, .8rem);
+            font-size: 2rem;
+            color: $grey2;
+        }
+    }
+    .navbar{
+        top: 1rem;
+        justify-content: center;
+        @include media-breakpoint-up(lg) {
+            position: static;
+            margin-top: 1.125rem;
+        }
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            margin-top: 0;
+            transform: translateX(-100%);
+            width: 18.75rem;
+            background-color: $white;  
+            height: 100vh;
+            z-index: 2;
+            display: block;
+            overflow: auto;   
+            transition: transform 0.2s;  
+            > .close-menu{
+                .back{
+                    display: none;
+                }
+            }      
+            .close-menu{
+                margin-bottom: 1rem;                
+                button{
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                }
+            }
+            .menu-group .navbar-nav > li{
+                .top-category ~ li a.dropdown-link:after, a.nav-link.dropdown-toggle::after{
+                    content: "";
+                    display: block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    transform: rotate(45deg) translateY(50%);
+                    border-top: 0.125rem solid $black;
+                    border-right: 0.125rem solid $black;
+                    position: absolute;
+                    right: 0;
+                    top: 0.6rem;
+                    border-left: none;
+                }
+                .top-category ~ li a.dropdown-link{
+                    position: relative;
+                }
+                .top-category ~ li a.dropdown-link:after{
+                    top: 0.1rem;
+                }
+                &.nav-item, .dropdown-item{
+                    position: relative;
+                }
+                &.nav-item:after, .dropdown-item:not(.top-category):after{
+                    content: "";
+                    display: block;
+                    height: 0;
+                    width: 100%;
+                    left: 0;
+                    top: 100%;
+                    border-top: 0.063rem solid $rb-grey1;
+                    position: absolute;
+                }
+                &.nav-item:after{
+                    width: calc(100% + 2rem);
+                    left: -1rem;
+                }
+                .top-category ~ li .top-category a.dropdown-link:after{
+                    display: none;
+                }
+            }
+        }
+        .menu-group{
+            .navbar-nav{
+                @include media-breakpoint-up(lg) {
+                    >li:nth-child(5), >li:nth-child(5) ~ li{
+                        display: none;
+                    }
+                }
+                >li a{
+                    font-size: .875rem;
+                    &:after{
+                        display: none;
+                    }
+                }
+                >li, >li>a{               
+                    color: $black;                
+                    text-transform: uppercase;                
+                    > a{
+                        @include media-breakpoint-up(lg) {
+                            padding-left: .6rem;
+                            padding-right: .6rem;                            
+                        }
+                        @include media-breakpoint-up(xl) {
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                        }
+                    }
+                    @include media-breakpoint-up(lg) {
+                        > a{
+                            position: relative;
+                            &:after{
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                bottom: -1.0945rem;
+                                width: 100%;
+                                height: 1.0945rem;
+                                border: none;
+                            }
+                        }
+                        position: static;
+                        + ul{
+                            transform: translateX(50%);
+                            right: 50%;
+                            left: auto;
+                            top: auto;
+                            width: 100%;
+                            &.show{
+                                display: flex;
+                                flex-flow: row wrap;
+                                max-height: 65vh;
+                                overflow: auto;
+                                min-height: 50vh;
+                                border-radius: 0;
+                                > li{
+                                    width: auto;
+                                    > a{
+                                        font-weight: 700;
+                                        +ul{
+                                            li{
+                                                padding:.5rem 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .dropdown-menu{
+                                border-radius: 0;
+                                border: none;
+                                padding: 0;
+                                margin: 0;
+                                display: block;
+                                position: static;                                                         
+                            }
+                            .dropdown-item{
+                                &.active, &:active, &:hover{
+                                    background-color: transparent;
+                                    color: $black;
+                                }
+                            }
+                        }
+                        .dropdown-menu{
+                            margin-top: 1.0945rem;
+                        }
+                    }
+                }                
+            }
+        }
+        .banner-img{
+            flex-grow: 100;
+        }  
+    }
+}

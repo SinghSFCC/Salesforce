@@ -1,0 +1,42 @@
+<div class="row ">
+
+    <div class="col-sm-12">
+        <!---Profile--->
+        <isinclude template="account/profileCard"/>
+
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <!---Password--->
+            <isinclude template="account/passwordCard"/>
+        </isif>
+
+        <!---Address Book--->
+        <isinclude template="account/addressBookCard"/>
+    </div>
+    <div class="col-sm-12">
+        <!---Order History--->
+        <isif condition="${pdict.account.orderHistory}">
+            <isset name="order" value="${pdict.account.orderHistory}" scope="page"/>
+            <div class="card order-history-table mb-0">
+                <div class="card-header  bg-light">
+                    <h2 class="pull-left">${Resource.msg('label.orderhistory', 'account', null)}</h2>
+                </div>
+            </div>
+            <isinclude template="account/order/orderHistoryCard"/>
+        </isif>
+        <!---Payment--->
+        <isinclude template="account/paymentCard"/>
+                <!---Paypal payment block--->
+        <isif condition="${pdict.paypal && (!empty(pdict.paypal.savedBA) || pdict.paypal.billingAgreementEnabled)}">
+            <isinclude template="account/paypal/paymentPaypal" />
+        </isif>
+                <!---Return History--->
+        <isif condition="${pdict.account.returns}">
+            <isset name="returns" value="${pdict.account.returns}" scope="page"/>
+            <isinclude template="account/return/returnHistoryCards"/>
+        </isif>
+                    <!---Wishlist--->
+        <iscomment> <div class="wishlist-account-card" data-error-msg="${Resource.msg('wishlist.removefromwishlist.failure.msg','wishlist',null)}">
+            <isinclude template="account/wishlist/listCards"/>
+        </div> </iscomment>
+    </div>
+</div>

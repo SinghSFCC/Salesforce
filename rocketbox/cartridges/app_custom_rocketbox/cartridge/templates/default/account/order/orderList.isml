@@ -1,0 +1,24 @@
+
+<div class="table-responsive card bg-light mb-0 sticky-top">
+    <table class="table table-hover mb-0">
+        <thead class="border-0">
+            <tr>
+                <th class="border-0 col-2" scope="col">${Resource.msg('account.label.Order', 'account', null)}</th>
+                <th class="border-0 col-2" scope="col">${Resource.msg('account.label.Payment-Date', 'account', null)}</th>
+                <th class="border-0 col-2" scope="col">${Resource.msg('account.label.Payment-Method', 'account', null)}</th>
+                <th class="border-0 col-2" scope="col">${Resource.msg('account.label.status', 'account', null)}</th>
+                <iscomment> <th class="border-0 col-2" scope="col">${Resource.msg('account.label.quainty', 'account', null)}</th> </iscomment>
+                <th colspan="2" class="border-0 col-2" scope="col">${Resource.msg('account.label.amount', 'account', null)}</th>
+                <th class="border-0 col-2" scope="col"></th>
+
+            </tr>
+        </thead>
+                </table>
+</div>
+<isloop items="${pdict.orders}" var="order">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <isinclude template="account/order/orderHistoryCard"/>
+        </div>
+    </div>
+</isloop>

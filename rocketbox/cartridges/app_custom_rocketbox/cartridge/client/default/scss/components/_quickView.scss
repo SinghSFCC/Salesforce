@@ -1,0 +1,175 @@
+@import "~base/components/quickView";
+
+#quickViewModal {
+    min-height: 450px;
+    
+}
+
+#quickViewModal .quick-view-dialog,
+.choose-bonus-product-dialog {
+    .modal-header {
+        background-color: $white!important;
+        border-bottom: 0;
+    }
+
+   .modal-footer {
+        padding: 0 2.5rem 2.5rem;
+
+        .global-availability {
+            margin-left: 1.11rem;
+        }
+
+        .row{
+            .non-input-label, label{
+                font-weight: bold;
+            }
+        }
+
+        .availability .row > div{
+            &.col-3{
+                max-width: 30%;
+            }
+
+            &.col-9{
+                max-width: 70%;
+            }
+        }
+    }
+
+    a.full-pdp-link {
+        padding-left: 25px;
+    }
+
+    .modal-title {
+        font-size: 1em;
+    }
+
+    .product-quickview {
+        padding: 0;
+
+        .collapsible-xl button.callout{
+            font-size: 0.75rem;
+        }
+    }
+
+    .swatch-circle {
+        // $white will be replaced by color image background via Javascript
+        @include swatch-rectangle(2.5em, 2.5em, $white);
+    }
+
+    .attributes {
+
+        > .row >div.col-8{
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .attribute{
+            .non-input-label, label{
+                font-weight: bold;
+            }
+        }
+    }
+    
+}
+
+#editProductModal {
+    .modal-body {
+        padding: 0 2rem 2.5rem 2.5rem;
+    }
+
+    .modal-footer {
+        .cart-and-ipay {
+            float: right;
+        }
+
+        .prices {
+            text-align: right;
+        }
+    }
+}
+
+/*CSS for pdp product images Slider*/
+.pdp-image-container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+
+    img {
+        max-width: 100%;
+    }
+
+.banner-slider{
+    display: flex;
+    justify-content: space-between;
+
+    .slider{
+        
+        .slick-list.draggable {  height: auto !important;}
+        &.slider-for {
+            width: 84%;
+
+            .slider-banner-image {
+                height: auto;
+                width: 100%;
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &.slider-nav {
+            width: 15%;
+            height: auto;
+            overflow: hidden;
+            padding: 0;
+
+            .thumbnail-image {
+                width: 100%;
+                .thumbImg{
+                    margin: 0 auto;
+                    border: 1px solid #EBEBEB;
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .slick-slide{
+                opacity: 0.4;
+
+                &.slick-current{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+}
+
+.quantity-select{
+    position: absolute;
+    left: -99999px;
+}
+
+.placeholder-qty-selector{
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    background-color: #f1f2f3;
+
+    button{
+        -webkit-text-stroke: 2px #f1f2f3;
+    }
+
+    .selected-qty{
+        display: inline-flex;
+        align-items: center;
+    }
+}

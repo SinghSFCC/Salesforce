@@ -1,0 +1,47 @@
+
+
+
+<div id="accordion-${nestingLevel}">
+<isloop items="${categories}" var="category" status="loopStatus">
+  <div class="">
+    <isif condition="${category.subCategories.length > 0}">
+      <div class="" id="heading-${category.id}">
+      
+        <button class="expander" role="button" data-toggle="collapse" href="${'#collapse-'+ category.id}" aria-expanded="${nestingLevel === '1' ? 'true' : 'false'}" aria-controls="collapse-${category.id}">
+          ${category.displayValue}
+        </button>
+      
+    </div>
+    <div id="collapse-${category.id}" class="collapse ${nestingLevel === '1' ? 'show' : ''}" data-parent="${'#accordion-'+ nestingLevel}" aria-labelledby="heading-${category.id}">
+      <div class="collapsing-card">
+        <button data-href="${category.url}">
+                <!--- Label --->
+                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
+                    All
+                </span>
+                <span class="sr-only selected-assistive-text">
+                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                    ${category.title}
+                </span>
+              </button>
+              <isset name="nestingLevel" value="${nestingLevel+1}" scope="page" />
+              <isset name="categories" value="${category.subCategories}" scope="page" />
+              <isinclude template="search/refinements/collapsible-categories" />
+      
+      </div>
+    </div>
+    <iselse/>
+      <button data-href="${category.url}">
+                <!--- Label --->
+                <span title="${category.title}" class="${category.selected ? 'selected' : ''}" aria-hidden="true">
+                    ${category.displayValue}
+                </span>
+                <span class="sr-only selected-assistive-text">
+                    ${category.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                    ${category.title}
+                </span>
+              </button>
+    </isif>
+  </div>
+  </isloop>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="orderdetails js-select-return-reasons" style="display:none;">
+    <div class="order-shipments">
+        <iscomment>Shipment Items</iscomment>
+        <div class="order-shipment-table">
+            <div class="line-items">
+                <isloop items="${shipment.items}" var="lineItem" status="pliloopstate">
+                    <div class="line-item js-reason-line" data-itemid="${lineItem.id}" data-orderitemid="${lineItem.orderItemID}" data-pliuuid="${lineItem.UUID}" style="display:none;">
+                        <div class="line-item-details">
+                            <iscomment>Display product line and product using module</iscomment>
+                            <isinclude template="account/orderhistory/returnReasonCard" />
+                        </div>
+                    </div>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</div>
+

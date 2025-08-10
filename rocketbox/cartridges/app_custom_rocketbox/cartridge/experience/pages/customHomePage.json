@@ -1,0 +1,15 @@
+{
+  "name": "Rocket Box",
+  "description": "Custom Rocket box Home Page",
+  "region_definitions": [
+      {
+          "id": "main",
+          "name": "Main Region",
+          "component_type_exclusions": [
+              {
+                  "type_id": "commerce_assets.campaignBanner"
+              }
+          ]
+      }
+  ]
+}

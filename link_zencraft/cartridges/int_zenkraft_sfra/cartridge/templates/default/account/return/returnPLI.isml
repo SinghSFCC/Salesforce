@@ -1,0 +1,9 @@
+<div class="col-4">
+    <img class="img-fluid" src="${pdict.returnLineItem.images.small[0].absURL}" alt="${pdict.returnLineItem.productName}" title="${pdict.returnLineItem.productName}"/>
+</div>
+<div class="col-8">
+    <isloop items="${pdict.returnLineItem.variationAttributes}" var="attribute" status="loopstatus">
+        <p class="line-item-attributes">${attribute.displayName + ': ' + attribute.displayValue}</p>
+    </isloop>
+    <p class="line-item-attributes">${Resource.msg('return.quantity','returns',null)} ${pdict.returnLineItem.quantity.toString()}</p>
+</div>

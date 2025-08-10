@@ -1,0 +1,73 @@
+<isset name="returnLineItem" value="${typeof returnLineItem === 'undefined' || empty(returnLineItem) ? pdict.lineItem : returnLineItem}" scope="page" />
+
+<div class="line-item-name col-12">
+    ${returnLineItem.product.title}
+</div>
+<div class="col-sm-2 col-4">
+    <img class="img-fluid" src="${returnLineItem.product.imageURL}" alt="${returnLineItem.product.description}" title="${returnLineItem.product.title}">
+</div>
+<div class="col-sm-3 col-6">
+    <isloop items="${returnLineItem.product.selectedVariationAttributes}" var="attribute" status="loopstatus">
+        <p class="line-item-attributes">${attribute.typeValue + ': ' + attribute.value}</p>
+    </isloop>
+    <p class="line-item-attributes">${Resource.msg('return.quantity','returns',null)} ${returnLineItem.quantity.toString()}</p>
+</div>
+<div class="col-sm-7 col-12">
+    <p class="line-item-attributes">
+        ${Resource.msg('return.requested','returns',null)} ${
+            returnLineItem.creationDate.getDay() + '/' +
+            parseInt(returnLineItem.creationDate.getMonth() + 1) + '/' +
+            returnLineItem.creationDate.getYear().toString().slice(2);
+        }
+    </p>
+    <p class="line-item-attributes">${Resource.msg('return.id','returns',null)} ${returnLineItem.id}</p>
+    <isif condition="${returnLineItem.trackingNumber && !empty(returnLineItem.trackingNumber) && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate))}">
+        <p class="line-item-attributes">${Resource.msg('return.tracking.number','returns',null)} ${returnLineItem.trackingNumber}</p>
+    </isif>
+    <div class="track-checkmarks mt-2">
+        <ul class="checkmark">
+            <iscomment>Only show for exceptions</iscomment>
+            <li class="active"><span>&nbsp;</span>
+                <isif condition="${returnLineItem.rejectedDate || !empty(returnLineItem.rejectedDate)}">
+                    <div class="title">${Resource.msg('status.rejected','returns',null)}</div>
+                </isif>
+                <isif condition="${returnLineItem.approvedDate && !empty(returnLineItem.approvedDate) && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate))}">
+                    <div class="title">${Resource.msg('status.approved','returns',null)}</div>
+                </isif>
+                <isif condition="${!returnLineItem.approvedDate || empty(returnLineItem.approvedDate) && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate))}">
+                    <div class="title">${Resource.msg('status.awaitingapproval','returns',null)}</div>
+                </isif>
+            </li>
+
+            <li class="${returnLineItem.approvedDate && !empty(returnLineItem.approvedDate) && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate)) ? 'active' : ''}">
+                <span>&nbsp;</span>
+                <div class="title">${Resource.msg('status.label','returns',null)}</div>
+            </li>
+
+            <li class="${returnLineItem.trackingStage && !empty(returnLineItem.trackingStage) && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate)) ? 'active' : ''}">
+                <span>&nbsp;</span>
+                <div class="title">${Resource.msg('status.intransit','returns',null)}</div>
+            </li>
+
+            <li class="${returnLineItem.trackingStage && returnLineItem.trackingStage && (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate)) === 'DELIVERED' ? 'active' : ''}">
+                <span>&nbsp;</span>
+                <div class="title">${Resource.msg('status.received','returns',null)}</div>
+            </li>
+        </ul>
+    </div>
+    <isif condition="${returnLineItem.labelType && returnLineItem.label &&
+        (returnLineItem.approvedDate && !empty(returnLineItem.approvedDate)) &&
+        (!returnLineItem.rejectedDate || empty(returnLineItem.rejectedDate)) &&
+        (!returnLineItem.trackingStage || empty(returnLineItem.trackingStage))
+    }">
+        <a class="btn btn-primary return-label-download mt-3"
+            download="return-label"
+            title="return-label"
+            href="data:${returnLineItem.labelType.toLowerCase() === 'pdf' ? 'application': 'image' }/${returnLineItem.labelType.toLowerCase()};base64,${returnLineItem.label}"
+        >${Resource.msg('download.label','returns',null)}</a>
+    </isif>
+</div>
+<isif condition="${!returnlineitemloopstatus.last}">
+    <div class="col-12 my-2 border-top">
+    </div>
+</isif>
