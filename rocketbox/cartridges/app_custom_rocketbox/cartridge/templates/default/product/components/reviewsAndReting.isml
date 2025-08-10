@@ -1,8 +1,9 @@
 <isif condition="${product.shortDescription}">
     <div class="col-sm-12 col-md-12 col-lg-12 value content" id="collapsible-reviews-${loopState && loopState.count ? loopState.count : '1'}">
         <isprint value="${''}" encoding="off" />
-        <isinclude template="widget/yotpoRatingsWidget" />
-            <isinclude template="widget/yotpoReviewsWidget" />
+        <iscomment>Yotpo widgets commented out to prevent template errors - uncomment if Yotpo cartridge is added to cartridge path</iscomment>
+        <iscomment><isinclude template="widget/yotpoRatingsWidget" /></iscomment>
+        <iscomment><isinclude template="widget/yotpoReviewsWidget" /></iscomment>
     </div>
 </isif> 
 

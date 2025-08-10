@@ -164,7 +164,8 @@
                 <iselse>
                     <div class="col-xs-12 col-sm-6 ">
                 </isif>
-                    <isinclude template="giftRegistry/components/addToRegistryButton" />
+                    <iscomment>Gift Registry component not available - commented out to prevent template error</iscomment>
+                    <iscomment><isinclude template="giftRegistry/components/addToRegistryButton" /></iscomment>
                 </div>
             </isif>
         </isif>
