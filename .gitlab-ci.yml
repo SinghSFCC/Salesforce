@@ -1,0 +1,37 @@
+variables:
+     DW_CONTENT: '{"hostname": "zyaj-010.sandbox.us01.dx.commercecloud.salesforce.com","username": "hemant.shukla@changecx.com","password": "Indrawati@92","code-version": "sfra_version1"}'
+build_and_deploy:
+     stage: build
+     script:
+     - 'echo "$DW_CONTENT" > dw.json'
+     - cd ./storefront-reference-architecture
+     - npm install
+     - cd ../rocketbox
+     - npm install
+     - cd ../plugin-applepay-master 
+     - npm install
+     - cd ../plugin_wishlist
+     - npm install
+     - cd ../storefront-reference-architecture
+     - npm run build
+     - cd ../rocketbox
+     - npm run build
+     - cd ../plugin-applepay-master
+     - npm run build
+     - cd ../plugin_wishlist
+     - npm run build
+     - cd ../storefront-reference-architecture
+     - 'echo "$DW_CONTENT" > dw.json'
+     - npm run uploadCartridge
+     - cd ../rocketbox
+     - 'echo "$DW_CONTENT" > dw.json'
+     - npm run uploadCartridge
+     - cd ../plugin-applepay-master
+     - 'echo "$DW_CONTENT" > dw.json'
+     - npm run uploadCartridge
+     - cd ../plugin_wishlist
+     - 'echo "$DW_CONTENT" > dw.json'
+     - npm run uploadCartridge
+     tags:
+     - shared-windows
+     when: manual
